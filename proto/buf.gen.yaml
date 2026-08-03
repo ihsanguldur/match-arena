@@ -1,0 +1,12 @@
+version: v2
+plugins:
+  - remote: buf.build/protocolbuffers/go
+    out: ../game-service/internal/gen
+    opt: paths=source_relative
+  - remote: buf.build/grpc/go
+    out: ../game-service/internal/gen
+    opt: paths=source_relative
+  - remote: buf.build/protocolbuffers/java
+    out: ../account-service/src/main/java
+  - remote: buf.build/grpc/java
+    out: ../account-service/src/main/java

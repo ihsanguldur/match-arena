@@ -1,0 +1,28 @@
+syntax = "proto3";
+package match_arena.v1;
+
+option go_package = "github.com/ihsanguldur/match-arena/game-service/internal/gen/match_arena/v1;matcharenav1";
+option java_package = "com.matcharena.grpc.v1";
+option java_multiple_files = true;
+
+message JoinQueueRequest {
+  string player_id = 1;
+  int32 rating = 2;
+}
+
+message JoinQueueResponse {
+  string queue_ticket_id = 1;
+}
+
+message LeaveQueueRequest {
+  string queue_ticket_id = 1;
+}
+
+message LeaveQueueResponse {
+  bool success = 1;
+}
+
+service MatchmakingService {
+  rpc JoinQueue(JoinQueueRequest) returns (JoinQueueResponse);
+  rpc LeaveQueue(LeaveQueueRequest) returns (LeaveQueueResponse);
+}

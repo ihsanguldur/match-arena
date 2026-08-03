@@ -1,0 +1,27 @@
+syntax = "proto3";
+package match_arena.v1;
+
+option go_package = "github.com/ihsanguldur/match-arena/game-service/internal/gen/match_arena/v1;matcharenav1";
+option java_package = "com.matcharena.grpc.v1";
+option java_multiple_files = true;
+
+message PingRequest {
+  string message = 1;
+}
+
+message PingResponse {
+  string message = 1;
+}
+
+message ReportMatchResultRequest {
+  string session_id = 1;
+}
+
+message ReportMatchResultResponse {
+  bool success = 1;
+}
+
+service AccountLookupService {
+  rpc Ping(PingRequest) returns (PingResponse);
+  rpc ReportMatchResult(ReportMatchResultRequest) returns (ReportMatchResultResponse);
+}

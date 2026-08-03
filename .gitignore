@@ -1,0 +1,20 @@
+# IDE
+.idea/
+*.iml
+
+# Go
+game-service/bin/
+*.exe
+*.test
+
+# Java / Maven / Gradle
+account-service/target/
+account-service/build/
+*.class
+
+# Node (web client)
+client/web/node_modules/
+client/web/dist/
+
+# OS
+.DS_Store
