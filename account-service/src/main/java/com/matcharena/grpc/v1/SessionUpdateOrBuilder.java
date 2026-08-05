@@ -7,72 +7,84 @@ package com.matcharena.grpc.v1;
 
 @com.google.protobuf.Generated
 public interface SessionUpdateOrBuilder extends
-    // @@protoc_insertion_point(interface_extends:match_arena.v1.SessionUpdate)
-    com.google.protobuf.MessageOrBuilder {
+        // @@protoc_insertion_point(interface_extends:match_arena.v1.SessionUpdate)
+        com.google.protobuf.MessageOrBuilder {
 
-  /**
-   * <code>string session_id = 1 [json_name = "sessionId"];</code>
-   * @return The sessionId.
-   */
-  java.lang.String getSessionId();
-  /**
-   * <code>string session_id = 1 [json_name = "sessionId"];</code>
-   * @return The bytes for sessionId.
-   */
-  com.google.protobuf.ByteString
-      getSessionIdBytes();
+    /**
+     * <code>string session_id = 1 [json_name = "sessionId"];</code>
+     *
+     * @return The sessionId.
+     */
+    java.lang.String getSessionId();
 
-  /**
-   * <code>repeated .match_arena.v1.PlayerScore scores = 2 [json_name = "scores"];</code>
-   */
-  java.util.List<com.matcharena.grpc.v1.PlayerScore> 
-      getScoresList();
-  /**
-   * <code>repeated .match_arena.v1.PlayerScore scores = 2 [json_name = "scores"];</code>
-   */
-  com.matcharena.grpc.v1.PlayerScore getScores(int index);
-  /**
-   * <code>repeated .match_arena.v1.PlayerScore scores = 2 [json_name = "scores"];</code>
-   */
-  int getScoresCount();
-  /**
-   * <code>repeated .match_arena.v1.PlayerScore scores = 2 [json_name = "scores"];</code>
-   */
-  java.util.List<? extends com.matcharena.grpc.v1.PlayerScoreOrBuilder> 
-      getScoresOrBuilderList();
-  /**
-   * <code>repeated .match_arena.v1.PlayerScore scores = 2 [json_name = "scores"];</code>
-   */
-  com.matcharena.grpc.v1.PlayerScoreOrBuilder getScoresOrBuilder(
-      int index);
+    /**
+     * <code>string session_id = 1 [json_name = "sessionId"];</code>
+     *
+     * @return The bytes for sessionId.
+     */
+    com.google.protobuf.ByteString
+    getSessionIdBytes();
 
-  /**
-   * <code>repeated .match_arena.v1.AntiCheatFlag flags = 3 [json_name = "flags"];</code>
-   */
-  java.util.List<com.matcharena.grpc.v1.AntiCheatFlag> 
-      getFlagsList();
-  /**
-   * <code>repeated .match_arena.v1.AntiCheatFlag flags = 3 [json_name = "flags"];</code>
-   */
-  com.matcharena.grpc.v1.AntiCheatFlag getFlags(int index);
-  /**
-   * <code>repeated .match_arena.v1.AntiCheatFlag flags = 3 [json_name = "flags"];</code>
-   */
-  int getFlagsCount();
-  /**
-   * <code>repeated .match_arena.v1.AntiCheatFlag flags = 3 [json_name = "flags"];</code>
-   */
-  java.util.List<? extends com.matcharena.grpc.v1.AntiCheatFlagOrBuilder> 
-      getFlagsOrBuilderList();
-  /**
-   * <code>repeated .match_arena.v1.AntiCheatFlag flags = 3 [json_name = "flags"];</code>
-   */
-  com.matcharena.grpc.v1.AntiCheatFlagOrBuilder getFlagsOrBuilder(
-      int index);
+    /**
+     * <code>repeated .match_arena.v1.PlayerScore scores = 2 [json_name = "scores"];</code>
+     */
+    java.util.List<com.matcharena.grpc.v1.PlayerScore>
+    getScoresList();
 
-  /**
-   * <code>bool session_ended = 4 [json_name = "sessionEnded"];</code>
-   * @return The sessionEnded.
-   */
-  boolean getSessionEnded();
+    /**
+     * <code>repeated .match_arena.v1.PlayerScore scores = 2 [json_name = "scores"];</code>
+     */
+    com.matcharena.grpc.v1.PlayerScore getScores(int index);
+
+    /**
+     * <code>repeated .match_arena.v1.PlayerScore scores = 2 [json_name = "scores"];</code>
+     */
+    int getScoresCount();
+
+    /**
+     * <code>repeated .match_arena.v1.PlayerScore scores = 2 [json_name = "scores"];</code>
+     */
+    java.util.List<? extends com.matcharena.grpc.v1.PlayerScoreOrBuilder>
+    getScoresOrBuilderList();
+
+    /**
+     * <code>repeated .match_arena.v1.PlayerScore scores = 2 [json_name = "scores"];</code>
+     */
+    com.matcharena.grpc.v1.PlayerScoreOrBuilder getScoresOrBuilder(
+            int index);
+
+    /**
+     * <code>repeated .match_arena.v1.AntiCheatFlag flags = 3 [json_name = "flags"];</code>
+     */
+    java.util.List<com.matcharena.grpc.v1.AntiCheatFlag>
+    getFlagsList();
+
+    /**
+     * <code>repeated .match_arena.v1.AntiCheatFlag flags = 3 [json_name = "flags"];</code>
+     */
+    com.matcharena.grpc.v1.AntiCheatFlag getFlags(int index);
+
+    /**
+     * <code>repeated .match_arena.v1.AntiCheatFlag flags = 3 [json_name = "flags"];</code>
+     */
+    int getFlagsCount();
+
+    /**
+     * <code>repeated .match_arena.v1.AntiCheatFlag flags = 3 [json_name = "flags"];</code>
+     */
+    java.util.List<? extends com.matcharena.grpc.v1.AntiCheatFlagOrBuilder>
+    getFlagsOrBuilderList();
+
+    /**
+     * <code>repeated .match_arena.v1.AntiCheatFlag flags = 3 [json_name = "flags"];</code>
+     */
+    com.matcharena.grpc.v1.AntiCheatFlagOrBuilder getFlagsOrBuilder(
+            int index);
+
+    /**
+     * <code>bool session_ended = 4 [json_name = "sessionEnded"];</code>
+     *
+     * @return The sessionEnded.
+     */
+    boolean getSessionEnded();
 }

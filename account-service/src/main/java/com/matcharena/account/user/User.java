@@ -46,11 +46,6 @@ public class User {
     @Column(name = "created_at", nullable = false, updatable = false)
     private Instant createdAt;
 
-    @PrePersist
-    void onCreate() {
-        createdAt = Instant.now();
-    }
-
     public static User create(String username, String email, String passwordHash) {
         User user = new User();
 
@@ -59,5 +54,10 @@ public class User {
         user.passwordHash = passwordHash;
 
         return user;
+    }
+
+    @PrePersist
+    void onCreate() {
+        createdAt = Instant.now();
     }
 }

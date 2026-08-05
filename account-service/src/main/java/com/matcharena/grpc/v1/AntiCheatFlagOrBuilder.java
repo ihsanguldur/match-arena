@@ -7,42 +7,51 @@ package com.matcharena.grpc.v1;
 
 @com.google.protobuf.Generated
 public interface AntiCheatFlagOrBuilder extends
-    // @@protoc_insertion_point(interface_extends:match_arena.v1.AntiCheatFlag)
-    com.google.protobuf.MessageOrBuilder {
+        // @@protoc_insertion_point(interface_extends:match_arena.v1.AntiCheatFlag)
+        com.google.protobuf.MessageOrBuilder {
 
-  /**
-   * <code>string player_id = 1 [json_name = "playerId"];</code>
-   * @return The playerId.
-   */
-  java.lang.String getPlayerId();
-  /**
-   * <code>string player_id = 1 [json_name = "playerId"];</code>
-   * @return The bytes for playerId.
-   */
-  com.google.protobuf.ByteString
-      getPlayerIdBytes();
+    /**
+     * <code>string player_id = 1 [json_name = "playerId"];</code>
+     *
+     * @return The playerId.
+     */
+    java.lang.String getPlayerId();
 
-  /**
-   * <code>string rule = 2 [json_name = "rule"];</code>
-   * @return The rule.
-   */
-  java.lang.String getRule();
-  /**
-   * <code>string rule = 2 [json_name = "rule"];</code>
-   * @return The bytes for rule.
-   */
-  com.google.protobuf.ByteString
-      getRuleBytes();
+    /**
+     * <code>string player_id = 1 [json_name = "playerId"];</code>
+     *
+     * @return The bytes for playerId.
+     */
+    com.google.protobuf.ByteString
+    getPlayerIdBytes();
 
-  /**
-   * <code>string detail = 3 [json_name = "detail"];</code>
-   * @return The detail.
-   */
-  java.lang.String getDetail();
-  /**
-   * <code>string detail = 3 [json_name = "detail"];</code>
-   * @return The bytes for detail.
-   */
-  com.google.protobuf.ByteString
-      getDetailBytes();
+    /**
+     * <code>string rule = 2 [json_name = "rule"];</code>
+     *
+     * @return The rule.
+     */
+    java.lang.String getRule();
+
+    /**
+     * <code>string rule = 2 [json_name = "rule"];</code>
+     *
+     * @return The bytes for rule.
+     */
+    com.google.protobuf.ByteString
+    getRuleBytes();
+
+    /**
+     * <code>string detail = 3 [json_name = "detail"];</code>
+     *
+     * @return The detail.
+     */
+    java.lang.String getDetail();
+
+    /**
+     * <code>string detail = 3 [json_name = "detail"];</code>
+     *
+     * @return The bytes for detail.
+     */
+    com.google.protobuf.ByteString
+    getDetailBytes();
 }

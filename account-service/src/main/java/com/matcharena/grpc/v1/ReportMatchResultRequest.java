@@ -10,502 +10,542 @@ package com.matcharena.grpc.v1;
  */
 @com.google.protobuf.Generated
 public final class ReportMatchResultRequest extends
-    com.google.protobuf.GeneratedMessage implements
-    // @@protoc_insertion_point(message_implements:match_arena.v1.ReportMatchResultRequest)
-    ReportMatchResultRequestOrBuilder {
-private static final long serialVersionUID = 0L;
-  static {
-    com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
-      com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
-      /* major= */ 4,
-      /* minor= */ 35,
-      /* patch= */ 1,
-      /* suffix= */ "",
-      "ReportMatchResultRequest");
-  }
-  // Use ReportMatchResultRequest.newBuilder() to construct.
-  private ReportMatchResultRequest(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
-    super(builder);
-  }
-  private ReportMatchResultRequest() {
-    sessionId_ = "";
-  }
+        com.google.protobuf.GeneratedMessage implements
+        // @@protoc_insertion_point(message_implements:match_arena.v1.ReportMatchResultRequest)
+        ReportMatchResultRequestOrBuilder {
+    public static final int SESSION_ID_FIELD_NUMBER = 1;
+    private static final long serialVersionUID = 0L;
+    // @@protoc_insertion_point(class_scope:match_arena.v1.ReportMatchResultRequest)
+    private static final com.matcharena.grpc.v1.ReportMatchResultRequest DEFAULT_INSTANCE;
+    private static final com.google.protobuf.Parser<ReportMatchResultRequest>
+            PARSER = new com.google.protobuf.AbstractParser<ReportMatchResultRequest>() {
+        @java.lang.Override
+        public ReportMatchResultRequest parsePartialFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+                builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+                throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                        .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+        }
+    };
 
-  public static final com.google.protobuf.Descriptors.Descriptor
-      getDescriptor() {
-    return com.matcharena.grpc.v1.Account.internal_static_match_arena_v1_ReportMatchResultRequest_descriptor;
-  }
-
-  @java.lang.Override
-  public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
-    return com.matcharena.grpc.v1.Account.internal_static_match_arena_v1_ReportMatchResultRequest_descriptor;
-  }
-
-  @java.lang.Override
-  protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
-      internalGetFieldAccessorTable() {
-    return com.matcharena.grpc.v1.Account.internal_static_match_arena_v1_ReportMatchResultRequest_fieldAccessorTable
-        .ensureFieldAccessorsInitialized(
-            com.matcharena.grpc.v1.ReportMatchResultRequest.class, com.matcharena.grpc.v1.ReportMatchResultRequest.Builder.class);
-  }
-
-  public static final int SESSION_ID_FIELD_NUMBER = 1;
-  @SuppressWarnings("serial")
-  private volatile java.lang.Object sessionId_ = "";
-  /**
-   * <code>string session_id = 1 [json_name = "sessionId"];</code>
-   * @return The sessionId.
-   */
-  @java.lang.Override
-  public java.lang.String getSessionId() {
-    java.lang.Object ref = sessionId_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      sessionId_ = s;
-      return s;
+    static {
+        com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+                com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+                /* major= */ 4,
+                /* minor= */ 35,
+                /* patch= */ 1,
+                /* suffix= */ "",
+                "ReportMatchResultRequest");
     }
-  }
-  /**
-   * <code>string session_id = 1 [json_name = "sessionId"];</code>
-   * @return The bytes for sessionId.
-   */
-  @java.lang.Override
-  public com.google.protobuf.ByteString
-      getSessionIdBytes() {
-    java.lang.Object ref = sessionId_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      sessionId_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
+
+    static {
+        DEFAULT_INSTANCE = new com.matcharena.grpc.v1.ReportMatchResultRequest();
     }
-  }
 
-  private byte memoizedIsInitialized = -1;
-  @java.lang.Override
-  public final boolean isInitialized() {
-    byte isInitialized = memoizedIsInitialized;
-    if (isInitialized == 1) return true;
-    if (isInitialized == 0) return false;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object sessionId_ = "";
+    private byte memoizedIsInitialized = -1;
 
-    memoizedIsInitialized = 1;
-    return true;
-  }
-
-  @java.lang.Override
-  public void writeTo(com.google.protobuf.CodedOutputStream output)
-                      throws java.io.IOException {
-    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(sessionId_)) {
-      com.google.protobuf.GeneratedMessage.writeString(output, 1, sessionId_);
+    // Use ReportMatchResultRequest.newBuilder() to construct.
+    private ReportMatchResultRequest(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+        super(builder);
     }
-    getUnknownFields().writeTo(output);
-  }
-  private int computeSerializedSize_0() {
-    int size = 0;
-    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(sessionId_)) {
-      size += com.google.protobuf.GeneratedMessage.computeStringSize(1, sessionId_);
+
+    private ReportMatchResultRequest() {
+        sessionId_ = "";
     }
-    return size;
-  }
-  @java.lang.Override
-  public int getSerializedSize() {
-    int size = memoizedSize;
-    if (size != -1) return size;
 
-    size = 0;
-    size += computeSerializedSize_0();
-    size += getUnknownFields().getSerializedSize();
-    memoizedSize = size;
-    return size;
-  }
-
-  @java.lang.Override
-  public boolean equals(final java.lang.Object obj) {
-    if (obj == this) {
-     return true;
-    }
-    if (!(obj instanceof com.matcharena.grpc.v1.ReportMatchResultRequest)) {
-      return super.equals(obj);
-    }
-    com.matcharena.grpc.v1.ReportMatchResultRequest other = (com.matcharena.grpc.v1.ReportMatchResultRequest) obj;
-
-    if (!getSessionId()
-        .equals(other.getSessionId())) return false;
-    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
-    return true;
-  }
-
-  @java.lang.Override
-  public int hashCode() {
-    if (memoizedHashCode != 0) {
-      return memoizedHashCode;
-    }
-    int hash = 41;
-    hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + SESSION_ID_FIELD_NUMBER;
-    hash = (53 * hash) + getSessionId().hashCode();
-    hash = (29 * hash) + getUnknownFields().hashCode();
-    memoizedHashCode = hash;
-    return hash;
-  }
-
-  public static com.matcharena.grpc.v1.ReportMatchResultRequest parseFrom(
-      java.nio.ByteBuffer data)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    return PARSER.parseFrom(data);
-  }
-  public static com.matcharena.grpc.v1.ReportMatchResultRequest parseFrom(
-      java.nio.ByteBuffer data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    return PARSER.parseFrom(data, extensionRegistry);
-  }
-  public static com.matcharena.grpc.v1.ReportMatchResultRequest parseFrom(
-      com.google.protobuf.ByteString data)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    return PARSER.parseFrom(data);
-  }
-  public static com.matcharena.grpc.v1.ReportMatchResultRequest parseFrom(
-      com.google.protobuf.ByteString data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    return PARSER.parseFrom(data, extensionRegistry);
-  }
-  public static com.matcharena.grpc.v1.ReportMatchResultRequest parseFrom(byte[] data)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    return PARSER.parseFrom(data);
-  }
-  public static com.matcharena.grpc.v1.ReportMatchResultRequest parseFrom(
-      byte[] data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    return PARSER.parseFrom(data, extensionRegistry);
-  }
-  public static com.matcharena.grpc.v1.ReportMatchResultRequest parseFrom(java.io.InputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessage
-        .parseWithIOException(PARSER, input);
-  }
-  public static com.matcharena.grpc.v1.ReportMatchResultRequest parseFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessage
-        .parseWithIOException(PARSER, input, extensionRegistry);
-  }
-
-  public static com.matcharena.grpc.v1.ReportMatchResultRequest parseDelimitedFrom(java.io.InputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessage
-        .parseDelimitedWithIOException(PARSER, input);
-  }
-
-  public static com.matcharena.grpc.v1.ReportMatchResultRequest parseDelimitedFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessage
-        .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-  }
-  public static com.matcharena.grpc.v1.ReportMatchResultRequest parseFrom(
-      com.google.protobuf.CodedInputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessage
-        .parseWithIOException(PARSER, input);
-  }
-  public static com.matcharena.grpc.v1.ReportMatchResultRequest parseFrom(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessage
-        .parseWithIOException(PARSER, input, extensionRegistry);
-  }
-
-  @java.lang.Override
-  public Builder newBuilderForType() { return newBuilder(); }
-  public static Builder newBuilder() {
-    return DEFAULT_INSTANCE.toBuilder();
-  }
-  public static Builder newBuilder(com.matcharena.grpc.v1.ReportMatchResultRequest prototype) {
-    return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-  }
-  @java.lang.Override
-  public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
-  }
-
-  @java.lang.Override
-  protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessage.BuilderParent parent) {
-    Builder builder = new Builder(parent);
-    return builder;
-  }
-  /**
-   * Protobuf type {@code match_arena.v1.ReportMatchResultRequest}
-   */
-  public static final class Builder extends
-      com.google.protobuf.GeneratedMessage.Builder<Builder> implements
-      // @@protoc_insertion_point(builder_implements:match_arena.v1.ReportMatchResultRequest)
-      com.matcharena.grpc.v1.ReportMatchResultRequestOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.matcharena.grpc.v1.Account.internal_static_match_arena_v1_ReportMatchResultRequest_descriptor;
+    getDescriptor() {
+        return com.matcharena.grpc.v1.Account.internal_static_match_arena_v1_ReportMatchResultRequest_descriptor;
+    }
+
+    public static com.matcharena.grpc.v1.ReportMatchResultRequest parseFrom(
+            java.nio.ByteBuffer data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+    }
+
+    public static com.matcharena.grpc.v1.ReportMatchResultRequest parseFrom(
+            java.nio.ByteBuffer data,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.matcharena.grpc.v1.ReportMatchResultRequest parseFrom(
+            com.google.protobuf.ByteString data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+    }
+
+    public static com.matcharena.grpc.v1.ReportMatchResultRequest parseFrom(
+            com.google.protobuf.ByteString data,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.matcharena.grpc.v1.ReportMatchResultRequest parseFrom(byte[] data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+    }
+
+    public static com.matcharena.grpc.v1.ReportMatchResultRequest parseFrom(
+            byte[] data,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.matcharena.grpc.v1.ReportMatchResultRequest parseFrom(java.io.InputStream input)
+            throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage
+                .parseWithIOException(PARSER, input);
+    }
+
+    public static com.matcharena.grpc.v1.ReportMatchResultRequest parseFrom(
+            java.io.InputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage
+                .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public static com.matcharena.grpc.v1.ReportMatchResultRequest parseDelimitedFrom(java.io.InputStream input)
+            throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage
+                .parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.matcharena.grpc.v1.ReportMatchResultRequest parseDelimitedFrom(
+            java.io.InputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage
+                .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public static com.matcharena.grpc.v1.ReportMatchResultRequest parseFrom(
+            com.google.protobuf.CodedInputStream input)
+            throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage
+                .parseWithIOException(PARSER, input);
+    }
+
+    public static com.matcharena.grpc.v1.ReportMatchResultRequest parseFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage
+                .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public static Builder newBuilder() {
+        return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(com.matcharena.grpc.v1.ReportMatchResultRequest prototype) {
+        return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    public static com.matcharena.grpc.v1.ReportMatchResultRequest getDefaultInstance() {
+        return DEFAULT_INSTANCE;
+    }
+
+    public static com.google.protobuf.Parser<ReportMatchResultRequest> parser() {
+        return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.matcharena.grpc.v1.Account.internal_static_match_arena_v1_ReportMatchResultRequest_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return com.matcharena.grpc.v1.Account.internal_static_match_arena_v1_ReportMatchResultRequest_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              com.matcharena.grpc.v1.ReportMatchResultRequest.class, com.matcharena.grpc.v1.ReportMatchResultRequest.Builder.class);
+    internalGetFieldAccessorTable() {
+        return com.matcharena.grpc.v1.Account.internal_static_match_arena_v1_ReportMatchResultRequest_fieldAccessorTable
+                .ensureFieldAccessorsInitialized(
+                        com.matcharena.grpc.v1.ReportMatchResultRequest.class, com.matcharena.grpc.v1.ReportMatchResultRequest.Builder.class);
     }
 
-    // Construct using com.matcharena.grpc.v1.ReportMatchResultRequest.newBuilder()
-    private Builder() {
-
-    }
-
-    private Builder(
-        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
-      super(parent);
-
-    }
+    /**
+     * <code>string session_id = 1 [json_name = "sessionId"];</code>
+     *
+     * @return The sessionId.
+     */
     @java.lang.Override
-    public Builder clear() {
-      super.clear();
-      bitField0_ = 0;
-      sessionId_ = "";
-      return this;
+    public java.lang.String getSessionId() {
+        java.lang.Object ref = sessionId_;
+        if (ref instanceof java.lang.String) {
+            return (java.lang.String) ref;
+        } else {
+            com.google.protobuf.ByteString bs =
+                    (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            sessionId_ = s;
+            return s;
+        }
     }
 
+    /**
+     * <code>string session_id = 1 [json_name = "sessionId"];</code>
+     *
+     * @return The bytes for sessionId.
+     */
     @java.lang.Override
-    public com.google.protobuf.Descriptors.Descriptor
-        getDescriptorForType() {
-      return com.matcharena.grpc.v1.Account.internal_static_match_arena_v1_ReportMatchResultRequest_descriptor;
-    }
-
-    @java.lang.Override
-    public com.matcharena.grpc.v1.ReportMatchResultRequest getDefaultInstanceForType() {
-      return com.matcharena.grpc.v1.ReportMatchResultRequest.getDefaultInstance();
-    }
-
-    @java.lang.Override
-    public com.matcharena.grpc.v1.ReportMatchResultRequest build() {
-      com.matcharena.grpc.v1.ReportMatchResultRequest result = buildPartial();
-      if (!result.isInitialized()) {
-        throw newUninitializedMessageException(result);
-      }
-      return result;
-    }
-
-    @java.lang.Override
-    public com.matcharena.grpc.v1.ReportMatchResultRequest buildPartial() {
-      com.matcharena.grpc.v1.ReportMatchResultRequest result = new com.matcharena.grpc.v1.ReportMatchResultRequest(this);
-      if (bitField0_ != 0) { buildPartial0(result); }
-      onBuilt();
-      return result;
-    }
-
-    private void buildPartial0(com.matcharena.grpc.v1.ReportMatchResultRequest result) {
-      int from_bitField0_ = bitField0_;
-      if (((from_bitField0_ & 0x00000001) != 0)) {
-        result.sessionId_ = sessionId_;
-      }
-    }
-
-    @java.lang.Override
-    public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof com.matcharena.grpc.v1.ReportMatchResultRequest) {
-        return mergeFrom((com.matcharena.grpc.v1.ReportMatchResultRequest)other);
-      } else {
-        super.mergeFrom(other);
-        return this;
-      }
-    }
-
-    public Builder mergeFrom(com.matcharena.grpc.v1.ReportMatchResultRequest other) {
-      if (other == com.matcharena.grpc.v1.ReportMatchResultRequest.getDefaultInstance()) return this;
-      if (!other.getSessionId().isEmpty()) {
-        sessionId_ = other.sessionId_;
-        bitField0_ |= 0x00000001;
-        onChanged();
-      }
-      this.mergeUnknownFields(other.getUnknownFields());
-      onChanged();
-      return this;
+    public com.google.protobuf.ByteString
+    getSessionIdBytes() {
+        java.lang.Object ref = sessionId_;
+        if (ref instanceof java.lang.String) {
+            com.google.protobuf.ByteString b =
+                    com.google.protobuf.ByteString.copyFromUtf8(
+                            (java.lang.String) ref);
+            sessionId_ = b;
+            return b;
+        } else {
+            return (com.google.protobuf.ByteString) ref;
+        }
     }
 
     @java.lang.Override
     public final boolean isInitialized() {
-      return true;
+        byte isInitialized = memoizedIsInitialized;
+        if (isInitialized == 1) return true;
+        if (isInitialized == 0) return false;
+
+        memoizedIsInitialized = 1;
+        return true;
     }
 
     @java.lang.Override
-    public Builder mergeFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10: {
-              sessionId_ = input.readStringRequireUtf8();
-              bitField0_ |= 0x00000001;
-              break;
-            } // case 10
-            default: {
-              if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                done = true; // was an endgroup tag
-              }
-              break;
-            } // default:
-          } // switch (tag)
-        } // while (!done)
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.unwrapIOException();
-      } finally {
-        onChanged();
-      } // finally
-      return this;
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+            throws java.io.IOException {
+        if (!com.google.protobuf.GeneratedMessage.isStringEmpty(sessionId_)) {
+            com.google.protobuf.GeneratedMessage.writeString(output, 1, sessionId_);
+        }
+        getUnknownFields().writeTo(output);
     }
-    private int bitField0_;
 
-    private java.lang.Object sessionId_ = "";
-    /**
-     * <code>string session_id = 1 [json_name = "sessionId"];</code>
-     * @return The sessionId.
-     */
-    public java.lang.String getSessionId() {
-      java.lang.Object ref = sessionId_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        sessionId_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
+    private int computeSerializedSize_0() {
+        int size = 0;
+        if (!com.google.protobuf.GeneratedMessage.isStringEmpty(sessionId_)) {
+            size += com.google.protobuf.GeneratedMessage.computeStringSize(1, sessionId_);
+        }
+        return size;
     }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+        int size = memoizedSize;
+        if (size != -1) return size;
+
+        size = 0;
+        size += computeSerializedSize_0();
+        size += getUnknownFields().getSerializedSize();
+        memoizedSize = size;
+        return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+        if (obj == this) {
+            return true;
+        }
+        if (!(obj instanceof com.matcharena.grpc.v1.ReportMatchResultRequest)) {
+            return super.equals(obj);
+        }
+        com.matcharena.grpc.v1.ReportMatchResultRequest other = (com.matcharena.grpc.v1.ReportMatchResultRequest) obj;
+
+        if (!getSessionId()
+                .equals(other.getSessionId())) return false;
+        if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+        return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+        if (memoizedHashCode != 0) {
+            return memoizedHashCode;
+        }
+        int hash = 41;
+        hash = (19 * hash) + getDescriptor().hashCode();
+        hash = (37 * hash) + SESSION_ID_FIELD_NUMBER;
+        hash = (53 * hash) + getSessionId().hashCode();
+        hash = (29 * hash) + getUnknownFields().hashCode();
+        memoizedHashCode = hash;
+        return hash;
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+        return newBuilder();
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+        return this == DEFAULT_INSTANCE
+                ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+            com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        Builder builder = new Builder(parent);
+        return builder;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<ReportMatchResultRequest> getParserForType() {
+        return PARSER;
+    }
+
+    @java.lang.Override
+    public com.matcharena.grpc.v1.ReportMatchResultRequest getDefaultInstanceForType() {
+        return DEFAULT_INSTANCE;
+    }
+
     /**
-     * <code>string session_id = 1 [json_name = "sessionId"];</code>
-     * @return The bytes for sessionId.
+     * Protobuf type {@code match_arena.v1.ReportMatchResultRequest}
      */
-    public com.google.protobuf.ByteString
+    public static final class Builder extends
+            com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+            // @@protoc_insertion_point(builder_implements:match_arena.v1.ReportMatchResultRequest)
+            com.matcharena.grpc.v1.ReportMatchResultRequestOrBuilder {
+        private int bitField0_;
+        private java.lang.Object sessionId_ = "";
+
+        // Construct using com.matcharena.grpc.v1.ReportMatchResultRequest.newBuilder()
+        private Builder() {
+
+        }
+
+        private Builder(
+                com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+            super(parent);
+
+        }
+
+        public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+            return com.matcharena.grpc.v1.Account.internal_static_match_arena_v1_ReportMatchResultRequest_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+            return com.matcharena.grpc.v1.Account.internal_static_match_arena_v1_ReportMatchResultRequest_fieldAccessorTable
+                    .ensureFieldAccessorsInitialized(
+                            com.matcharena.grpc.v1.ReportMatchResultRequest.class, com.matcharena.grpc.v1.ReportMatchResultRequest.Builder.class);
+        }
+
+        @java.lang.Override
+        public Builder clear() {
+            super.clear();
+            bitField0_ = 0;
+            sessionId_ = "";
+            return this;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Descriptors.Descriptor
+        getDescriptorForType() {
+            return com.matcharena.grpc.v1.Account.internal_static_match_arena_v1_ReportMatchResultRequest_descriptor;
+        }
+
+        @java.lang.Override
+        public com.matcharena.grpc.v1.ReportMatchResultRequest getDefaultInstanceForType() {
+            return com.matcharena.grpc.v1.ReportMatchResultRequest.getDefaultInstance();
+        }
+
+        @java.lang.Override
+        public com.matcharena.grpc.v1.ReportMatchResultRequest build() {
+            com.matcharena.grpc.v1.ReportMatchResultRequest result = buildPartial();
+            if (!result.isInitialized()) {
+                throw newUninitializedMessageException(result);
+            }
+            return result;
+        }
+
+        @java.lang.Override
+        public com.matcharena.grpc.v1.ReportMatchResultRequest buildPartial() {
+            com.matcharena.grpc.v1.ReportMatchResultRequest result = new com.matcharena.grpc.v1.ReportMatchResultRequest(this);
+            if (bitField0_ != 0) {
+                buildPartial0(result);
+            }
+            onBuilt();
+            return result;
+        }
+
+        private void buildPartial0(com.matcharena.grpc.v1.ReportMatchResultRequest result) {
+            int from_bitField0_ = bitField0_;
+            if (((from_bitField0_ & 0x00000001) != 0)) {
+                result.sessionId_ = sessionId_;
+            }
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(com.google.protobuf.Message other) {
+            if (other instanceof com.matcharena.grpc.v1.ReportMatchResultRequest) {
+                return mergeFrom((com.matcharena.grpc.v1.ReportMatchResultRequest) other);
+            } else {
+                super.mergeFrom(other);
+                return this;
+            }
+        }
+
+        public Builder mergeFrom(com.matcharena.grpc.v1.ReportMatchResultRequest other) {
+            if (other == com.matcharena.grpc.v1.ReportMatchResultRequest.getDefaultInstance()) return this;
+            if (!other.getSessionId().isEmpty()) {
+                sessionId_ = other.sessionId_;
+                bitField0_ |= 0x00000001;
+                onChanged();
+            }
+            this.mergeUnknownFields(other.getUnknownFields());
+            onChanged();
+            return this;
+        }
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+            return true;
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+            if (extensionRegistry == null) {
+                throw new java.lang.NullPointerException();
+            }
+            try {
+                boolean done = false;
+                while (!done) {
+                    int tag = input.readTag();
+                    switch (tag) {
+                        case 0:
+                            done = true;
+                            break;
+                        case 10: {
+                            sessionId_ = input.readStringRequireUtf8();
+                            bitField0_ |= 0x00000001;
+                            break;
+                        } // case 10
+                        default: {
+                            if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                                done = true; // was an endgroup tag
+                            }
+                            break;
+                        } // default:
+                    } // switch (tag)
+                } // while (!done)
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.unwrapIOException();
+            } finally {
+                onChanged();
+            } // finally
+            return this;
+        }
+
+        /**
+         * <code>string session_id = 1 [json_name = "sessionId"];</code>
+         *
+         * @return The sessionId.
+         */
+        public java.lang.String getSessionId() {
+            java.lang.Object ref = sessionId_;
+            if (!(ref instanceof java.lang.String)) {
+                com.google.protobuf.ByteString bs =
+                        (com.google.protobuf.ByteString) ref;
+                java.lang.String s = bs.toStringUtf8();
+                sessionId_ = s;
+                return s;
+            } else {
+                return (java.lang.String) ref;
+            }
+        }
+
+        /**
+         * <code>string session_id = 1 [json_name = "sessionId"];</code>
+         *
+         * @param value The sessionId to set.
+         * @return This builder for chaining.
+         */
+        public Builder setSessionId(
+                java.lang.String value) {
+            if (value == null) {
+                throw new NullPointerException();
+            }
+            sessionId_ = value;
+            bitField0_ |= 0x00000001;
+            onChanged();
+            return this;
+        }
+
+        /**
+         * <code>string session_id = 1 [json_name = "sessionId"];</code>
+         *
+         * @return The bytes for sessionId.
+         */
+        public com.google.protobuf.ByteString
         getSessionIdBytes() {
-      java.lang.Object ref = sessionId_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        sessionId_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
+            java.lang.Object ref = sessionId_;
+            if (ref instanceof String) {
+                com.google.protobuf.ByteString b =
+                        com.google.protobuf.ByteString.copyFromUtf8(
+                                (java.lang.String) ref);
+                sessionId_ = b;
+                return b;
+            } else {
+                return (com.google.protobuf.ByteString) ref;
+            }
+        }
+
+        /**
+         * <code>string session_id = 1 [json_name = "sessionId"];</code>
+         *
+         * @param value The bytes for sessionId to set.
+         * @return This builder for chaining.
+         */
+        public Builder setSessionIdBytes(
+                com.google.protobuf.ByteString value) {
+            if (value == null) {
+                throw new NullPointerException();
+            }
+            checkByteStringIsUtf8(value);
+            sessionId_ = value;
+            bitField0_ |= 0x00000001;
+            onChanged();
+            return this;
+        }
+
+        /**
+         * <code>string session_id = 1 [json_name = "sessionId"];</code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearSessionId() {
+            sessionId_ = getDefaultInstance().getSessionId();
+            bitField0_ = (bitField0_ & ~0x00000001);
+            onChanged();
+            return this;
+        }
+
+        // @@protoc_insertion_point(builder_scope:match_arena.v1.ReportMatchResultRequest)
     }
-    /**
-     * <code>string session_id = 1 [json_name = "sessionId"];</code>
-     * @param value The sessionId to set.
-     * @return This builder for chaining.
-     */
-    public Builder setSessionId(
-        java.lang.String value) {
-      if (value == null) { throw new NullPointerException(); }
-      sessionId_ = value;
-      bitField0_ |= 0x00000001;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>string session_id = 1 [json_name = "sessionId"];</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearSessionId() {
-      sessionId_ = getDefaultInstance().getSessionId();
-      bitField0_ = (bitField0_ & ~0x00000001);
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>string session_id = 1 [json_name = "sessionId"];</code>
-     * @param value The bytes for sessionId to set.
-     * @return This builder for chaining.
-     */
-    public Builder setSessionIdBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) { throw new NullPointerException(); }
-      checkByteStringIsUtf8(value);
-      sessionId_ = value;
-      bitField0_ |= 0x00000001;
-      onChanged();
-      return this;
-    }
-
-    // @@protoc_insertion_point(builder_scope:match_arena.v1.ReportMatchResultRequest)
-  }
-
-  // @@protoc_insertion_point(class_scope:match_arena.v1.ReportMatchResultRequest)
-  private static final com.matcharena.grpc.v1.ReportMatchResultRequest DEFAULT_INSTANCE;
-  static {
-    DEFAULT_INSTANCE = new com.matcharena.grpc.v1.ReportMatchResultRequest();
-  }
-
-  public static com.matcharena.grpc.v1.ReportMatchResultRequest getDefaultInstance() {
-    return DEFAULT_INSTANCE;
-  }
-
-  private static final com.google.protobuf.Parser<ReportMatchResultRequest>
-      PARSER = new com.google.protobuf.AbstractParser<ReportMatchResultRequest>() {
-    @java.lang.Override
-    public ReportMatchResultRequest parsePartialFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      Builder builder = newBuilder();
-      try {
-        builder.mergeFrom(input, extensionRegistry);
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(builder.buildPartial());
-      } catch (com.google.protobuf.UninitializedMessageException e) {
-        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(e)
-            .setUnfinishedMessage(builder.buildPartial());
-      }
-      return builder.buildPartial();
-    }
-  };
-
-  public static com.google.protobuf.Parser<ReportMatchResultRequest> parser() {
-    return PARSER;
-  }
-
-  @java.lang.Override
-  public com.google.protobuf.Parser<ReportMatchResultRequest> getParserForType() {
-    return PARSER;
-  }
-
-  @java.lang.Override
-  public com.matcharena.grpc.v1.ReportMatchResultRequest getDefaultInstanceForType() {
-    return DEFAULT_INSTANCE;
-  }
 
 }
 

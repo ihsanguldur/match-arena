@@ -7,12 +7,13 @@ package com.matcharena.grpc.v1;
 
 @com.google.protobuf.Generated
 public interface LeaveQueueResponseOrBuilder extends
-    // @@protoc_insertion_point(interface_extends:match_arena.v1.LeaveQueueResponse)
-    com.google.protobuf.MessageOrBuilder {
+        // @@protoc_insertion_point(interface_extends:match_arena.v1.LeaveQueueResponse)
+        com.google.protobuf.MessageOrBuilder {
 
-  /**
-   * <code>bool success = 1 [json_name = "success"];</code>
-   * @return The success.
-   */
-  boolean getSuccess();
+    /**
+     * <code>bool success = 1 [json_name = "success"];</code>
+     *
+     * @return The success.
+     */
+    boolean getSuccess();
 }

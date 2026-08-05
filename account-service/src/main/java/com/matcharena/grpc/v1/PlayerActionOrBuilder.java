@@ -7,57 +7,70 @@ package com.matcharena.grpc.v1;
 
 @com.google.protobuf.Generated
 public interface PlayerActionOrBuilder extends
-    // @@protoc_insertion_point(interface_extends:match_arena.v1.PlayerAction)
-    com.google.protobuf.MessageOrBuilder {
+        // @@protoc_insertion_point(interface_extends:match_arena.v1.PlayerAction)
+        com.google.protobuf.MessageOrBuilder {
 
-  /**
-   * <code>string player_id = 1 [json_name = "playerId"];</code>
-   * @return The playerId.
-   */
-  java.lang.String getPlayerId();
-  /**
-   * <code>string player_id = 1 [json_name = "playerId"];</code>
-   * @return The bytes for playerId.
-   */
-  com.google.protobuf.ByteString
-      getPlayerIdBytes();
+    /**
+     * <code>string player_id = 1 [json_name = "playerId"];</code>
+     *
+     * @return The playerId.
+     */
+    java.lang.String getPlayerId();
 
-  /**
-   * <code>string session_id = 2 [json_name = "sessionId"];</code>
-   * @return The sessionId.
-   */
-  java.lang.String getSessionId();
-  /**
-   * <code>string session_id = 2 [json_name = "sessionId"];</code>
-   * @return The bytes for sessionId.
-   */
-  com.google.protobuf.ByteString
-      getSessionIdBytes();
+    /**
+     * <code>string player_id = 1 [json_name = "playerId"];</code>
+     *
+     * @return The bytes for playerId.
+     */
+    com.google.protobuf.ByteString
+    getPlayerIdBytes();
 
-  /**
-   * <code>string action_type = 3 [json_name = "actionType"];</code>
-   * @return The actionType.
-   */
-  java.lang.String getActionType();
-  /**
-   * <code>string action_type = 3 [json_name = "actionType"];</code>
-   * @return The bytes for actionType.
-   */
-  com.google.protobuf.ByteString
-      getActionTypeBytes();
+    /**
+     * <code>string session_id = 2 [json_name = "sessionId"];</code>
+     *
+     * @return The sessionId.
+     */
+    java.lang.String getSessionId();
 
-  /**
-   * <code>.google.protobuf.Timestamp client_timestamp = 4 [json_name = "clientTimestamp"];</code>
-   * @return Whether the clientTimestamp field is set.
-   */
-  boolean hasClientTimestamp();
-  /**
-   * <code>.google.protobuf.Timestamp client_timestamp = 4 [json_name = "clientTimestamp"];</code>
-   * @return The clientTimestamp.
-   */
-  com.google.protobuf.Timestamp getClientTimestamp();
-  /**
-   * <code>.google.protobuf.Timestamp client_timestamp = 4 [json_name = "clientTimestamp"];</code>
-   */
-  com.google.protobuf.TimestampOrBuilder getClientTimestampOrBuilder();
+    /**
+     * <code>string session_id = 2 [json_name = "sessionId"];</code>
+     *
+     * @return The bytes for sessionId.
+     */
+    com.google.protobuf.ByteString
+    getSessionIdBytes();
+
+    /**
+     * <code>string action_type = 3 [json_name = "actionType"];</code>
+     *
+     * @return The actionType.
+     */
+    java.lang.String getActionType();
+
+    /**
+     * <code>string action_type = 3 [json_name = "actionType"];</code>
+     *
+     * @return The bytes for actionType.
+     */
+    com.google.protobuf.ByteString
+    getActionTypeBytes();
+
+    /**
+     * <code>.google.protobuf.Timestamp client_timestamp = 4 [json_name = "clientTimestamp"];</code>
+     *
+     * @return Whether the clientTimestamp field is set.
+     */
+    boolean hasClientTimestamp();
+
+    /**
+     * <code>.google.protobuf.Timestamp client_timestamp = 4 [json_name = "clientTimestamp"];</code>
+     *
+     * @return The clientTimestamp.
+     */
+    com.google.protobuf.Timestamp getClientTimestamp();
+
+    /**
+     * <code>.google.protobuf.Timestamp client_timestamp = 4 [json_name = "clientTimestamp"];</code>
+     */
+    com.google.protobuf.TimestampOrBuilder getClientTimestampOrBuilder();
 }
