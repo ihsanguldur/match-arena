@@ -7,108 +7,113 @@ package com.matcharena.grpc.v1;
 
 @com.google.protobuf.Generated
 public final class GameSession extends com.google.protobuf.GeneratedFile {
-  private GameSession() {}
-  static {
-    com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
-      com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
-      /* major= */ 4,
-      /* minor= */ 35,
-      /* patch= */ 1,
-      /* suffix= */ "",
-      "GameSession");
-  }
-  public static void registerAllExtensions(
-      com.google.protobuf.ExtensionRegistryLite registry) {
-  }
+    static final com.google.protobuf.Descriptors.Descriptor
+            internal_static_match_arena_v1_PlayerAction_descriptor;
+    static final
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+            internal_static_match_arena_v1_PlayerAction_fieldAccessorTable;
+    static final com.google.protobuf.Descriptors.Descriptor
+            internal_static_match_arena_v1_PlayerScore_descriptor;
+    static final
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+            internal_static_match_arena_v1_PlayerScore_fieldAccessorTable;
+    static final com.google.protobuf.Descriptors.Descriptor
+            internal_static_match_arena_v1_AntiCheatFlag_descriptor;
+    static final
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+            internal_static_match_arena_v1_AntiCheatFlag_fieldAccessorTable;
+    static final com.google.protobuf.Descriptors.Descriptor
+            internal_static_match_arena_v1_SessionUpdate_descriptor;
+    static final
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+            internal_static_match_arena_v1_SessionUpdate_fieldAccessorTable;
+    private static final com.google.protobuf.Descriptors.FileDescriptor
+            descriptor;
 
-  public static void registerAllExtensions(
-      com.google.protobuf.ExtensionRegistry registry) {
-    registerAllExtensions(
-        (com.google.protobuf.ExtensionRegistryLite) registry);
-  }
-  static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_match_arena_v1_PlayerAction_descriptor;
-  static final 
-    com.google.protobuf.GeneratedMessage.FieldAccessorTable
-      internal_static_match_arena_v1_PlayerAction_fieldAccessorTable;
-  static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_match_arena_v1_PlayerScore_descriptor;
-  static final 
-    com.google.protobuf.GeneratedMessage.FieldAccessorTable
-      internal_static_match_arena_v1_PlayerScore_fieldAccessorTable;
-  static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_match_arena_v1_AntiCheatFlag_descriptor;
-  static final 
-    com.google.protobuf.GeneratedMessage.FieldAccessorTable
-      internal_static_match_arena_v1_AntiCheatFlag_fieldAccessorTable;
-  static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_match_arena_v1_SessionUpdate_descriptor;
-  static final 
-    com.google.protobuf.GeneratedMessage.FieldAccessorTable
-      internal_static_match_arena_v1_SessionUpdate_fieldAccessorTable;
+    static {
+        com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+                com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+                /* major= */ 4,
+                /* minor= */ 35,
+                /* patch= */ 1,
+                /* suffix= */ "",
+                "GameSession");
+    }
 
-  public static com.google.protobuf.Descriptors.FileDescriptor
-      getDescriptor() {
-    return descriptor;
-  }
-  private static final com.google.protobuf.Descriptors.FileDescriptor
-      descriptor;
-  static {
-    java.lang.String[] descriptorData = {
-      "\n!match_arena/v1/game_session.proto\022\016mat" +
-      "ch_arena.v1\032\037google/protobuf/timestamp.p" +
-      "roto\"\262\001\n\014PlayerAction\022\033\n\tplayer_id\030\001 \001(\t" +
-      "R\010playerId\022\035\n\nsession_id\030\002 \001(\tR\tsessionI" +
-      "d\022\037\n\013action_type\030\003 \001(\tR\nactionType\022E\n\020cl" +
-      "ient_timestamp\030\004 \001(\0132\032.google.protobuf.T" +
-      "imestampR\017clientTimestamp\"@\n\013PlayerScore" +
-      "\022\033\n\tplayer_id\030\001 \001(\tR\010playerId\022\024\n\005score\030\002" +
-      " \001(\005R\005score\"X\n\rAntiCheatFlag\022\033\n\tplayer_i" +
-      "d\030\001 \001(\tR\010playerId\022\022\n\004rule\030\002 \001(\tR\004rule\022\026\n" +
-      "\006detail\030\003 \001(\tR\006detail\"\275\001\n\rSessionUpdate\022" +
-      "\035\n\nsession_id\030\001 \001(\tR\tsessionId\0223\n\006scores" +
-      "\030\002 \003(\0132\033.match_arena.v1.PlayerScoreR\006sco" +
-      "res\0223\n\005flags\030\003 \003(\0132\035.match_arena.v1.Anti" +
-      "CheatFlagR\005flags\022#\n\rsession_ended\030\004 \001(\010R" +
-      "\014sessionEnded2a\n\022GameSessionService\022K\n\010P" +
-      "layGame\022\034.match_arena.v1.PlayerAction\032\035." +
-      "match_arena.v1.SessionUpdate(\0010\001Bt\n\026com." +
-      "matcharena.grpc.v1P\001ZXgithub.com/ihsangu" +
-      "ldur/match-arena/game-service/internal/g" +
-      "en/match_arena/v1;matcharenav1b\006proto3"
-    };
-    descriptor = com.google.protobuf.Descriptors.FileDescriptor
-      .internalBuildGeneratedFileFrom(descriptorData,
-        new com.google.protobuf.Descriptors.FileDescriptor[] {
-          com.google.protobuf.TimestampProto.getDescriptor(),
-        });
-    internal_static_match_arena_v1_PlayerAction_descriptor =
-      getDescriptor().getMessageType(0);
-    internal_static_match_arena_v1_PlayerAction_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-        internal_static_match_arena_v1_PlayerAction_descriptor,
-        new java.lang.String[] { "PlayerId", "SessionId", "ActionType", "ClientTimestamp", });
-    internal_static_match_arena_v1_PlayerScore_descriptor =
-      getDescriptor().getMessageType(1);
-    internal_static_match_arena_v1_PlayerScore_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-        internal_static_match_arena_v1_PlayerScore_descriptor,
-        new java.lang.String[] { "PlayerId", "Score", });
-    internal_static_match_arena_v1_AntiCheatFlag_descriptor =
-      getDescriptor().getMessageType(2);
-    internal_static_match_arena_v1_AntiCheatFlag_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-        internal_static_match_arena_v1_AntiCheatFlag_descriptor,
-        new java.lang.String[] { "PlayerId", "Rule", "Detail", });
-    internal_static_match_arena_v1_SessionUpdate_descriptor =
-      getDescriptor().getMessageType(3);
-    internal_static_match_arena_v1_SessionUpdate_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-        internal_static_match_arena_v1_SessionUpdate_descriptor,
-        new java.lang.String[] { "SessionId", "Scores", "Flags", "SessionEnded", });
-    descriptor.resolveAllFeaturesImmutable();
-    com.google.protobuf.TimestampProto.getDescriptor();
-  }
+    static {
+        java.lang.String[] descriptorData = {
+                "\n!match_arena/v1/game_session.proto\022\016mat" +
+                        "ch_arena.v1\032\037google/protobuf/timestamp.p" +
+                        "roto\"\262\001\n\014PlayerAction\022\033\n\tplayer_id\030\001 \001(\t" +
+                        "R\010playerId\022\035\n\nsession_id\030\002 \001(\tR\tsessionI" +
+                        "d\022\037\n\013action_type\030\003 \001(\tR\nactionType\022E\n\020cl" +
+                        "ient_timestamp\030\004 \001(\0132\032.google.protobuf.T" +
+                        "imestampR\017clientTimestamp\"@\n\013PlayerScore" +
+                        "\022\033\n\tplayer_id\030\001 \001(\tR\010playerId\022\024\n\005score\030\002" +
+                        " \001(\005R\005score\"X\n\rAntiCheatFlag\022\033\n\tplayer_i" +
+                        "d\030\001 \001(\tR\010playerId\022\022\n\004rule\030\002 \001(\tR\004rule\022\026\n" +
+                        "\006detail\030\003 \001(\tR\006detail\"\275\001\n\rSessionUpdate\022" +
+                        "\035\n\nsession_id\030\001 \001(\tR\tsessionId\0223\n\006scores" +
+                        "\030\002 \003(\0132\033.match_arena.v1.PlayerScoreR\006sco" +
+                        "res\0223\n\005flags\030\003 \003(\0132\035.match_arena.v1.Anti" +
+                        "CheatFlagR\005flags\022#\n\rsession_ended\030\004 \001(\010R" +
+                        "\014sessionEnded2a\n\022GameSessionService\022K\n\010P" +
+                        "layGame\022\034.match_arena.v1.PlayerAction\032\035." +
+                        "match_arena.v1.SessionUpdate(\0010\001Bt\n\026com." +
+                        "matcharena.grpc.v1P\001ZXgithub.com/ihsangu" +
+                        "ldur/match-arena/game-service/internal/g" +
+                        "en/match_arena/v1;matcharenav1b\006proto3"
+        };
+        descriptor = com.google.protobuf.Descriptors.FileDescriptor
+                .internalBuildGeneratedFileFrom(descriptorData,
+                        new com.google.protobuf.Descriptors.FileDescriptor[]{
+                                com.google.protobuf.TimestampProto.getDescriptor(),
+                        });
+        internal_static_match_arena_v1_PlayerAction_descriptor =
+                getDescriptor().getMessageType(0);
+        internal_static_match_arena_v1_PlayerAction_fieldAccessorTable = new
+                com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+                internal_static_match_arena_v1_PlayerAction_descriptor,
+                new java.lang.String[]{"PlayerId", "SessionId", "ActionType", "ClientTimestamp",});
+        internal_static_match_arena_v1_PlayerScore_descriptor =
+                getDescriptor().getMessageType(1);
+        internal_static_match_arena_v1_PlayerScore_fieldAccessorTable = new
+                com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+                internal_static_match_arena_v1_PlayerScore_descriptor,
+                new java.lang.String[]{"PlayerId", "Score",});
+        internal_static_match_arena_v1_AntiCheatFlag_descriptor =
+                getDescriptor().getMessageType(2);
+        internal_static_match_arena_v1_AntiCheatFlag_fieldAccessorTable = new
+                com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+                internal_static_match_arena_v1_AntiCheatFlag_descriptor,
+                new java.lang.String[]{"PlayerId", "Rule", "Detail",});
+        internal_static_match_arena_v1_SessionUpdate_descriptor =
+                getDescriptor().getMessageType(3);
+        internal_static_match_arena_v1_SessionUpdate_fieldAccessorTable = new
+                com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+                internal_static_match_arena_v1_SessionUpdate_descriptor,
+                new java.lang.String[]{"SessionId", "Scores", "Flags", "SessionEnded",});
+        descriptor.resolveAllFeaturesImmutable();
+        com.google.protobuf.TimestampProto.getDescriptor();
+    }
 
-  // @@protoc_insertion_point(outer_class_scope)
+    private GameSession() {
+    }
+
+    public static void registerAllExtensions(
+            com.google.protobuf.ExtensionRegistryLite registry) {
+    }
+
+    public static void registerAllExtensions(
+            com.google.protobuf.ExtensionRegistry registry) {
+        registerAllExtensions(
+                (com.google.protobuf.ExtensionRegistryLite) registry);
+    }
+
+    public static com.google.protobuf.Descriptors.FileDescriptor
+    getDescriptor() {
+        return descriptor;
+    }
+
+    // @@protoc_insertion_point(outer_class_scope)
 }

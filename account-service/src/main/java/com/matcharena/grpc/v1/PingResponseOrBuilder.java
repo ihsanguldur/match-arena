@@ -7,18 +7,21 @@ package com.matcharena.grpc.v1;
 
 @com.google.protobuf.Generated
 public interface PingResponseOrBuilder extends
-    // @@protoc_insertion_point(interface_extends:match_arena.v1.PingResponse)
-    com.google.protobuf.MessageOrBuilder {
+        // @@protoc_insertion_point(interface_extends:match_arena.v1.PingResponse)
+        com.google.protobuf.MessageOrBuilder {
 
-  /**
-   * <code>string message = 1 [json_name = "message"];</code>
-   * @return The message.
-   */
-  java.lang.String getMessage();
-  /**
-   * <code>string message = 1 [json_name = "message"];</code>
-   * @return The bytes for message.
-   */
-  com.google.protobuf.ByteString
-      getMessageBytes();
+    /**
+     * <code>string message = 1 [json_name = "message"];</code>
+     *
+     * @return The message.
+     */
+    java.lang.String getMessage();
+
+    /**
+     * <code>string message = 1 [json_name = "message"];</code>
+     *
+     * @return The bytes for message.
+     */
+    com.google.protobuf.ByteString
+    getMessageBytes();
 }

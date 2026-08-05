@@ -7,18 +7,21 @@ package com.matcharena.grpc.v1;
 
 @com.google.protobuf.Generated
 public interface JoinQueueResponseOrBuilder extends
-    // @@protoc_insertion_point(interface_extends:match_arena.v1.JoinQueueResponse)
-    com.google.protobuf.MessageOrBuilder {
+        // @@protoc_insertion_point(interface_extends:match_arena.v1.JoinQueueResponse)
+        com.google.protobuf.MessageOrBuilder {
 
-  /**
-   * <code>string queue_ticket_id = 1 [json_name = "queueTicketId"];</code>
-   * @return The queueTicketId.
-   */
-  java.lang.String getQueueTicketId();
-  /**
-   * <code>string queue_ticket_id = 1 [json_name = "queueTicketId"];</code>
-   * @return The bytes for queueTicketId.
-   */
-  com.google.protobuf.ByteString
-      getQueueTicketIdBytes();
+    /**
+     * <code>string queue_ticket_id = 1 [json_name = "queueTicketId"];</code>
+     *
+     * @return The queueTicketId.
+     */
+    java.lang.String getQueueTicketId();
+
+    /**
+     * <code>string queue_ticket_id = 1 [json_name = "queueTicketId"];</code>
+     *
+     * @return The bytes for queueTicketId.
+     */
+    com.google.protobuf.ByteString
+    getQueueTicketIdBytes();
 }

@@ -10,967 +10,1054 @@ package com.matcharena.grpc.v1;
  */
 @com.google.protobuf.Generated
 public final class PlayerAction extends
-    com.google.protobuf.GeneratedMessage implements
-    // @@protoc_insertion_point(message_implements:match_arena.v1.PlayerAction)
-    PlayerActionOrBuilder {
-private static final long serialVersionUID = 0L;
-  static {
-    com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
-      com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
-      /* major= */ 4,
-      /* minor= */ 35,
-      /* patch= */ 1,
-      /* suffix= */ "",
-      "PlayerAction");
-  }
-  // Use PlayerAction.newBuilder() to construct.
-  private PlayerAction(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
-    super(builder);
-  }
-  private PlayerAction() {
-    playerId_ = "";
-    sessionId_ = "";
-    actionType_ = "";
-  }
+        com.google.protobuf.GeneratedMessage implements
+        // @@protoc_insertion_point(message_implements:match_arena.v1.PlayerAction)
+        PlayerActionOrBuilder {
+    public static final int PLAYER_ID_FIELD_NUMBER = 1;
+    public static final int SESSION_ID_FIELD_NUMBER = 2;
+    public static final int ACTION_TYPE_FIELD_NUMBER = 3;
+    public static final int CLIENT_TIMESTAMP_FIELD_NUMBER = 4;
+    private static final long serialVersionUID = 0L;
+    // @@protoc_insertion_point(class_scope:match_arena.v1.PlayerAction)
+    private static final com.matcharena.grpc.v1.PlayerAction DEFAULT_INSTANCE;
+    private static final com.google.protobuf.Parser<PlayerAction>
+            PARSER = new com.google.protobuf.AbstractParser<PlayerAction>() {
+        @java.lang.Override
+        public PlayerAction parsePartialFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+                builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+                throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                        .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+        }
+    };
 
-  public static final com.google.protobuf.Descriptors.Descriptor
-      getDescriptor() {
-    return com.matcharena.grpc.v1.GameSession.internal_static_match_arena_v1_PlayerAction_descriptor;
-  }
+    static {
+        com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+                com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+                /* major= */ 4,
+                /* minor= */ 35,
+                /* patch= */ 1,
+                /* suffix= */ "",
+                "PlayerAction");
+    }
 
-  @java.lang.Override
-  public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
-    return com.matcharena.grpc.v1.GameSession.internal_static_match_arena_v1_PlayerAction_descriptor;
-  }
+    static {
+        DEFAULT_INSTANCE = new com.matcharena.grpc.v1.PlayerAction();
+    }
 
-  @java.lang.Override
-  protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
-      internalGetFieldAccessorTable() {
-    return com.matcharena.grpc.v1.GameSession.internal_static_match_arena_v1_PlayerAction_fieldAccessorTable
-        .ensureFieldAccessorsInitialized(
-            com.matcharena.grpc.v1.PlayerAction.class, com.matcharena.grpc.v1.PlayerAction.Builder.class);
-  }
+    private int bitField0_;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object playerId_ = "";
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object sessionId_ = "";
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object actionType_ = "";
+    private com.google.protobuf.Timestamp clientTimestamp_;
+    private byte memoizedIsInitialized = -1;
 
-  private int bitField0_;
-  public static final int PLAYER_ID_FIELD_NUMBER = 1;
-  @SuppressWarnings("serial")
-  private volatile java.lang.Object playerId_ = "";
-  /**
-   * <code>string player_id = 1 [json_name = "playerId"];</code>
-   * @return The playerId.
-   */
-  @java.lang.Override
-  public java.lang.String getPlayerId() {
-    java.lang.Object ref = playerId_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      playerId_ = s;
-      return s;
+    // Use PlayerAction.newBuilder() to construct.
+    private PlayerAction(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+        super(builder);
     }
-  }
-  /**
-   * <code>string player_id = 1 [json_name = "playerId"];</code>
-   * @return The bytes for playerId.
-   */
-  @java.lang.Override
-  public com.google.protobuf.ByteString
-      getPlayerIdBytes() {
-    java.lang.Object ref = playerId_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      playerId_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
-  }
 
-  public static final int SESSION_ID_FIELD_NUMBER = 2;
-  @SuppressWarnings("serial")
-  private volatile java.lang.Object sessionId_ = "";
-  /**
-   * <code>string session_id = 2 [json_name = "sessionId"];</code>
-   * @return The sessionId.
-   */
-  @java.lang.Override
-  public java.lang.String getSessionId() {
-    java.lang.Object ref = sessionId_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      sessionId_ = s;
-      return s;
+    private PlayerAction() {
+        playerId_ = "";
+        sessionId_ = "";
+        actionType_ = "";
     }
-  }
-  /**
-   * <code>string session_id = 2 [json_name = "sessionId"];</code>
-   * @return The bytes for sessionId.
-   */
-  @java.lang.Override
-  public com.google.protobuf.ByteString
-      getSessionIdBytes() {
-    java.lang.Object ref = sessionId_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      sessionId_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
-  }
 
-  public static final int ACTION_TYPE_FIELD_NUMBER = 3;
-  @SuppressWarnings("serial")
-  private volatile java.lang.Object actionType_ = "";
-  /**
-   * <code>string action_type = 3 [json_name = "actionType"];</code>
-   * @return The actionType.
-   */
-  @java.lang.Override
-  public java.lang.String getActionType() {
-    java.lang.Object ref = actionType_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      actionType_ = s;
-      return s;
-    }
-  }
-  /**
-   * <code>string action_type = 3 [json_name = "actionType"];</code>
-   * @return The bytes for actionType.
-   */
-  @java.lang.Override
-  public com.google.protobuf.ByteString
-      getActionTypeBytes() {
-    java.lang.Object ref = actionType_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      actionType_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
-  }
-
-  public static final int CLIENT_TIMESTAMP_FIELD_NUMBER = 4;
-  private com.google.protobuf.Timestamp clientTimestamp_;
-  /**
-   * <code>.google.protobuf.Timestamp client_timestamp = 4 [json_name = "clientTimestamp"];</code>
-   * @return Whether the clientTimestamp field is set.
-   */
-  @java.lang.Override
-  public boolean hasClientTimestamp() {
-    return ((bitField0_ & 0x00000001) != 0);
-  }
-  /**
-   * <code>.google.protobuf.Timestamp client_timestamp = 4 [json_name = "clientTimestamp"];</code>
-   * @return The clientTimestamp.
-   */
-  @java.lang.Override
-  public com.google.protobuf.Timestamp getClientTimestamp() {
-    return clientTimestamp_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : clientTimestamp_;
-  }
-  /**
-   * <code>.google.protobuf.Timestamp client_timestamp = 4 [json_name = "clientTimestamp"];</code>
-   */
-  @java.lang.Override
-  public com.google.protobuf.TimestampOrBuilder getClientTimestampOrBuilder() {
-    return clientTimestamp_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : clientTimestamp_;
-  }
-
-  private byte memoizedIsInitialized = -1;
-  @java.lang.Override
-  public final boolean isInitialized() {
-    byte isInitialized = memoizedIsInitialized;
-    if (isInitialized == 1) return true;
-    if (isInitialized == 0) return false;
-
-    memoizedIsInitialized = 1;
-    return true;
-  }
-
-  @java.lang.Override
-  public void writeTo(com.google.protobuf.CodedOutputStream output)
-                      throws java.io.IOException {
-    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(playerId_)) {
-      com.google.protobuf.GeneratedMessage.writeString(output, 1, playerId_);
-    }
-    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(sessionId_)) {
-      com.google.protobuf.GeneratedMessage.writeString(output, 2, sessionId_);
-    }
-    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(actionType_)) {
-      com.google.protobuf.GeneratedMessage.writeString(output, 3, actionType_);
-    }
-    if (((bitField0_ & 0x00000001) != 0)) {
-      output.writeMessage(4, getClientTimestamp());
-    }
-    getUnknownFields().writeTo(output);
-  }
-  private int computeSerializedSize_0() {
-    int size = 0;
-    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(playerId_)) {
-      size += com.google.protobuf.GeneratedMessage.computeStringSize(1, playerId_);
-    }
-    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(sessionId_)) {
-      size += com.google.protobuf.GeneratedMessage.computeStringSize(2, sessionId_);
-    }
-    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(actionType_)) {
-      size += com.google.protobuf.GeneratedMessage.computeStringSize(3, actionType_);
-    }
-    if (((bitField0_ & 0x00000001) != 0)) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(4, getClientTimestamp());
-    }
-    return size;
-  }
-  @java.lang.Override
-  public int getSerializedSize() {
-    int size = memoizedSize;
-    if (size != -1) return size;
-
-    size = 0;
-    size += computeSerializedSize_0();
-    size += getUnknownFields().getSerializedSize();
-    memoizedSize = size;
-    return size;
-  }
-
-  @java.lang.Override
-  public boolean equals(final java.lang.Object obj) {
-    if (obj == this) {
-     return true;
-    }
-    if (!(obj instanceof com.matcharena.grpc.v1.PlayerAction)) {
-      return super.equals(obj);
-    }
-    com.matcharena.grpc.v1.PlayerAction other = (com.matcharena.grpc.v1.PlayerAction) obj;
-
-    if (!getPlayerId()
-        .equals(other.getPlayerId())) return false;
-    if (!getSessionId()
-        .equals(other.getSessionId())) return false;
-    if (!getActionType()
-        .equals(other.getActionType())) return false;
-    if (hasClientTimestamp() != other.hasClientTimestamp()) return false;
-    if (hasClientTimestamp()) {
-      if (!getClientTimestamp()
-          .equals(other.getClientTimestamp())) return false;
-    }
-    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
-    return true;
-  }
-
-  @java.lang.Override
-  public int hashCode() {
-    if (memoizedHashCode != 0) {
-      return memoizedHashCode;
-    }
-    int hash = 41;
-    hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + PLAYER_ID_FIELD_NUMBER;
-    hash = (53 * hash) + getPlayerId().hashCode();
-    hash = (37 * hash) + SESSION_ID_FIELD_NUMBER;
-    hash = (53 * hash) + getSessionId().hashCode();
-    hash = (37 * hash) + ACTION_TYPE_FIELD_NUMBER;
-    hash = (53 * hash) + getActionType().hashCode();
-    if (hasClientTimestamp()) {
-      hash = (37 * hash) + CLIENT_TIMESTAMP_FIELD_NUMBER;
-      hash = (53 * hash) + getClientTimestamp().hashCode();
-    }
-    hash = (29 * hash) + getUnknownFields().hashCode();
-    memoizedHashCode = hash;
-    return hash;
-  }
-
-  public static com.matcharena.grpc.v1.PlayerAction parseFrom(
-      java.nio.ByteBuffer data)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    return PARSER.parseFrom(data);
-  }
-  public static com.matcharena.grpc.v1.PlayerAction parseFrom(
-      java.nio.ByteBuffer data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    return PARSER.parseFrom(data, extensionRegistry);
-  }
-  public static com.matcharena.grpc.v1.PlayerAction parseFrom(
-      com.google.protobuf.ByteString data)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    return PARSER.parseFrom(data);
-  }
-  public static com.matcharena.grpc.v1.PlayerAction parseFrom(
-      com.google.protobuf.ByteString data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    return PARSER.parseFrom(data, extensionRegistry);
-  }
-  public static com.matcharena.grpc.v1.PlayerAction parseFrom(byte[] data)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    return PARSER.parseFrom(data);
-  }
-  public static com.matcharena.grpc.v1.PlayerAction parseFrom(
-      byte[] data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    return PARSER.parseFrom(data, extensionRegistry);
-  }
-  public static com.matcharena.grpc.v1.PlayerAction parseFrom(java.io.InputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessage
-        .parseWithIOException(PARSER, input);
-  }
-  public static com.matcharena.grpc.v1.PlayerAction parseFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessage
-        .parseWithIOException(PARSER, input, extensionRegistry);
-  }
-
-  public static com.matcharena.grpc.v1.PlayerAction parseDelimitedFrom(java.io.InputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessage
-        .parseDelimitedWithIOException(PARSER, input);
-  }
-
-  public static com.matcharena.grpc.v1.PlayerAction parseDelimitedFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessage
-        .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-  }
-  public static com.matcharena.grpc.v1.PlayerAction parseFrom(
-      com.google.protobuf.CodedInputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessage
-        .parseWithIOException(PARSER, input);
-  }
-  public static com.matcharena.grpc.v1.PlayerAction parseFrom(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessage
-        .parseWithIOException(PARSER, input, extensionRegistry);
-  }
-
-  @java.lang.Override
-  public Builder newBuilderForType() { return newBuilder(); }
-  public static Builder newBuilder() {
-    return DEFAULT_INSTANCE.toBuilder();
-  }
-  public static Builder newBuilder(com.matcharena.grpc.v1.PlayerAction prototype) {
-    return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-  }
-  @java.lang.Override
-  public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
-  }
-
-  @java.lang.Override
-  protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessage.BuilderParent parent) {
-    Builder builder = new Builder(parent);
-    return builder;
-  }
-  /**
-   * Protobuf type {@code match_arena.v1.PlayerAction}
-   */
-  public static final class Builder extends
-      com.google.protobuf.GeneratedMessage.Builder<Builder> implements
-      // @@protoc_insertion_point(builder_implements:match_arena.v1.PlayerAction)
-      com.matcharena.grpc.v1.PlayerActionOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.matcharena.grpc.v1.GameSession.internal_static_match_arena_v1_PlayerAction_descriptor;
+    getDescriptor() {
+        return com.matcharena.grpc.v1.GameSession.internal_static_match_arena_v1_PlayerAction_descriptor;
+    }
+
+    public static com.matcharena.grpc.v1.PlayerAction parseFrom(
+            java.nio.ByteBuffer data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+    }
+
+    public static com.matcharena.grpc.v1.PlayerAction parseFrom(
+            java.nio.ByteBuffer data,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.matcharena.grpc.v1.PlayerAction parseFrom(
+            com.google.protobuf.ByteString data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+    }
+
+    public static com.matcharena.grpc.v1.PlayerAction parseFrom(
+            com.google.protobuf.ByteString data,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.matcharena.grpc.v1.PlayerAction parseFrom(byte[] data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+    }
+
+    public static com.matcharena.grpc.v1.PlayerAction parseFrom(
+            byte[] data,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.matcharena.grpc.v1.PlayerAction parseFrom(java.io.InputStream input)
+            throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage
+                .parseWithIOException(PARSER, input);
+    }
+
+    public static com.matcharena.grpc.v1.PlayerAction parseFrom(
+            java.io.InputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage
+                .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public static com.matcharena.grpc.v1.PlayerAction parseDelimitedFrom(java.io.InputStream input)
+            throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage
+                .parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.matcharena.grpc.v1.PlayerAction parseDelimitedFrom(
+            java.io.InputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage
+                .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public static com.matcharena.grpc.v1.PlayerAction parseFrom(
+            com.google.protobuf.CodedInputStream input)
+            throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage
+                .parseWithIOException(PARSER, input);
+    }
+
+    public static com.matcharena.grpc.v1.PlayerAction parseFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage
+                .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public static Builder newBuilder() {
+        return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(com.matcharena.grpc.v1.PlayerAction prototype) {
+        return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    public static com.matcharena.grpc.v1.PlayerAction getDefaultInstance() {
+        return DEFAULT_INSTANCE;
+    }
+
+    public static com.google.protobuf.Parser<PlayerAction> parser() {
+        return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.matcharena.grpc.v1.GameSession.internal_static_match_arena_v1_PlayerAction_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return com.matcharena.grpc.v1.GameSession.internal_static_match_arena_v1_PlayerAction_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              com.matcharena.grpc.v1.PlayerAction.class, com.matcharena.grpc.v1.PlayerAction.Builder.class);
+    internalGetFieldAccessorTable() {
+        return com.matcharena.grpc.v1.GameSession.internal_static_match_arena_v1_PlayerAction_fieldAccessorTable
+                .ensureFieldAccessorsInitialized(
+                        com.matcharena.grpc.v1.PlayerAction.class, com.matcharena.grpc.v1.PlayerAction.Builder.class);
     }
 
-    // Construct using com.matcharena.grpc.v1.PlayerAction.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
-
-    private Builder(
-        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
-      super(parent);
-      maybeForceBuilderInitialization();
-    }
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessage
-              .alwaysUseFieldBuilders) {
-        internalGetClientTimestampFieldBuilder();
-      }
-    }
+    /**
+     * <code>string player_id = 1 [json_name = "playerId"];</code>
+     *
+     * @return The playerId.
+     */
     @java.lang.Override
-    public Builder clear() {
-      super.clear();
-      bitField0_ = 0;
-      playerId_ = "";
-      sessionId_ = "";
-      actionType_ = "";
-      clientTimestamp_ = null;
-      if (clientTimestampBuilder_ != null) {
-        clientTimestampBuilder_.dispose();
-        clientTimestampBuilder_ = null;
-      }
-      return this;
+    public java.lang.String getPlayerId() {
+        java.lang.Object ref = playerId_;
+        if (ref instanceof java.lang.String) {
+            return (java.lang.String) ref;
+        } else {
+            com.google.protobuf.ByteString bs =
+                    (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            playerId_ = s;
+            return s;
+        }
     }
 
+    /**
+     * <code>string player_id = 1 [json_name = "playerId"];</code>
+     *
+     * @return The bytes for playerId.
+     */
     @java.lang.Override
-    public com.google.protobuf.Descriptors.Descriptor
-        getDescriptorForType() {
-      return com.matcharena.grpc.v1.GameSession.internal_static_match_arena_v1_PlayerAction_descriptor;
+    public com.google.protobuf.ByteString
+    getPlayerIdBytes() {
+        java.lang.Object ref = playerId_;
+        if (ref instanceof java.lang.String) {
+            com.google.protobuf.ByteString b =
+                    com.google.protobuf.ByteString.copyFromUtf8(
+                            (java.lang.String) ref);
+            playerId_ = b;
+            return b;
+        } else {
+            return (com.google.protobuf.ByteString) ref;
+        }
     }
 
+    /**
+     * <code>string session_id = 2 [json_name = "sessionId"];</code>
+     *
+     * @return The sessionId.
+     */
     @java.lang.Override
-    public com.matcharena.grpc.v1.PlayerAction getDefaultInstanceForType() {
-      return com.matcharena.grpc.v1.PlayerAction.getDefaultInstance();
+    public java.lang.String getSessionId() {
+        java.lang.Object ref = sessionId_;
+        if (ref instanceof java.lang.String) {
+            return (java.lang.String) ref;
+        } else {
+            com.google.protobuf.ByteString bs =
+                    (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            sessionId_ = s;
+            return s;
+        }
     }
 
+    /**
+     * <code>string session_id = 2 [json_name = "sessionId"];</code>
+     *
+     * @return The bytes for sessionId.
+     */
     @java.lang.Override
-    public com.matcharena.grpc.v1.PlayerAction build() {
-      com.matcharena.grpc.v1.PlayerAction result = buildPartial();
-      if (!result.isInitialized()) {
-        throw newUninitializedMessageException(result);
-      }
-      return result;
+    public com.google.protobuf.ByteString
+    getSessionIdBytes() {
+        java.lang.Object ref = sessionId_;
+        if (ref instanceof java.lang.String) {
+            com.google.protobuf.ByteString b =
+                    com.google.protobuf.ByteString.copyFromUtf8(
+                            (java.lang.String) ref);
+            sessionId_ = b;
+            return b;
+        } else {
+            return (com.google.protobuf.ByteString) ref;
+        }
     }
 
+    /**
+     * <code>string action_type = 3 [json_name = "actionType"];</code>
+     *
+     * @return The actionType.
+     */
     @java.lang.Override
-    public com.matcharena.grpc.v1.PlayerAction buildPartial() {
-      com.matcharena.grpc.v1.PlayerAction result = new com.matcharena.grpc.v1.PlayerAction(this);
-      if (bitField0_ != 0) { buildPartial0(result); }
-      onBuilt();
-      return result;
+    public java.lang.String getActionType() {
+        java.lang.Object ref = actionType_;
+        if (ref instanceof java.lang.String) {
+            return (java.lang.String) ref;
+        } else {
+            com.google.protobuf.ByteString bs =
+                    (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            actionType_ = s;
+            return s;
+        }
     }
 
-    private void buildPartial0(com.matcharena.grpc.v1.PlayerAction result) {
-      int from_bitField0_ = bitField0_;
-      if (((from_bitField0_ & 0x00000001) != 0)) {
-        result.playerId_ = playerId_;
-      }
-      if (((from_bitField0_ & 0x00000002) != 0)) {
-        result.sessionId_ = sessionId_;
-      }
-      if (((from_bitField0_ & 0x00000004) != 0)) {
-        result.actionType_ = actionType_;
-      }
-      int to_bitField0_ = 0;
-      if (((from_bitField0_ & 0x00000008) != 0)) {
-        result.clientTimestamp_ = clientTimestampBuilder_ == null
-            ? clientTimestamp_
-            : clientTimestampBuilder_.build();
-        to_bitField0_ |= 0x00000001;
-      }
-      result.bitField0_ |= to_bitField0_;
-    }
-
+    /**
+     * <code>string action_type = 3 [json_name = "actionType"];</code>
+     *
+     * @return The bytes for actionType.
+     */
     @java.lang.Override
-    public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof com.matcharena.grpc.v1.PlayerAction) {
-        return mergeFrom((com.matcharena.grpc.v1.PlayerAction)other);
-      } else {
-        super.mergeFrom(other);
-        return this;
-      }
+    public com.google.protobuf.ByteString
+    getActionTypeBytes() {
+        java.lang.Object ref = actionType_;
+        if (ref instanceof java.lang.String) {
+            com.google.protobuf.ByteString b =
+                    com.google.protobuf.ByteString.copyFromUtf8(
+                            (java.lang.String) ref);
+            actionType_ = b;
+            return b;
+        } else {
+            return (com.google.protobuf.ByteString) ref;
+        }
     }
 
-    public Builder mergeFrom(com.matcharena.grpc.v1.PlayerAction other) {
-      if (other == com.matcharena.grpc.v1.PlayerAction.getDefaultInstance()) return this;
-      if (!other.getPlayerId().isEmpty()) {
-        playerId_ = other.playerId_;
-        bitField0_ |= 0x00000001;
-        onChanged();
-      }
-      if (!other.getSessionId().isEmpty()) {
-        sessionId_ = other.sessionId_;
-        bitField0_ |= 0x00000002;
-        onChanged();
-      }
-      if (!other.getActionType().isEmpty()) {
-        actionType_ = other.actionType_;
-        bitField0_ |= 0x00000004;
-        onChanged();
-      }
-      if (other.hasClientTimestamp()) {
-        mergeClientTimestamp(other.getClientTimestamp());
-      }
-      this.mergeUnknownFields(other.getUnknownFields());
-      onChanged();
-      return this;
+    /**
+     * <code>.google.protobuf.Timestamp client_timestamp = 4 [json_name = "clientTimestamp"];</code>
+     *
+     * @return Whether the clientTimestamp field is set.
+     */
+    @java.lang.Override
+    public boolean hasClientTimestamp() {
+        return ((bitField0_ & 0x00000001) != 0);
+    }
+
+    /**
+     * <code>.google.protobuf.Timestamp client_timestamp = 4 [json_name = "clientTimestamp"];</code>
+     *
+     * @return The clientTimestamp.
+     */
+    @java.lang.Override
+    public com.google.protobuf.Timestamp getClientTimestamp() {
+        return clientTimestamp_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : clientTimestamp_;
+    }
+
+    /**
+     * <code>.google.protobuf.Timestamp client_timestamp = 4 [json_name = "clientTimestamp"];</code>
+     */
+    @java.lang.Override
+    public com.google.protobuf.TimestampOrBuilder getClientTimestampOrBuilder() {
+        return clientTimestamp_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : clientTimestamp_;
     }
 
     @java.lang.Override
     public final boolean isInitialized() {
-      return true;
+        byte isInitialized = memoizedIsInitialized;
+        if (isInitialized == 1) return true;
+        if (isInitialized == 0) return false;
+
+        memoizedIsInitialized = 1;
+        return true;
     }
 
     @java.lang.Override
-    public Builder mergeFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10: {
-              playerId_ = input.readStringRequireUtf8();
-              bitField0_ |= 0x00000001;
-              break;
-            } // case 10
-            case 18: {
-              sessionId_ = input.readStringRequireUtf8();
-              bitField0_ |= 0x00000002;
-              break;
-            } // case 18
-            case 26: {
-              actionType_ = input.readStringRequireUtf8();
-              bitField0_ |= 0x00000004;
-              break;
-            } // case 26
-            case 34: {
-              input.readMessage(
-                  internalGetClientTimestampFieldBuilder().getBuilder(),
-                  extensionRegistry);
-              bitField0_ |= 0x00000008;
-              break;
-            } // case 34
-            default: {
-              if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                done = true; // was an endgroup tag
-              }
-              break;
-            } // default:
-          } // switch (tag)
-        } // while (!done)
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.unwrapIOException();
-      } finally {
-        onChanged();
-      } // finally
-      return this;
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+            throws java.io.IOException {
+        if (!com.google.protobuf.GeneratedMessage.isStringEmpty(playerId_)) {
+            com.google.protobuf.GeneratedMessage.writeString(output, 1, playerId_);
+        }
+        if (!com.google.protobuf.GeneratedMessage.isStringEmpty(sessionId_)) {
+            com.google.protobuf.GeneratedMessage.writeString(output, 2, sessionId_);
+        }
+        if (!com.google.protobuf.GeneratedMessage.isStringEmpty(actionType_)) {
+            com.google.protobuf.GeneratedMessage.writeString(output, 3, actionType_);
+        }
+        if (((bitField0_ & 0x00000001) != 0)) {
+            output.writeMessage(4, getClientTimestamp());
+        }
+        getUnknownFields().writeTo(output);
     }
-    private int bitField0_;
 
-    private java.lang.Object playerId_ = "";
-    /**
-     * <code>string player_id = 1 [json_name = "playerId"];</code>
-     * @return The playerId.
-     */
-    public java.lang.String getPlayerId() {
-      java.lang.Object ref = playerId_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        playerId_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
+    private int computeSerializedSize_0() {
+        int size = 0;
+        if (!com.google.protobuf.GeneratedMessage.isStringEmpty(playerId_)) {
+            size += com.google.protobuf.GeneratedMessage.computeStringSize(1, playerId_);
+        }
+        if (!com.google.protobuf.GeneratedMessage.isStringEmpty(sessionId_)) {
+            size += com.google.protobuf.GeneratedMessage.computeStringSize(2, sessionId_);
+        }
+        if (!com.google.protobuf.GeneratedMessage.isStringEmpty(actionType_)) {
+            size += com.google.protobuf.GeneratedMessage.computeStringSize(3, actionType_);
+        }
+        if (((bitField0_ & 0x00000001) != 0)) {
+            size += com.google.protobuf.CodedOutputStream
+                    .computeMessageSize(4, getClientTimestamp());
+        }
+        return size;
     }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+        int size = memoizedSize;
+        if (size != -1) return size;
+
+        size = 0;
+        size += computeSerializedSize_0();
+        size += getUnknownFields().getSerializedSize();
+        memoizedSize = size;
+        return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+        if (obj == this) {
+            return true;
+        }
+        if (!(obj instanceof com.matcharena.grpc.v1.PlayerAction)) {
+            return super.equals(obj);
+        }
+        com.matcharena.grpc.v1.PlayerAction other = (com.matcharena.grpc.v1.PlayerAction) obj;
+
+        if (!getPlayerId()
+                .equals(other.getPlayerId())) return false;
+        if (!getSessionId()
+                .equals(other.getSessionId())) return false;
+        if (!getActionType()
+                .equals(other.getActionType())) return false;
+        if (hasClientTimestamp() != other.hasClientTimestamp()) return false;
+        if (hasClientTimestamp()) {
+            if (!getClientTimestamp()
+                    .equals(other.getClientTimestamp())) return false;
+        }
+        if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+        return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+        if (memoizedHashCode != 0) {
+            return memoizedHashCode;
+        }
+        int hash = 41;
+        hash = (19 * hash) + getDescriptor().hashCode();
+        hash = (37 * hash) + PLAYER_ID_FIELD_NUMBER;
+        hash = (53 * hash) + getPlayerId().hashCode();
+        hash = (37 * hash) + SESSION_ID_FIELD_NUMBER;
+        hash = (53 * hash) + getSessionId().hashCode();
+        hash = (37 * hash) + ACTION_TYPE_FIELD_NUMBER;
+        hash = (53 * hash) + getActionType().hashCode();
+        if (hasClientTimestamp()) {
+            hash = (37 * hash) + CLIENT_TIMESTAMP_FIELD_NUMBER;
+            hash = (53 * hash) + getClientTimestamp().hashCode();
+        }
+        hash = (29 * hash) + getUnknownFields().hashCode();
+        memoizedHashCode = hash;
+        return hash;
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+        return newBuilder();
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+        return this == DEFAULT_INSTANCE
+                ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+            com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        Builder builder = new Builder(parent);
+        return builder;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<PlayerAction> getParserForType() {
+        return PARSER;
+    }
+
+    @java.lang.Override
+    public com.matcharena.grpc.v1.PlayerAction getDefaultInstanceForType() {
+        return DEFAULT_INSTANCE;
+    }
+
     /**
-     * <code>string player_id = 1 [json_name = "playerId"];</code>
-     * @return The bytes for playerId.
+     * Protobuf type {@code match_arena.v1.PlayerAction}
      */
-    public com.google.protobuf.ByteString
+    public static final class Builder extends
+            com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+            // @@protoc_insertion_point(builder_implements:match_arena.v1.PlayerAction)
+            com.matcharena.grpc.v1.PlayerActionOrBuilder {
+        private int bitField0_;
+        private java.lang.Object playerId_ = "";
+        private java.lang.Object sessionId_ = "";
+        private java.lang.Object actionType_ = "";
+        private com.google.protobuf.Timestamp clientTimestamp_;
+        private com.google.protobuf.SingleFieldBuilder<
+                com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> clientTimestampBuilder_;
+
+        // Construct using com.matcharena.grpc.v1.PlayerAction.newBuilder()
+        private Builder() {
+            maybeForceBuilderInitialization();
+        }
+
+        private Builder(
+                com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+            super(parent);
+            maybeForceBuilderInitialization();
+        }
+
+        public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+            return com.matcharena.grpc.v1.GameSession.internal_static_match_arena_v1_PlayerAction_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+            return com.matcharena.grpc.v1.GameSession.internal_static_match_arena_v1_PlayerAction_fieldAccessorTable
+                    .ensureFieldAccessorsInitialized(
+                            com.matcharena.grpc.v1.PlayerAction.class, com.matcharena.grpc.v1.PlayerAction.Builder.class);
+        }
+
+        private void maybeForceBuilderInitialization() {
+            if (com.google.protobuf.GeneratedMessage
+                    .alwaysUseFieldBuilders) {
+                internalGetClientTimestampFieldBuilder();
+            }
+        }
+
+        @java.lang.Override
+        public Builder clear() {
+            super.clear();
+            bitField0_ = 0;
+            playerId_ = "";
+            sessionId_ = "";
+            actionType_ = "";
+            clientTimestamp_ = null;
+            if (clientTimestampBuilder_ != null) {
+                clientTimestampBuilder_.dispose();
+                clientTimestampBuilder_ = null;
+            }
+            return this;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Descriptors.Descriptor
+        getDescriptorForType() {
+            return com.matcharena.grpc.v1.GameSession.internal_static_match_arena_v1_PlayerAction_descriptor;
+        }
+
+        @java.lang.Override
+        public com.matcharena.grpc.v1.PlayerAction getDefaultInstanceForType() {
+            return com.matcharena.grpc.v1.PlayerAction.getDefaultInstance();
+        }
+
+        @java.lang.Override
+        public com.matcharena.grpc.v1.PlayerAction build() {
+            com.matcharena.grpc.v1.PlayerAction result = buildPartial();
+            if (!result.isInitialized()) {
+                throw newUninitializedMessageException(result);
+            }
+            return result;
+        }
+
+        @java.lang.Override
+        public com.matcharena.grpc.v1.PlayerAction buildPartial() {
+            com.matcharena.grpc.v1.PlayerAction result = new com.matcharena.grpc.v1.PlayerAction(this);
+            if (bitField0_ != 0) {
+                buildPartial0(result);
+            }
+            onBuilt();
+            return result;
+        }
+
+        private void buildPartial0(com.matcharena.grpc.v1.PlayerAction result) {
+            int from_bitField0_ = bitField0_;
+            if (((from_bitField0_ & 0x00000001) != 0)) {
+                result.playerId_ = playerId_;
+            }
+            if (((from_bitField0_ & 0x00000002) != 0)) {
+                result.sessionId_ = sessionId_;
+            }
+            if (((from_bitField0_ & 0x00000004) != 0)) {
+                result.actionType_ = actionType_;
+            }
+            int to_bitField0_ = 0;
+            if (((from_bitField0_ & 0x00000008) != 0)) {
+                result.clientTimestamp_ = clientTimestampBuilder_ == null
+                        ? clientTimestamp_
+                        : clientTimestampBuilder_.build();
+                to_bitField0_ |= 0x00000001;
+            }
+            result.bitField0_ |= to_bitField0_;
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(com.google.protobuf.Message other) {
+            if (other instanceof com.matcharena.grpc.v1.PlayerAction) {
+                return mergeFrom((com.matcharena.grpc.v1.PlayerAction) other);
+            } else {
+                super.mergeFrom(other);
+                return this;
+            }
+        }
+
+        public Builder mergeFrom(com.matcharena.grpc.v1.PlayerAction other) {
+            if (other == com.matcharena.grpc.v1.PlayerAction.getDefaultInstance()) return this;
+            if (!other.getPlayerId().isEmpty()) {
+                playerId_ = other.playerId_;
+                bitField0_ |= 0x00000001;
+                onChanged();
+            }
+            if (!other.getSessionId().isEmpty()) {
+                sessionId_ = other.sessionId_;
+                bitField0_ |= 0x00000002;
+                onChanged();
+            }
+            if (!other.getActionType().isEmpty()) {
+                actionType_ = other.actionType_;
+                bitField0_ |= 0x00000004;
+                onChanged();
+            }
+            if (other.hasClientTimestamp()) {
+                mergeClientTimestamp(other.getClientTimestamp());
+            }
+            this.mergeUnknownFields(other.getUnknownFields());
+            onChanged();
+            return this;
+        }
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+            return true;
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+            if (extensionRegistry == null) {
+                throw new java.lang.NullPointerException();
+            }
+            try {
+                boolean done = false;
+                while (!done) {
+                    int tag = input.readTag();
+                    switch (tag) {
+                        case 0:
+                            done = true;
+                            break;
+                        case 10: {
+                            playerId_ = input.readStringRequireUtf8();
+                            bitField0_ |= 0x00000001;
+                            break;
+                        } // case 10
+                        case 18: {
+                            sessionId_ = input.readStringRequireUtf8();
+                            bitField0_ |= 0x00000002;
+                            break;
+                        } // case 18
+                        case 26: {
+                            actionType_ = input.readStringRequireUtf8();
+                            bitField0_ |= 0x00000004;
+                            break;
+                        } // case 26
+                        case 34: {
+                            input.readMessage(
+                                    internalGetClientTimestampFieldBuilder().getBuilder(),
+                                    extensionRegistry);
+                            bitField0_ |= 0x00000008;
+                            break;
+                        } // case 34
+                        default: {
+                            if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                                done = true; // was an endgroup tag
+                            }
+                            break;
+                        } // default:
+                    } // switch (tag)
+                } // while (!done)
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.unwrapIOException();
+            } finally {
+                onChanged();
+            } // finally
+            return this;
+        }
+
+        /**
+         * <code>string player_id = 1 [json_name = "playerId"];</code>
+         *
+         * @return The playerId.
+         */
+        public java.lang.String getPlayerId() {
+            java.lang.Object ref = playerId_;
+            if (!(ref instanceof java.lang.String)) {
+                com.google.protobuf.ByteString bs =
+                        (com.google.protobuf.ByteString) ref;
+                java.lang.String s = bs.toStringUtf8();
+                playerId_ = s;
+                return s;
+            } else {
+                return (java.lang.String) ref;
+            }
+        }
+
+        /**
+         * <code>string player_id = 1 [json_name = "playerId"];</code>
+         *
+         * @param value The playerId to set.
+         * @return This builder for chaining.
+         */
+        public Builder setPlayerId(
+                java.lang.String value) {
+            if (value == null) {
+                throw new NullPointerException();
+            }
+            playerId_ = value;
+            bitField0_ |= 0x00000001;
+            onChanged();
+            return this;
+        }
+
+        /**
+         * <code>string player_id = 1 [json_name = "playerId"];</code>
+         *
+         * @return The bytes for playerId.
+         */
+        public com.google.protobuf.ByteString
         getPlayerIdBytes() {
-      java.lang.Object ref = playerId_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        playerId_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     * <code>string player_id = 1 [json_name = "playerId"];</code>
-     * @param value The playerId to set.
-     * @return This builder for chaining.
-     */
-    public Builder setPlayerId(
-        java.lang.String value) {
-      if (value == null) { throw new NullPointerException(); }
-      playerId_ = value;
-      bitField0_ |= 0x00000001;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>string player_id = 1 [json_name = "playerId"];</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearPlayerId() {
-      playerId_ = getDefaultInstance().getPlayerId();
-      bitField0_ = (bitField0_ & ~0x00000001);
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>string player_id = 1 [json_name = "playerId"];</code>
-     * @param value The bytes for playerId to set.
-     * @return This builder for chaining.
-     */
-    public Builder setPlayerIdBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) { throw new NullPointerException(); }
-      checkByteStringIsUtf8(value);
-      playerId_ = value;
-      bitField0_ |= 0x00000001;
-      onChanged();
-      return this;
-    }
+            java.lang.Object ref = playerId_;
+            if (ref instanceof String) {
+                com.google.protobuf.ByteString b =
+                        com.google.protobuf.ByteString.copyFromUtf8(
+                                (java.lang.String) ref);
+                playerId_ = b;
+                return b;
+            } else {
+                return (com.google.protobuf.ByteString) ref;
+            }
+        }
 
-    private java.lang.Object sessionId_ = "";
-    /**
-     * <code>string session_id = 2 [json_name = "sessionId"];</code>
-     * @return The sessionId.
-     */
-    public java.lang.String getSessionId() {
-      java.lang.Object ref = sessionId_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        sessionId_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
-    }
-    /**
-     * <code>string session_id = 2 [json_name = "sessionId"];</code>
-     * @return The bytes for sessionId.
-     */
-    public com.google.protobuf.ByteString
+        /**
+         * <code>string player_id = 1 [json_name = "playerId"];</code>
+         *
+         * @param value The bytes for playerId to set.
+         * @return This builder for chaining.
+         */
+        public Builder setPlayerIdBytes(
+                com.google.protobuf.ByteString value) {
+            if (value == null) {
+                throw new NullPointerException();
+            }
+            checkByteStringIsUtf8(value);
+            playerId_ = value;
+            bitField0_ |= 0x00000001;
+            onChanged();
+            return this;
+        }
+
+        /**
+         * <code>string player_id = 1 [json_name = "playerId"];</code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearPlayerId() {
+            playerId_ = getDefaultInstance().getPlayerId();
+            bitField0_ = (bitField0_ & ~0x00000001);
+            onChanged();
+            return this;
+        }
+
+        /**
+         * <code>string session_id = 2 [json_name = "sessionId"];</code>
+         *
+         * @return The sessionId.
+         */
+        public java.lang.String getSessionId() {
+            java.lang.Object ref = sessionId_;
+            if (!(ref instanceof java.lang.String)) {
+                com.google.protobuf.ByteString bs =
+                        (com.google.protobuf.ByteString) ref;
+                java.lang.String s = bs.toStringUtf8();
+                sessionId_ = s;
+                return s;
+            } else {
+                return (java.lang.String) ref;
+            }
+        }
+
+        /**
+         * <code>string session_id = 2 [json_name = "sessionId"];</code>
+         *
+         * @param value The sessionId to set.
+         * @return This builder for chaining.
+         */
+        public Builder setSessionId(
+                java.lang.String value) {
+            if (value == null) {
+                throw new NullPointerException();
+            }
+            sessionId_ = value;
+            bitField0_ |= 0x00000002;
+            onChanged();
+            return this;
+        }
+
+        /**
+         * <code>string session_id = 2 [json_name = "sessionId"];</code>
+         *
+         * @return The bytes for sessionId.
+         */
+        public com.google.protobuf.ByteString
         getSessionIdBytes() {
-      java.lang.Object ref = sessionId_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        sessionId_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     * <code>string session_id = 2 [json_name = "sessionId"];</code>
-     * @param value The sessionId to set.
-     * @return This builder for chaining.
-     */
-    public Builder setSessionId(
-        java.lang.String value) {
-      if (value == null) { throw new NullPointerException(); }
-      sessionId_ = value;
-      bitField0_ |= 0x00000002;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>string session_id = 2 [json_name = "sessionId"];</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearSessionId() {
-      sessionId_ = getDefaultInstance().getSessionId();
-      bitField0_ = (bitField0_ & ~0x00000002);
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>string session_id = 2 [json_name = "sessionId"];</code>
-     * @param value The bytes for sessionId to set.
-     * @return This builder for chaining.
-     */
-    public Builder setSessionIdBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) { throw new NullPointerException(); }
-      checkByteStringIsUtf8(value);
-      sessionId_ = value;
-      bitField0_ |= 0x00000002;
-      onChanged();
-      return this;
-    }
+            java.lang.Object ref = sessionId_;
+            if (ref instanceof String) {
+                com.google.protobuf.ByteString b =
+                        com.google.protobuf.ByteString.copyFromUtf8(
+                                (java.lang.String) ref);
+                sessionId_ = b;
+                return b;
+            } else {
+                return (com.google.protobuf.ByteString) ref;
+            }
+        }
 
-    private java.lang.Object actionType_ = "";
-    /**
-     * <code>string action_type = 3 [json_name = "actionType"];</code>
-     * @return The actionType.
-     */
-    public java.lang.String getActionType() {
-      java.lang.Object ref = actionType_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        actionType_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
-    }
-    /**
-     * <code>string action_type = 3 [json_name = "actionType"];</code>
-     * @return The bytes for actionType.
-     */
-    public com.google.protobuf.ByteString
+        /**
+         * <code>string session_id = 2 [json_name = "sessionId"];</code>
+         *
+         * @param value The bytes for sessionId to set.
+         * @return This builder for chaining.
+         */
+        public Builder setSessionIdBytes(
+                com.google.protobuf.ByteString value) {
+            if (value == null) {
+                throw new NullPointerException();
+            }
+            checkByteStringIsUtf8(value);
+            sessionId_ = value;
+            bitField0_ |= 0x00000002;
+            onChanged();
+            return this;
+        }
+
+        /**
+         * <code>string session_id = 2 [json_name = "sessionId"];</code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearSessionId() {
+            sessionId_ = getDefaultInstance().getSessionId();
+            bitField0_ = (bitField0_ & ~0x00000002);
+            onChanged();
+            return this;
+        }
+
+        /**
+         * <code>string action_type = 3 [json_name = "actionType"];</code>
+         *
+         * @return The actionType.
+         */
+        public java.lang.String getActionType() {
+            java.lang.Object ref = actionType_;
+            if (!(ref instanceof java.lang.String)) {
+                com.google.protobuf.ByteString bs =
+                        (com.google.protobuf.ByteString) ref;
+                java.lang.String s = bs.toStringUtf8();
+                actionType_ = s;
+                return s;
+            } else {
+                return (java.lang.String) ref;
+            }
+        }
+
+        /**
+         * <code>string action_type = 3 [json_name = "actionType"];</code>
+         *
+         * @param value The actionType to set.
+         * @return This builder for chaining.
+         */
+        public Builder setActionType(
+                java.lang.String value) {
+            if (value == null) {
+                throw new NullPointerException();
+            }
+            actionType_ = value;
+            bitField0_ |= 0x00000004;
+            onChanged();
+            return this;
+        }
+
+        /**
+         * <code>string action_type = 3 [json_name = "actionType"];</code>
+         *
+         * @return The bytes for actionType.
+         */
+        public com.google.protobuf.ByteString
         getActionTypeBytes() {
-      java.lang.Object ref = actionType_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        actionType_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     * <code>string action_type = 3 [json_name = "actionType"];</code>
-     * @param value The actionType to set.
-     * @return This builder for chaining.
-     */
-    public Builder setActionType(
-        java.lang.String value) {
-      if (value == null) { throw new NullPointerException(); }
-      actionType_ = value;
-      bitField0_ |= 0x00000004;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>string action_type = 3 [json_name = "actionType"];</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearActionType() {
-      actionType_ = getDefaultInstance().getActionType();
-      bitField0_ = (bitField0_ & ~0x00000004);
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>string action_type = 3 [json_name = "actionType"];</code>
-     * @param value The bytes for actionType to set.
-     * @return This builder for chaining.
-     */
-    public Builder setActionTypeBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) { throw new NullPointerException(); }
-      checkByteStringIsUtf8(value);
-      actionType_ = value;
-      bitField0_ |= 0x00000004;
-      onChanged();
-      return this;
-    }
+            java.lang.Object ref = actionType_;
+            if (ref instanceof String) {
+                com.google.protobuf.ByteString b =
+                        com.google.protobuf.ByteString.copyFromUtf8(
+                                (java.lang.String) ref);
+                actionType_ = b;
+                return b;
+            } else {
+                return (com.google.protobuf.ByteString) ref;
+            }
+        }
 
-    private com.google.protobuf.Timestamp clientTimestamp_;
-    private com.google.protobuf.SingleFieldBuilder<
-        com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> clientTimestampBuilder_;
-    /**
-     * <code>.google.protobuf.Timestamp client_timestamp = 4 [json_name = "clientTimestamp"];</code>
-     * @return Whether the clientTimestamp field is set.
-     */
-    public boolean hasClientTimestamp() {
-      return ((bitField0_ & 0x00000008) != 0);
-    }
-    /**
-     * <code>.google.protobuf.Timestamp client_timestamp = 4 [json_name = "clientTimestamp"];</code>
-     * @return The clientTimestamp.
-     */
-    public com.google.protobuf.Timestamp getClientTimestamp() {
-      if (clientTimestampBuilder_ == null) {
-        return clientTimestamp_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : clientTimestamp_;
-      } else {
-        return clientTimestampBuilder_.getMessage();
-      }
-    }
-    /**
-     * <code>.google.protobuf.Timestamp client_timestamp = 4 [json_name = "clientTimestamp"];</code>
-     */
-    public Builder setClientTimestamp(com.google.protobuf.Timestamp value) {
-      if (clientTimestampBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
+        /**
+         * <code>string action_type = 3 [json_name = "actionType"];</code>
+         *
+         * @param value The bytes for actionType to set.
+         * @return This builder for chaining.
+         */
+        public Builder setActionTypeBytes(
+                com.google.protobuf.ByteString value) {
+            if (value == null) {
+                throw new NullPointerException();
+            }
+            checkByteStringIsUtf8(value);
+            actionType_ = value;
+            bitField0_ |= 0x00000004;
+            onChanged();
+            return this;
         }
-        clientTimestamp_ = value;
-      } else {
-        clientTimestampBuilder_.setMessage(value);
-      }
-      bitField0_ |= 0x00000008;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>.google.protobuf.Timestamp client_timestamp = 4 [json_name = "clientTimestamp"];</code>
-     */
-    public Builder setClientTimestamp(
-        com.google.protobuf.Timestamp.Builder builderForValue) {
-      if (clientTimestampBuilder_ == null) {
-        clientTimestamp_ = builderForValue.build();
-      } else {
-        clientTimestampBuilder_.setMessage(builderForValue.build());
-      }
-      bitField0_ |= 0x00000008;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>.google.protobuf.Timestamp client_timestamp = 4 [json_name = "clientTimestamp"];</code>
-     */
-    public Builder mergeClientTimestamp(com.google.protobuf.Timestamp value) {
-      if (clientTimestampBuilder_ == null) {
-        if (((bitField0_ & 0x00000008) != 0) &&
-          clientTimestamp_ != null &&
-          clientTimestamp_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
-          getClientTimestampBuilder().mergeFrom(value);
-        } else {
-          clientTimestamp_ = value;
+
+        /**
+         * <code>string action_type = 3 [json_name = "actionType"];</code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearActionType() {
+            actionType_ = getDefaultInstance().getActionType();
+            bitField0_ = (bitField0_ & ~0x00000004);
+            onChanged();
+            return this;
         }
-      } else {
-        clientTimestampBuilder_.mergeFrom(value);
-      }
-      if (clientTimestamp_ != null) {
-        bitField0_ |= 0x00000008;
-        onChanged();
-      }
-      return this;
-    }
-    /**
-     * <code>.google.protobuf.Timestamp client_timestamp = 4 [json_name = "clientTimestamp"];</code>
-     */
-    public Builder clearClientTimestamp() {
-      bitField0_ = (bitField0_ & ~0x00000008);
-      clientTimestamp_ = null;
-      if (clientTimestampBuilder_ != null) {
-        clientTimestampBuilder_.dispose();
-        clientTimestampBuilder_ = null;
-      }
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>.google.protobuf.Timestamp client_timestamp = 4 [json_name = "clientTimestamp"];</code>
-     */
-    public com.google.protobuf.Timestamp.Builder getClientTimestampBuilder() {
-      bitField0_ |= 0x00000008;
-      onChanged();
-      return internalGetClientTimestampFieldBuilder().getBuilder();
-    }
-    /**
-     * <code>.google.protobuf.Timestamp client_timestamp = 4 [json_name = "clientTimestamp"];</code>
-     */
-    public com.google.protobuf.TimestampOrBuilder getClientTimestampOrBuilder() {
-      if (clientTimestampBuilder_ != null) {
-        return clientTimestampBuilder_.getMessageOrBuilder();
-      } else {
-        return clientTimestamp_ == null ?
-            com.google.protobuf.Timestamp.getDefaultInstance() : clientTimestamp_;
-      }
-    }
-    /**
-     * <code>.google.protobuf.Timestamp client_timestamp = 4 [json_name = "clientTimestamp"];</code>
-     */
-    private com.google.protobuf.SingleFieldBuilder<
-        com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 
+
+        /**
+         * <code>.google.protobuf.Timestamp client_timestamp = 4 [json_name = "clientTimestamp"];</code>
+         *
+         * @return Whether the clientTimestamp field is set.
+         */
+        public boolean hasClientTimestamp() {
+            return ((bitField0_ & 0x00000008) != 0);
+        }
+
+        /**
+         * <code>.google.protobuf.Timestamp client_timestamp = 4 [json_name = "clientTimestamp"];</code>
+         *
+         * @return The clientTimestamp.
+         */
+        public com.google.protobuf.Timestamp getClientTimestamp() {
+            if (clientTimestampBuilder_ == null) {
+                return clientTimestamp_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : clientTimestamp_;
+            } else {
+                return clientTimestampBuilder_.getMessage();
+            }
+        }
+
+        /**
+         * <code>.google.protobuf.Timestamp client_timestamp = 4 [json_name = "clientTimestamp"];</code>
+         */
+        public Builder setClientTimestamp(com.google.protobuf.Timestamp value) {
+            if (clientTimestampBuilder_ == null) {
+                if (value == null) {
+                    throw new NullPointerException();
+                }
+                clientTimestamp_ = value;
+            } else {
+                clientTimestampBuilder_.setMessage(value);
+            }
+            bitField0_ |= 0x00000008;
+            onChanged();
+            return this;
+        }
+
+        /**
+         * <code>.google.protobuf.Timestamp client_timestamp = 4 [json_name = "clientTimestamp"];</code>
+         */
+        public Builder setClientTimestamp(
+                com.google.protobuf.Timestamp.Builder builderForValue) {
+            if (clientTimestampBuilder_ == null) {
+                clientTimestamp_ = builderForValue.build();
+            } else {
+                clientTimestampBuilder_.setMessage(builderForValue.build());
+            }
+            bitField0_ |= 0x00000008;
+            onChanged();
+            return this;
+        }
+
+        /**
+         * <code>.google.protobuf.Timestamp client_timestamp = 4 [json_name = "clientTimestamp"];</code>
+         */
+        public Builder mergeClientTimestamp(com.google.protobuf.Timestamp value) {
+            if (clientTimestampBuilder_ == null) {
+                if (((bitField0_ & 0x00000008) != 0) &&
+                        clientTimestamp_ != null &&
+                        clientTimestamp_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+                    getClientTimestampBuilder().mergeFrom(value);
+                } else {
+                    clientTimestamp_ = value;
+                }
+            } else {
+                clientTimestampBuilder_.mergeFrom(value);
+            }
+            if (clientTimestamp_ != null) {
+                bitField0_ |= 0x00000008;
+                onChanged();
+            }
+            return this;
+        }
+
+        /**
+         * <code>.google.protobuf.Timestamp client_timestamp = 4 [json_name = "clientTimestamp"];</code>
+         */
+        public Builder clearClientTimestamp() {
+            bitField0_ = (bitField0_ & ~0x00000008);
+            clientTimestamp_ = null;
+            if (clientTimestampBuilder_ != null) {
+                clientTimestampBuilder_.dispose();
+                clientTimestampBuilder_ = null;
+            }
+            onChanged();
+            return this;
+        }
+
+        /**
+         * <code>.google.protobuf.Timestamp client_timestamp = 4 [json_name = "clientTimestamp"];</code>
+         */
+        public com.google.protobuf.Timestamp.Builder getClientTimestampBuilder() {
+            bitField0_ |= 0x00000008;
+            onChanged();
+            return internalGetClientTimestampFieldBuilder().getBuilder();
+        }
+
+        /**
+         * <code>.google.protobuf.Timestamp client_timestamp = 4 [json_name = "clientTimestamp"];</code>
+         */
+        public com.google.protobuf.TimestampOrBuilder getClientTimestampOrBuilder() {
+            if (clientTimestampBuilder_ != null) {
+                return clientTimestampBuilder_.getMessageOrBuilder();
+            } else {
+                return clientTimestamp_ == null ?
+                        com.google.protobuf.Timestamp.getDefaultInstance() : clientTimestamp_;
+            }
+        }
+
+        /**
+         * <code>.google.protobuf.Timestamp client_timestamp = 4 [json_name = "clientTimestamp"];</code>
+         */
+        private com.google.protobuf.SingleFieldBuilder<
+                com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder>
         internalGetClientTimestampFieldBuilder() {
-      if (clientTimestampBuilder_ == null) {
-        clientTimestampBuilder_ = new com.google.protobuf.SingleFieldBuilder<
-            com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder>(
-                getClientTimestamp(),
-                getParentForChildren(),
-                isClean());
-        clientTimestamp_ = null;
-      }
-      return clientTimestampBuilder_;
+            if (clientTimestampBuilder_ == null) {
+                clientTimestampBuilder_ = new com.google.protobuf.SingleFieldBuilder<
+                        com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder>(
+                        getClientTimestamp(),
+                        getParentForChildren(),
+                        isClean());
+                clientTimestamp_ = null;
+            }
+            return clientTimestampBuilder_;
+        }
+
+        // @@protoc_insertion_point(builder_scope:match_arena.v1.PlayerAction)
     }
-
-    // @@protoc_insertion_point(builder_scope:match_arena.v1.PlayerAction)
-  }
-
-  // @@protoc_insertion_point(class_scope:match_arena.v1.PlayerAction)
-  private static final com.matcharena.grpc.v1.PlayerAction DEFAULT_INSTANCE;
-  static {
-    DEFAULT_INSTANCE = new com.matcharena.grpc.v1.PlayerAction();
-  }
-
-  public static com.matcharena.grpc.v1.PlayerAction getDefaultInstance() {
-    return DEFAULT_INSTANCE;
-  }
-
-  private static final com.google.protobuf.Parser<PlayerAction>
-      PARSER = new com.google.protobuf.AbstractParser<PlayerAction>() {
-    @java.lang.Override
-    public PlayerAction parsePartialFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      Builder builder = newBuilder();
-      try {
-        builder.mergeFrom(input, extensionRegistry);
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(builder.buildPartial());
-      } catch (com.google.protobuf.UninitializedMessageException e) {
-        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(e)
-            .setUnfinishedMessage(builder.buildPartial());
-      }
-      return builder.buildPartial();
-    }
-  };
-
-  public static com.google.protobuf.Parser<PlayerAction> parser() {
-    return PARSER;
-  }
-
-  @java.lang.Override
-  public com.google.protobuf.Parser<PlayerAction> getParserForType() {
-    return PARSER;
-  }
-
-  @java.lang.Override
-  public com.matcharena.grpc.v1.PlayerAction getDefaultInstanceForType() {
-    return DEFAULT_INSTANCE;
-  }
 
 }
 

@@ -2,6 +2,6 @@ version: v2
 modules:
   - path: .
 lint:
-  use: [STANDARD]
+  use: [ STANDARD ]
 breaking:
-  use: [FILE]
+  use: [ FILE ]

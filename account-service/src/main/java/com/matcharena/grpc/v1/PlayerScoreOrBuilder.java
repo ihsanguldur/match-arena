@@ -7,24 +7,28 @@ package com.matcharena.grpc.v1;
 
 @com.google.protobuf.Generated
 public interface PlayerScoreOrBuilder extends
-    // @@protoc_insertion_point(interface_extends:match_arena.v1.PlayerScore)
-    com.google.protobuf.MessageOrBuilder {
+        // @@protoc_insertion_point(interface_extends:match_arena.v1.PlayerScore)
+        com.google.protobuf.MessageOrBuilder {
 
-  /**
-   * <code>string player_id = 1 [json_name = "playerId"];</code>
-   * @return The playerId.
-   */
-  java.lang.String getPlayerId();
-  /**
-   * <code>string player_id = 1 [json_name = "playerId"];</code>
-   * @return The bytes for playerId.
-   */
-  com.google.protobuf.ByteString
-      getPlayerIdBytes();
+    /**
+     * <code>string player_id = 1 [json_name = "playerId"];</code>
+     *
+     * @return The playerId.
+     */
+    java.lang.String getPlayerId();
 
-  /**
-   * <code>int32 score = 2 [json_name = "score"];</code>
-   * @return The score.
-   */
-  int getScore();
+    /**
+     * <code>string player_id = 1 [json_name = "playerId"];</code>
+     *
+     * @return The bytes for playerId.
+     */
+    com.google.protobuf.ByteString
+    getPlayerIdBytes();
+
+    /**
+     * <code>int32 score = 2 [json_name = "score"];</code>
+     *
+     * @return The score.
+     */
+    int getScore();
 }
