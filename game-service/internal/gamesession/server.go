@@ -38,6 +38,9 @@ func (s *Server) PlayGame(stream matcharenav1.GameSessionService_PlayGameServer)
 	if !ok {
 		return status.Error(codes.NotFound, "session not found")
 	}
+	if !sess.HasPlayer(playerID) {
+		return status.Error(codes.PermissionDenied, "player not part of this session")
+	}
 
 	updates := make(chan *matcharenav1.SessionUpdate, 1)
 	sess.Subscribe(playerID, updates)

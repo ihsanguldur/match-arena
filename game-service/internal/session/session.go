@@ -67,6 +67,15 @@ func NewSession(id string, playerIDs []string) *Session {
 
 func (s *Session) Done() <-chan struct{} { return s.done }
 
+func (s *Session) HasPlayer(playerID string) bool {
+	for _, id := range s.playerIDs {
+		if id == playerID {
+			return true
+		}
+	}
+	return false
+}
+
 func (s *Session) Send(cmd sessionCmd) {
 	select {
 	case s.inbox <- cmd:
