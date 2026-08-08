@@ -56,7 +56,6 @@ public final class PingResponse extends
     @SuppressWarnings("serial")
     private volatile java.lang.Object message_ = "";
     private byte memoizedIsInitialized = -1;
-
     // Use PingResponse.newBuilder() to construct.
     private PingResponse(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
         super(builder);

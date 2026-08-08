@@ -27,7 +27,7 @@ const (
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type MatchmakingServiceClient interface {
-	JoinQueue(ctx context.Context, in *JoinQueueRequest, opts ...grpc.CallOption) (*JoinQueueResponse, error)
+	JoinQueue(ctx context.Context, in *JoinQueueRequest, opts ...grpc.CallOption) (grpc.ServerStreamingClient[JoinQueueUpdate], error)
 	LeaveQueue(ctx context.Context, in *LeaveQueueRequest, opts ...grpc.CallOption) (*LeaveQueueResponse, error)
 }
 
@@ -39,15 +39,24 @@ func NewMatchmakingServiceClient(cc grpc.ClientConnInterface) MatchmakingService
 	return &matchmakingServiceClient{cc}
 }
 
-func (c *matchmakingServiceClient) JoinQueue(ctx context.Context, in *JoinQueueRequest, opts ...grpc.CallOption) (*JoinQueueResponse, error) {
+func (c *matchmakingServiceClient) JoinQueue(ctx context.Context, in *JoinQueueRequest, opts ...grpc.CallOption) (grpc.ServerStreamingClient[JoinQueueUpdate], error) {
 	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
-	out := new(JoinQueueResponse)
-	err := c.cc.Invoke(ctx, MatchmakingService_JoinQueue_FullMethodName, in, out, cOpts...)
+	stream, err := c.cc.NewStream(ctx, &MatchmakingService_ServiceDesc.Streams[0], MatchmakingService_JoinQueue_FullMethodName, cOpts...)
 	if err != nil {
 		return nil, err
 	}
-	return out, nil
+	x := &grpc.GenericClientStream[JoinQueueRequest, JoinQueueUpdate]{ClientStream: stream}
+	if err := x.ClientStream.SendMsg(in); err != nil {
+		return nil, err
+	}
+	if err := x.ClientStream.CloseSend(); err != nil {
+		return nil, err
+	}
+	return x, nil
 }
+
+// This type alias is provided for backwards compatibility with existing code that references the prior non-generic stream type by name.
+type MatchmakingService_JoinQueueClient = grpc.ServerStreamingClient[JoinQueueUpdate]
 
 func (c *matchmakingServiceClient) LeaveQueue(ctx context.Context, in *LeaveQueueRequest, opts ...grpc.CallOption) (*LeaveQueueResponse, error) {
 	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
@@ -63,7 +72,7 @@ func (c *matchmakingServiceClient) LeaveQueue(ctx context.Context, in *LeaveQueu
 // All implementations must embed UnimplementedMatchmakingServiceServer
 // for forward compatibility.
 type MatchmakingServiceServer interface {
-	JoinQueue(context.Context, *JoinQueueRequest) (*JoinQueueResponse, error)
+	JoinQueue(*JoinQueueRequest, grpc.ServerStreamingServer[JoinQueueUpdate]) error
 	LeaveQueue(context.Context, *LeaveQueueRequest) (*LeaveQueueResponse, error)
 	mustEmbedUnimplementedMatchmakingServiceServer()
 }
@@ -75,8 +84,8 @@ type MatchmakingServiceServer interface {
 // pointer dereference when methods are called.
 type UnimplementedMatchmakingServiceServer struct{}
 
-func (UnimplementedMatchmakingServiceServer) JoinQueue(context.Context, *JoinQueueRequest) (*JoinQueueResponse, error) {
-	return nil, status.Error(codes.Unimplemented, "method JoinQueue not implemented")
+func (UnimplementedMatchmakingServiceServer) JoinQueue(*JoinQueueRequest, grpc.ServerStreamingServer[JoinQueueUpdate]) error {
+	return status.Error(codes.Unimplemented, "method JoinQueue not implemented")
 }
 func (UnimplementedMatchmakingServiceServer) LeaveQueue(context.Context, *LeaveQueueRequest) (*LeaveQueueResponse, error) {
 	return nil, status.Error(codes.Unimplemented, "method LeaveQueue not implemented")
@@ -102,23 +111,16 @@ func RegisterMatchmakingServiceServer(s grpc.ServiceRegistrar, srv MatchmakingSe
 	s.RegisterService(&MatchmakingService_ServiceDesc, srv)
 }
 
-func _MatchmakingService_JoinQueue_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(JoinQueueRequest)
-	if err := dec(in); err != nil {
-		return nil, err
+func _MatchmakingService_JoinQueue_Handler(srv interface{}, stream grpc.ServerStream) error {
+	m := new(JoinQueueRequest)
+	if err := stream.RecvMsg(m); err != nil {
+		return err
 	}
-	if interceptor == nil {
-		return srv.(MatchmakingServiceServer).JoinQueue(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: MatchmakingService_JoinQueue_FullMethodName,
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(MatchmakingServiceServer).JoinQueue(ctx, req.(*JoinQueueRequest))
-	}
-	return interceptor(ctx, in, info, handler)
+	return srv.(MatchmakingServiceServer).JoinQueue(m, &grpc.GenericServerStream[JoinQueueRequest, JoinQueueUpdate]{ServerStream: stream})
 }
+
+// This type alias is provided for backwards compatibility with existing code that references the prior non-generic stream type by name.
+type MatchmakingService_JoinQueueServer = grpc.ServerStreamingServer[JoinQueueUpdate]
 
 func _MatchmakingService_LeaveQueue_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(LeaveQueueRequest)
@@ -146,14 +148,16 @@ var MatchmakingService_ServiceDesc = grpc.ServiceDesc{
 	HandlerType: (*MatchmakingServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
-			MethodName: "JoinQueue",
-			Handler:    _MatchmakingService_JoinQueue_Handler,
-		},
-		{
 			MethodName: "LeaveQueue",
 			Handler:    _MatchmakingService_LeaveQueue_Handler,
 		},
 	},
-	Streams:  []grpc.StreamDesc{},
+	Streams: []grpc.StreamDesc{
+		{
+			StreamName:    "JoinQueue",
+			Handler:       _MatchmakingService_JoinQueue_Handler,
+			ServerStreams: true,
+		},
+	},
 	Metadata: "match_arena/v1/matchmaking.proto",
 }

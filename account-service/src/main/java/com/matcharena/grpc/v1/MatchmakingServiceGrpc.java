@@ -13,7 +13,7 @@ public final class MatchmakingServiceGrpc {
     private static final int METHODID_LEAVE_QUEUE = 1;
     // Static method descriptors that strictly reflect the proto.
     private static volatile io.grpc.MethodDescriptor<com.matcharena.grpc.v1.JoinQueueRequest,
-            com.matcharena.grpc.v1.JoinQueueResponse> getJoinQueueMethod;
+            com.matcharena.grpc.v1.JoinQueueUpdate> getJoinQueueMethod;
     private static volatile io.grpc.MethodDescriptor<com.matcharena.grpc.v1.LeaveQueueRequest,
             com.matcharena.grpc.v1.LeaveQueueResponse> getLeaveQueueMethod;
     private static volatile io.grpc.ServiceDescriptor serviceDescriptor;
@@ -24,23 +24,23 @@ public final class MatchmakingServiceGrpc {
     @io.grpc.stub.annotations.RpcMethod(
             fullMethodName = SERVICE_NAME + '/' + "JoinQueue",
             requestType = com.matcharena.grpc.v1.JoinQueueRequest.class,
-            responseType = com.matcharena.grpc.v1.JoinQueueResponse.class,
-            methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+            responseType = com.matcharena.grpc.v1.JoinQueueUpdate.class,
+            methodType = io.grpc.MethodDescriptor.MethodType.SERVER_STREAMING)
     public static io.grpc.MethodDescriptor<com.matcharena.grpc.v1.JoinQueueRequest,
-            com.matcharena.grpc.v1.JoinQueueResponse> getJoinQueueMethod() {
-        io.grpc.MethodDescriptor<com.matcharena.grpc.v1.JoinQueueRequest, com.matcharena.grpc.v1.JoinQueueResponse> getJoinQueueMethod;
+            com.matcharena.grpc.v1.JoinQueueUpdate> getJoinQueueMethod() {
+        io.grpc.MethodDescriptor<com.matcharena.grpc.v1.JoinQueueRequest, com.matcharena.grpc.v1.JoinQueueUpdate> getJoinQueueMethod;
         if ((getJoinQueueMethod = MatchmakingServiceGrpc.getJoinQueueMethod) == null) {
             synchronized (MatchmakingServiceGrpc.class) {
                 if ((getJoinQueueMethod = MatchmakingServiceGrpc.getJoinQueueMethod) == null) {
                     MatchmakingServiceGrpc.getJoinQueueMethod = getJoinQueueMethod =
-                            io.grpc.MethodDescriptor.<com.matcharena.grpc.v1.JoinQueueRequest, com.matcharena.grpc.v1.JoinQueueResponse>newBuilder()
-                                    .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                            io.grpc.MethodDescriptor.<com.matcharena.grpc.v1.JoinQueueRequest, com.matcharena.grpc.v1.JoinQueueUpdate>newBuilder()
+                                    .setType(io.grpc.MethodDescriptor.MethodType.SERVER_STREAMING)
                                     .setFullMethodName(generateFullMethodName(SERVICE_NAME, "JoinQueue"))
                                     .setSampledToLocalTracing(true)
                                     .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                                             com.matcharena.grpc.v1.JoinQueueRequest.getDefaultInstance()))
                                     .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                                            com.matcharena.grpc.v1.JoinQueueResponse.getDefaultInstance()))
+                                            com.matcharena.grpc.v1.JoinQueueUpdate.getDefaultInstance()))
                                     .setSchemaDescriptor(new MatchmakingServiceMethodDescriptorSupplier("JoinQueue"))
                                     .build();
                 }
@@ -140,10 +140,10 @@ public final class MatchmakingServiceGrpc {
         return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
                 .addMethod(
                         getJoinQueueMethod(),
-                        io.grpc.stub.ServerCalls.asyncUnaryCall(
+                        io.grpc.stub.ServerCalls.asyncServerStreamingCall(
                                 new MethodHandlers<
                                         com.matcharena.grpc.v1.JoinQueueRequest,
-                                        com.matcharena.grpc.v1.JoinQueueResponse>(
+                                        com.matcharena.grpc.v1.JoinQueueUpdate>(
                                         service, METHODID_JOIN_QUEUE)))
                 .addMethod(
                         getLeaveQueueMethod(),
@@ -181,7 +181,7 @@ public final class MatchmakingServiceGrpc {
          *
          */
         default void joinQueue(com.matcharena.grpc.v1.JoinQueueRequest request,
-                               io.grpc.stub.StreamObserver<com.matcharena.grpc.v1.JoinQueueResponse> responseObserver) {
+                               io.grpc.stub.StreamObserver<com.matcharena.grpc.v1.JoinQueueUpdate> responseObserver) {
             io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getJoinQueueMethod(), responseObserver);
         }
 
@@ -226,8 +226,8 @@ public final class MatchmakingServiceGrpc {
          *
          */
         public void joinQueue(com.matcharena.grpc.v1.JoinQueueRequest request,
-                              io.grpc.stub.StreamObserver<com.matcharena.grpc.v1.JoinQueueResponse> responseObserver) {
-            io.grpc.stub.ClientCalls.asyncUnaryCall(
+                              io.grpc.stub.StreamObserver<com.matcharena.grpc.v1.JoinQueueUpdate> responseObserver) {
+            io.grpc.stub.ClientCalls.asyncServerStreamingCall(
                     getChannel().newCall(getJoinQueueMethod(), getCallOptions()), request, responseObserver);
         }
 
@@ -260,8 +260,10 @@ public final class MatchmakingServiceGrpc {
         /**
          *
          */
-        public com.matcharena.grpc.v1.JoinQueueResponse joinQueue(com.matcharena.grpc.v1.JoinQueueRequest request) throws io.grpc.StatusException {
-            return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+        @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/10918")
+        public io.grpc.stub.BlockingClientCall<?, com.matcharena.grpc.v1.JoinQueueUpdate>
+        joinQueue(com.matcharena.grpc.v1.JoinQueueRequest request) {
+            return io.grpc.stub.ClientCalls.blockingV2ServerStreamingCall(
                     getChannel(), getJoinQueueMethod(), getCallOptions(), request);
         }
 
@@ -293,8 +295,9 @@ public final class MatchmakingServiceGrpc {
         /**
          *
          */
-        public com.matcharena.grpc.v1.JoinQueueResponse joinQueue(com.matcharena.grpc.v1.JoinQueueRequest request) {
-            return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        public java.util.Iterator<com.matcharena.grpc.v1.JoinQueueUpdate> joinQueue(
+                com.matcharena.grpc.v1.JoinQueueRequest request) {
+            return io.grpc.stub.ClientCalls.blockingServerStreamingCall(
                     getChannel(), getJoinQueueMethod(), getCallOptions(), request);
         }
 
@@ -326,15 +329,6 @@ public final class MatchmakingServiceGrpc {
         /**
          *
          */
-        public com.google.common.util.concurrent.ListenableFuture<com.matcharena.grpc.v1.JoinQueueResponse> joinQueue(
-                com.matcharena.grpc.v1.JoinQueueRequest request) {
-            return io.grpc.stub.ClientCalls.futureUnaryCall(
-                    getChannel().newCall(getJoinQueueMethod(), getCallOptions()), request);
-        }
-
-        /**
-         *
-         */
         public com.google.common.util.concurrent.ListenableFuture<com.matcharena.grpc.v1.LeaveQueueResponse> leaveQueue(
                 com.matcharena.grpc.v1.LeaveQueueRequest request) {
             return io.grpc.stub.ClientCalls.futureUnaryCall(
@@ -361,7 +355,7 @@ public final class MatchmakingServiceGrpc {
             switch (methodId) {
                 case METHODID_JOIN_QUEUE:
                     serviceImpl.joinQueue((com.matcharena.grpc.v1.JoinQueueRequest) request,
-                            (io.grpc.stub.StreamObserver<com.matcharena.grpc.v1.JoinQueueResponse>) responseObserver);
+                            (io.grpc.stub.StreamObserver<com.matcharena.grpc.v1.JoinQueueUpdate>) responseObserver);
                     break;
                 case METHODID_LEAVE_QUEUE:
                     serviceImpl.leaveQueue((com.matcharena.grpc.v1.LeaveQueueRequest) request,

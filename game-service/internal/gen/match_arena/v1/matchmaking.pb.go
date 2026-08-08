@@ -73,27 +73,28 @@ func (x *JoinQueueRequest) GetRating() int32 {
 	return 0
 }
 
-type JoinQueueResponse struct {
+type MatchFound struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	QueueTicketId string                 `protobuf:"bytes,1,opt,name=queue_ticket_id,json=queueTicketId,proto3" json:"queue_ticket_id,omitempty"`
+	SessionId     string                 `protobuf:"bytes,1,opt,name=session_id,json=sessionId,proto3" json:"session_id,omitempty"`
+	PlayerIds     []string               `protobuf:"bytes,2,rep,name=player_ids,json=playerIds,proto3" json:"player_ids,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
 
-func (x *JoinQueueResponse) Reset() {
-	*x = JoinQueueResponse{}
+func (x *MatchFound) Reset() {
+	*x = MatchFound{}
 	mi := &file_match_arena_v1_matchmaking_proto_msgTypes[1]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
 
-func (x *JoinQueueResponse) String() string {
+func (x *MatchFound) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*JoinQueueResponse) ProtoMessage() {}
+func (*MatchFound) ProtoMessage() {}
 
-func (x *JoinQueueResponse) ProtoReflect() protoreflect.Message {
+func (x *MatchFound) ProtoReflect() protoreflect.Message {
 	mi := &file_match_arena_v1_matchmaking_proto_msgTypes[1]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -105,17 +106,106 @@ func (x *JoinQueueResponse) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use JoinQueueResponse.ProtoReflect.Descriptor instead.
-func (*JoinQueueResponse) Descriptor() ([]byte, []int) {
+// Deprecated: Use MatchFound.ProtoReflect.Descriptor instead.
+func (*MatchFound) Descriptor() ([]byte, []int) {
 	return file_match_arena_v1_matchmaking_proto_rawDescGZIP(), []int{1}
 }
 
-func (x *JoinQueueResponse) GetQueueTicketId() string {
+func (x *MatchFound) GetSessionId() string {
 	if x != nil {
-		return x.QueueTicketId
+		return x.SessionId
 	}
 	return ""
 }
+
+func (x *MatchFound) GetPlayerIds() []string {
+	if x != nil {
+		return x.PlayerIds
+	}
+	return nil
+}
+
+type JoinQueueUpdate struct {
+	state protoimpl.MessageState `protogen:"open.v1"`
+	// Types that are valid to be assigned to Update:
+	//
+	//	*JoinQueueUpdate_QueueTicketId
+	//	*JoinQueueUpdate_MatchFound
+	Update        isJoinQueueUpdate_Update `protobuf_oneof:"update"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *JoinQueueUpdate) Reset() {
+	*x = JoinQueueUpdate{}
+	mi := &file_match_arena_v1_matchmaking_proto_msgTypes[2]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *JoinQueueUpdate) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*JoinQueueUpdate) ProtoMessage() {}
+
+func (x *JoinQueueUpdate) ProtoReflect() protoreflect.Message {
+	mi := &file_match_arena_v1_matchmaking_proto_msgTypes[2]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use JoinQueueUpdate.ProtoReflect.Descriptor instead.
+func (*JoinQueueUpdate) Descriptor() ([]byte, []int) {
+	return file_match_arena_v1_matchmaking_proto_rawDescGZIP(), []int{2}
+}
+
+func (x *JoinQueueUpdate) GetUpdate() isJoinQueueUpdate_Update {
+	if x != nil {
+		return x.Update
+	}
+	return nil
+}
+
+func (x *JoinQueueUpdate) GetQueueTicketId() string {
+	if x != nil {
+		if x, ok := x.Update.(*JoinQueueUpdate_QueueTicketId); ok {
+			return x.QueueTicketId
+		}
+	}
+	return ""
+}
+
+func (x *JoinQueueUpdate) GetMatchFound() *MatchFound {
+	if x != nil {
+		if x, ok := x.Update.(*JoinQueueUpdate_MatchFound); ok {
+			return x.MatchFound
+		}
+	}
+	return nil
+}
+
+type isJoinQueueUpdate_Update interface {
+	isJoinQueueUpdate_Update()
+}
+
+type JoinQueueUpdate_QueueTicketId struct {
+	QueueTicketId string `protobuf:"bytes,1,opt,name=queue_ticket_id,json=queueTicketId,proto3,oneof"`
+}
+
+type JoinQueueUpdate_MatchFound struct {
+	MatchFound *MatchFound `protobuf:"bytes,2,opt,name=match_found,json=matchFound,proto3,oneof"`
+}
+
+func (*JoinQueueUpdate_QueueTicketId) isJoinQueueUpdate_Update() {}
+
+func (*JoinQueueUpdate_MatchFound) isJoinQueueUpdate_Update() {}
 
 type LeaveQueueRequest struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
@@ -126,7 +216,7 @@ type LeaveQueueRequest struct {
 
 func (x *LeaveQueueRequest) Reset() {
 	*x = LeaveQueueRequest{}
-	mi := &file_match_arena_v1_matchmaking_proto_msgTypes[2]
+	mi := &file_match_arena_v1_matchmaking_proto_msgTypes[3]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -138,7 +228,7 @@ func (x *LeaveQueueRequest) String() string {
 func (*LeaveQueueRequest) ProtoMessage() {}
 
 func (x *LeaveQueueRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_match_arena_v1_matchmaking_proto_msgTypes[2]
+	mi := &file_match_arena_v1_matchmaking_proto_msgTypes[3]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -151,7 +241,7 @@ func (x *LeaveQueueRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use LeaveQueueRequest.ProtoReflect.Descriptor instead.
 func (*LeaveQueueRequest) Descriptor() ([]byte, []int) {
-	return file_match_arena_v1_matchmaking_proto_rawDescGZIP(), []int{2}
+	return file_match_arena_v1_matchmaking_proto_rawDescGZIP(), []int{3}
 }
 
 func (x *LeaveQueueRequest) GetQueueTicketId() string {
@@ -170,7 +260,7 @@ type LeaveQueueResponse struct {
 
 func (x *LeaveQueueResponse) Reset() {
 	*x = LeaveQueueResponse{}
-	mi := &file_match_arena_v1_matchmaking_proto_msgTypes[3]
+	mi := &file_match_arena_v1_matchmaking_proto_msgTypes[4]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -182,7 +272,7 @@ func (x *LeaveQueueResponse) String() string {
 func (*LeaveQueueResponse) ProtoMessage() {}
 
 func (x *LeaveQueueResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_match_arena_v1_matchmaking_proto_msgTypes[3]
+	mi := &file_match_arena_v1_matchmaking_proto_msgTypes[4]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -195,7 +285,7 @@ func (x *LeaveQueueResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use LeaveQueueResponse.ProtoReflect.Descriptor instead.
 func (*LeaveQueueResponse) Descriptor() ([]byte, []int) {
-	return file_match_arena_v1_matchmaking_proto_rawDescGZIP(), []int{3}
+	return file_match_arena_v1_matchmaking_proto_rawDescGZIP(), []int{4}
 }
 
 func (x *LeaveQueueResponse) GetSuccess() bool {
@@ -212,15 +302,24 @@ const file_match_arena_v1_matchmaking_proto_rawDesc = "" +
 	" match_arena/v1/matchmaking.proto\x12\x0ematch_arena.v1\"G\n" +
 	"\x10JoinQueueRequest\x12\x1b\n" +
 	"\tplayer_id\x18\x01 \x01(\tR\bplayerId\x12\x16\n" +
-	"\x06rating\x18\x02 \x01(\x05R\x06rating\";\n" +
-	"\x11JoinQueueResponse\x12&\n" +
-	"\x0fqueue_ticket_id\x18\x01 \x01(\tR\rqueueTicketId\";\n" +
+	"\x06rating\x18\x02 \x01(\x05R\x06rating\"J\n" +
+	"\n" +
+	"MatchFound\x12\x1d\n" +
+	"\n" +
+	"session_id\x18\x01 \x01(\tR\tsessionId\x12\x1d\n" +
+	"\n" +
+	"player_ids\x18\x02 \x03(\tR\tplayerIds\"\x84\x01\n" +
+	"\x0fJoinQueueUpdate\x12(\n" +
+	"\x0fqueue_ticket_id\x18\x01 \x01(\tH\x00R\rqueueTicketId\x12=\n" +
+	"\vmatch_found\x18\x02 \x01(\v2\x1a.match_arena.v1.MatchFoundH\x00R\n" +
+	"matchFoundB\b\n" +
+	"\x06update\";\n" +
 	"\x11LeaveQueueRequest\x12&\n" +
 	"\x0fqueue_ticket_id\x18\x01 \x01(\tR\rqueueTicketId\".\n" +
 	"\x12LeaveQueueResponse\x12\x18\n" +
 	"\asuccess\x18\x01 \x01(\bR\asuccess2\xbb\x01\n" +
 	"\x12MatchmakingService\x12P\n" +
-	"\tJoinQueue\x12 .match_arena.v1.JoinQueueRequest\x1a!.match_arena.v1.JoinQueueResponse\x12S\n" +
+	"\tJoinQueue\x12 .match_arena.v1.JoinQueueRequest\x1a\x1f.match_arena.v1.JoinQueueUpdate0\x01\x12S\n" +
 	"\n" +
 	"LeaveQueue\x12!.match_arena.v1.LeaveQueueRequest\x1a\".match_arena.v1.LeaveQueueResponseBt\n" +
 	"\x16com.matcharena.grpc.v1P\x01ZXgithub.com/ihsanguldur/match-arena/game-service/internal/gen/match_arena/v1;matcharenav1b\x06proto3"
@@ -237,23 +336,25 @@ func file_match_arena_v1_matchmaking_proto_rawDescGZIP() []byte {
 	return file_match_arena_v1_matchmaking_proto_rawDescData
 }
 
-var file_match_arena_v1_matchmaking_proto_msgTypes = make([]protoimpl.MessageInfo, 4)
+var file_match_arena_v1_matchmaking_proto_msgTypes = make([]protoimpl.MessageInfo, 5)
 var file_match_arena_v1_matchmaking_proto_goTypes = []any{
 	(*JoinQueueRequest)(nil),   // 0: match_arena.v1.JoinQueueRequest
-	(*JoinQueueResponse)(nil),  // 1: match_arena.v1.JoinQueueResponse
-	(*LeaveQueueRequest)(nil),  // 2: match_arena.v1.LeaveQueueRequest
-	(*LeaveQueueResponse)(nil), // 3: match_arena.v1.LeaveQueueResponse
+	(*MatchFound)(nil),         // 1: match_arena.v1.MatchFound
+	(*JoinQueueUpdate)(nil),    // 2: match_arena.v1.JoinQueueUpdate
+	(*LeaveQueueRequest)(nil),  // 3: match_arena.v1.LeaveQueueRequest
+	(*LeaveQueueResponse)(nil), // 4: match_arena.v1.LeaveQueueResponse
 }
 var file_match_arena_v1_matchmaking_proto_depIdxs = []int32{
-	0, // 0: match_arena.v1.MatchmakingService.JoinQueue:input_type -> match_arena.v1.JoinQueueRequest
-	2, // 1: match_arena.v1.MatchmakingService.LeaveQueue:input_type -> match_arena.v1.LeaveQueueRequest
-	1, // 2: match_arena.v1.MatchmakingService.JoinQueue:output_type -> match_arena.v1.JoinQueueResponse
-	3, // 3: match_arena.v1.MatchmakingService.LeaveQueue:output_type -> match_arena.v1.LeaveQueueResponse
-	2, // [2:4] is the sub-list for method output_type
-	0, // [0:2] is the sub-list for method input_type
-	0, // [0:0] is the sub-list for extension type_name
-	0, // [0:0] is the sub-list for extension extendee
-	0, // [0:0] is the sub-list for field type_name
+	1, // 0: match_arena.v1.JoinQueueUpdate.match_found:type_name -> match_arena.v1.MatchFound
+	0, // 1: match_arena.v1.MatchmakingService.JoinQueue:input_type -> match_arena.v1.JoinQueueRequest
+	3, // 2: match_arena.v1.MatchmakingService.LeaveQueue:input_type -> match_arena.v1.LeaveQueueRequest
+	2, // 3: match_arena.v1.MatchmakingService.JoinQueue:output_type -> match_arena.v1.JoinQueueUpdate
+	4, // 4: match_arena.v1.MatchmakingService.LeaveQueue:output_type -> match_arena.v1.LeaveQueueResponse
+	3, // [3:5] is the sub-list for method output_type
+	1, // [1:3] is the sub-list for method input_type
+	1, // [1:1] is the sub-list for extension type_name
+	1, // [1:1] is the sub-list for extension extendee
+	0, // [0:1] is the sub-list for field type_name
 }
 
 func init() { file_match_arena_v1_matchmaking_proto_init() }
@@ -261,13 +362,17 @@ func file_match_arena_v1_matchmaking_proto_init() {
 	if File_match_arena_v1_matchmaking_proto != nil {
 		return
 	}
+	file_match_arena_v1_matchmaking_proto_msgTypes[2].OneofWrappers = []any{
+		(*JoinQueueUpdate_QueueTicketId)(nil),
+		(*JoinQueueUpdate_MatchFound)(nil),
+	}
 	type x struct{}
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_match_arena_v1_matchmaking_proto_rawDesc), len(file_match_arena_v1_matchmaking_proto_rawDesc)),
 			NumEnums:      0,
-			NumMessages:   4,
+			NumMessages:   5,
 			NumExtensions: 0,
 			NumServices:   1,
 		},
