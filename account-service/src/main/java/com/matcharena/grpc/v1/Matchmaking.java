@@ -13,10 +13,15 @@ public final class Matchmaking extends com.google.protobuf.GeneratedFile {
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
             internal_static_match_arena_v1_JoinQueueRequest_fieldAccessorTable;
     static final com.google.protobuf.Descriptors.Descriptor
-            internal_static_match_arena_v1_JoinQueueResponse_descriptor;
+            internal_static_match_arena_v1_MatchFound_descriptor;
     static final
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
-            internal_static_match_arena_v1_JoinQueueResponse_fieldAccessorTable;
+            internal_static_match_arena_v1_MatchFound_fieldAccessorTable;
+    static final com.google.protobuf.Descriptors.Descriptor
+            internal_static_match_arena_v1_JoinQueueUpdate_descriptor;
+    static final
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+            internal_static_match_arena_v1_JoinQueueUpdate_fieldAccessorTable;
     static final com.google.protobuf.Descriptors.Descriptor
             internal_static_match_arena_v1_LeaveQueueRequest_descriptor;
     static final
@@ -45,19 +50,22 @@ public final class Matchmaking extends com.google.protobuf.GeneratedFile {
                 "\n match_arena/v1/matchmaking.proto\022\016matc" +
                         "h_arena.v1\"G\n\020JoinQueueRequest\022\033\n\tplayer" +
                         "_id\030\001 \001(\tR\010playerId\022\026\n\006rating\030\002 \001(\005R\006rat" +
-                        "ing\";\n\021JoinQueueResponse\022&\n\017queue_ticket" +
-                        "_id\030\001 \001(\tR\rqueueTicketId\";\n\021LeaveQueueRe" +
-                        "quest\022&\n\017queue_ticket_id\030\001 \001(\tR\rqueueTic" +
-                        "ketId\".\n\022LeaveQueueResponse\022\030\n\007success\030\001" +
-                        " \001(\010R\007success2\273\001\n\022MatchmakingService\022P\n\t" +
-                        "JoinQueue\022 .match_arena.v1.JoinQueueRequ" +
-                        "est\032!.match_arena.v1.JoinQueueResponse\022S" +
-                        "\n\nLeaveQueue\022!.match_arena.v1.LeaveQueue" +
-                        "Request\032\".match_arena.v1.LeaveQueueRespo" +
-                        "nseBt\n\026com.matcharena.grpc.v1P\001ZXgithub." +
-                        "com/ihsanguldur/match-arena/game-service" +
-                        "/internal/gen/match_arena/v1;matcharenav" +
-                        "1b\006proto3"
+                        "ing\"J\n\nMatchFound\022\035\n\nsession_id\030\001 \001(\tR\ts" +
+                        "essionId\022\035\n\nplayer_ids\030\002 \003(\tR\tplayerIds\"" +
+                        "\204\001\n\017JoinQueueUpdate\022(\n\017queue_ticket_id\030\001" +
+                        " \001(\tH\000R\rqueueTicketId\022=\n\013match_found\030\002 \001" +
+                        "(\0132\032.match_arena.v1.MatchFoundH\000R\nmatchF" +
+                        "oundB\010\n\006update\";\n\021LeaveQueueRequest\022&\n\017q" +
+                        "ueue_ticket_id\030\001 \001(\tR\rqueueTicketId\".\n\022L" +
+                        "eaveQueueResponse\022\030\n\007success\030\001 \001(\010R\007succ" +
+                        "ess2\273\001\n\022MatchmakingService\022P\n\tJoinQueue\022" +
+                        " .match_arena.v1.JoinQueueRequest\032\037.matc" +
+                        "h_arena.v1.JoinQueueUpdate0\001\022S\n\nLeaveQue" +
+                        "ue\022!.match_arena.v1.LeaveQueueRequest\032\"." +
+                        "match_arena.v1.LeaveQueueResponseBt\n\026com" +
+                        ".matcharena.grpc.v1P\001ZXgithub.com/ihsang" +
+                        "uldur/match-arena/game-service/internal/" +
+                        "gen/match_arena/v1;matcharenav1b\006proto3"
         };
         descriptor = com.google.protobuf.Descriptors.FileDescriptor
                 .internalBuildGeneratedFileFrom(descriptorData,
@@ -69,27 +77,32 @@ public final class Matchmaking extends com.google.protobuf.GeneratedFile {
                 com.google.protobuf.GeneratedMessage.FieldAccessorTable(
                 internal_static_match_arena_v1_JoinQueueRequest_descriptor,
                 new java.lang.String[]{"PlayerId", "Rating",});
-        internal_static_match_arena_v1_JoinQueueResponse_descriptor =
+        internal_static_match_arena_v1_MatchFound_descriptor =
                 getDescriptor().getMessageType(1);
-        internal_static_match_arena_v1_JoinQueueResponse_fieldAccessorTable = new
+        internal_static_match_arena_v1_MatchFound_fieldAccessorTable = new
                 com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-                internal_static_match_arena_v1_JoinQueueResponse_descriptor,
-                new java.lang.String[]{"QueueTicketId",});
-        internal_static_match_arena_v1_LeaveQueueRequest_descriptor =
+                internal_static_match_arena_v1_MatchFound_descriptor,
+                new java.lang.String[]{"SessionId", "PlayerIds",});
+        internal_static_match_arena_v1_JoinQueueUpdate_descriptor =
                 getDescriptor().getMessageType(2);
+        internal_static_match_arena_v1_JoinQueueUpdate_fieldAccessorTable = new
+                com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+                internal_static_match_arena_v1_JoinQueueUpdate_descriptor,
+                new java.lang.String[]{"QueueTicketId", "MatchFound", "Update",});
+        internal_static_match_arena_v1_LeaveQueueRequest_descriptor =
+                getDescriptor().getMessageType(3);
         internal_static_match_arena_v1_LeaveQueueRequest_fieldAccessorTable = new
                 com.google.protobuf.GeneratedMessage.FieldAccessorTable(
                 internal_static_match_arena_v1_LeaveQueueRequest_descriptor,
                 new java.lang.String[]{"QueueTicketId",});
         internal_static_match_arena_v1_LeaveQueueResponse_descriptor =
-                getDescriptor().getMessageType(3);
+                getDescriptor().getMessageType(4);
         internal_static_match_arena_v1_LeaveQueueResponse_fieldAccessorTable = new
                 com.google.protobuf.GeneratedMessage.FieldAccessorTable(
                 internal_static_match_arena_v1_LeaveQueueResponse_descriptor,
                 new java.lang.String[]{"Success",});
         descriptor.resolveAllFeaturesImmutable();
     }
-
     private Matchmaking() {
     }
 

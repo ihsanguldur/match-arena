@@ -10,8 +10,16 @@ message JoinQueueRequest {
   int32 rating = 2;
 }
 
-message JoinQueueResponse {
-  string queue_ticket_id = 1;
+message MatchFound {
+  string session_id = 1;
+  repeated string player_ids = 2;
+}
+
+message JoinQueueUpdate {
+  oneof update {
+    string queue_ticket_id = 1;
+    MatchFound match_found = 2;
+  }
 }
 
 message LeaveQueueRequest {
@@ -23,6 +31,6 @@ message LeaveQueueResponse {
 }
 
 service MatchmakingService {
-  rpc JoinQueue(JoinQueueRequest) returns (JoinQueueResponse);
+  rpc JoinQueue(JoinQueueRequest) returns (stream JoinQueueUpdate);
   rpc LeaveQueue(LeaveQueueRequest) returns (LeaveQueueResponse);
 }

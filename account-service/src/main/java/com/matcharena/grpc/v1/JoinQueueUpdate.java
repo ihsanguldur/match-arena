@@ -6,22 +6,22 @@
 package com.matcharena.grpc.v1;
 
 /**
- * Protobuf type {@code match_arena.v1.JoinQueueResponse}
+ * Protobuf type {@code match_arena.v1.JoinQueueUpdate}
  */
 @com.google.protobuf.Generated
-public final class JoinQueueResponse extends
+public final class JoinQueueUpdate extends
         com.google.protobuf.GeneratedMessage implements
-        // @@protoc_insertion_point(message_implements:match_arena.v1.JoinQueueResponse)
-        JoinQueueResponseOrBuilder {
+        // @@protoc_insertion_point(message_implements:match_arena.v1.JoinQueueUpdate)
+        JoinQueueUpdateOrBuilder {
     public static final int QUEUE_TICKET_ID_FIELD_NUMBER = 1;
     public static final int MATCH_FOUND_FIELD_NUMBER = 2;
     private static final long serialVersionUID = 0L;
-    // @@protoc_insertion_point(class_scope:match_arena.v1.JoinQueueResponse)
-    private static final com.matcharena.grpc.v1.JoinQueueResponse DEFAULT_INSTANCE;
-    private static final com.google.protobuf.Parser<JoinQueueResponse>
-            PARSER = new com.google.protobuf.AbstractParser<JoinQueueResponse>() {
+    // @@protoc_insertion_point(class_scope:match_arena.v1.JoinQueueUpdate)
+    private static final com.matcharena.grpc.v1.JoinQueueUpdate DEFAULT_INSTANCE;
+    private static final com.google.protobuf.Parser<JoinQueueUpdate>
+            PARSER = new com.google.protobuf.AbstractParser<JoinQueueUpdate>() {
         @java.lang.Override
-        public JoinQueueResponse parsePartialFrom(
+        public JoinQueueUpdate parsePartialFrom(
                 com.google.protobuf.CodedInputStream input,
                 com.google.protobuf.ExtensionRegistryLite extensionRegistry)
                 throws com.google.protobuf.InvalidProtocolBufferException {
@@ -47,11 +47,11 @@ public final class JoinQueueResponse extends
                 /* minor= */ 35,
                 /* patch= */ 1,
                 /* suffix= */ "",
-                "JoinQueueResponse");
+                "JoinQueueUpdate");
     }
 
     static {
-        DEFAULT_INSTANCE = new com.matcharena.grpc.v1.JoinQueueResponse();
+        DEFAULT_INSTANCE = new com.matcharena.grpc.v1.JoinQueueUpdate();
     }
 
     private int updateCase_ = 0;
@@ -61,64 +61,64 @@ public final class JoinQueueResponse extends
 
     ;
 
-    // Use JoinQueueResponse.newBuilder() to construct.
-    private JoinQueueResponse(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+    // Use JoinQueueUpdate.newBuilder() to construct.
+    private JoinQueueUpdate(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
         super(builder);
     }
 
-    private JoinQueueResponse() {
+    private JoinQueueUpdate() {
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor
     getDescriptor() {
-        return com.matcharena.grpc.v1.Matchmaking.internal_static_match_arena_v1_JoinQueueResponse_descriptor;
+        return com.matcharena.grpc.v1.Matchmaking.internal_static_match_arena_v1_JoinQueueUpdate_descriptor;
     }
 
-    public static com.matcharena.grpc.v1.JoinQueueResponse parseFrom(
+    public static com.matcharena.grpc.v1.JoinQueueUpdate parseFrom(
             java.nio.ByteBuffer data)
             throws com.google.protobuf.InvalidProtocolBufferException {
         return PARSER.parseFrom(data);
     }
 
-    public static com.matcharena.grpc.v1.JoinQueueResponse parseFrom(
+    public static com.matcharena.grpc.v1.JoinQueueUpdate parseFrom(
             java.nio.ByteBuffer data,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
         return PARSER.parseFrom(data, extensionRegistry);
     }
 
-    public static com.matcharena.grpc.v1.JoinQueueResponse parseFrom(
+    public static com.matcharena.grpc.v1.JoinQueueUpdate parseFrom(
             com.google.protobuf.ByteString data)
             throws com.google.protobuf.InvalidProtocolBufferException {
         return PARSER.parseFrom(data);
     }
 
-    public static com.matcharena.grpc.v1.JoinQueueResponse parseFrom(
+    public static com.matcharena.grpc.v1.JoinQueueUpdate parseFrom(
             com.google.protobuf.ByteString data,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
         return PARSER.parseFrom(data, extensionRegistry);
     }
 
-    public static com.matcharena.grpc.v1.JoinQueueResponse parseFrom(byte[] data)
+    public static com.matcharena.grpc.v1.JoinQueueUpdate parseFrom(byte[] data)
             throws com.google.protobuf.InvalidProtocolBufferException {
         return PARSER.parseFrom(data);
     }
 
-    public static com.matcharena.grpc.v1.JoinQueueResponse parseFrom(
+    public static com.matcharena.grpc.v1.JoinQueueUpdate parseFrom(
             byte[] data,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
         return PARSER.parseFrom(data, extensionRegistry);
     }
 
-    public static com.matcharena.grpc.v1.JoinQueueResponse parseFrom(java.io.InputStream input)
+    public static com.matcharena.grpc.v1.JoinQueueUpdate parseFrom(java.io.InputStream input)
             throws java.io.IOException {
         return com.google.protobuf.GeneratedMessage
                 .parseWithIOException(PARSER, input);
     }
 
-    public static com.matcharena.grpc.v1.JoinQueueResponse parseFrom(
+    public static com.matcharena.grpc.v1.JoinQueueUpdate parseFrom(
             java.io.InputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws java.io.IOException {
@@ -126,13 +126,13 @@ public final class JoinQueueResponse extends
                 .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
-    public static com.matcharena.grpc.v1.JoinQueueResponse parseDelimitedFrom(java.io.InputStream input)
+    public static com.matcharena.grpc.v1.JoinQueueUpdate parseDelimitedFrom(java.io.InputStream input)
             throws java.io.IOException {
         return com.google.protobuf.GeneratedMessage
                 .parseDelimitedWithIOException(PARSER, input);
     }
 
-    public static com.matcharena.grpc.v1.JoinQueueResponse parseDelimitedFrom(
+    public static com.matcharena.grpc.v1.JoinQueueUpdate parseDelimitedFrom(
             java.io.InputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws java.io.IOException {
@@ -140,14 +140,14 @@ public final class JoinQueueResponse extends
                 .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
 
-    public static com.matcharena.grpc.v1.JoinQueueResponse parseFrom(
+    public static com.matcharena.grpc.v1.JoinQueueUpdate parseFrom(
             com.google.protobuf.CodedInputStream input)
             throws java.io.IOException {
         return com.google.protobuf.GeneratedMessage
                 .parseWithIOException(PARSER, input);
     }
 
-    public static com.matcharena.grpc.v1.JoinQueueResponse parseFrom(
+    public static com.matcharena.grpc.v1.JoinQueueUpdate parseFrom(
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws java.io.IOException {
@@ -159,29 +159,29 @@ public final class JoinQueueResponse extends
         return DEFAULT_INSTANCE.toBuilder();
     }
 
-    public static Builder newBuilder(com.matcharena.grpc.v1.JoinQueueResponse prototype) {
+    public static Builder newBuilder(com.matcharena.grpc.v1.JoinQueueUpdate prototype) {
         return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
 
-    public static com.matcharena.grpc.v1.JoinQueueResponse getDefaultInstance() {
+    public static com.matcharena.grpc.v1.JoinQueueUpdate getDefaultInstance() {
         return DEFAULT_INSTANCE;
     }
 
-    public static com.google.protobuf.Parser<JoinQueueResponse> parser() {
+    public static com.google.protobuf.Parser<JoinQueueUpdate> parser() {
         return PARSER;
     }
 
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
-        return com.matcharena.grpc.v1.Matchmaking.internal_static_match_arena_v1_JoinQueueResponse_descriptor;
+        return com.matcharena.grpc.v1.Matchmaking.internal_static_match_arena_v1_JoinQueueUpdate_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
     internalGetFieldAccessorTable() {
-        return com.matcharena.grpc.v1.Matchmaking.internal_static_match_arena_v1_JoinQueueResponse_fieldAccessorTable
+        return com.matcharena.grpc.v1.Matchmaking.internal_static_match_arena_v1_JoinQueueUpdate_fieldAccessorTable
                 .ensureFieldAccessorsInitialized(
-                        com.matcharena.grpc.v1.JoinQueueResponse.class, com.matcharena.grpc.v1.JoinQueueResponse.Builder.class);
+                        com.matcharena.grpc.v1.JoinQueueUpdate.class, com.matcharena.grpc.v1.JoinQueueUpdate.Builder.class);
     }
 
     public UpdateCase
@@ -327,10 +327,10 @@ public final class JoinQueueResponse extends
         if (obj == this) {
             return true;
         }
-        if (!(obj instanceof com.matcharena.grpc.v1.JoinQueueResponse)) {
+        if (!(obj instanceof com.matcharena.grpc.v1.JoinQueueUpdate)) {
             return super.equals(obj);
         }
-        com.matcharena.grpc.v1.JoinQueueResponse other = (com.matcharena.grpc.v1.JoinQueueResponse) obj;
+        com.matcharena.grpc.v1.JoinQueueUpdate other = (com.matcharena.grpc.v1.JoinQueueUpdate) obj;
 
         if (!getUpdateCase().equals(other.getUpdateCase())) return false;
         switch (updateCase_) {
@@ -392,12 +392,12 @@ public final class JoinQueueResponse extends
     }
 
     @java.lang.Override
-    public com.google.protobuf.Parser<JoinQueueResponse> getParserForType() {
+    public com.google.protobuf.Parser<JoinQueueUpdate> getParserForType() {
         return PARSER;
     }
 
     @java.lang.Override
-    public com.matcharena.grpc.v1.JoinQueueResponse getDefaultInstanceForType() {
+    public com.matcharena.grpc.v1.JoinQueueUpdate getDefaultInstanceForType() {
         return DEFAULT_INSTANCE;
     }
 
@@ -442,19 +442,19 @@ public final class JoinQueueResponse extends
     }
 
     /**
-     * Protobuf type {@code match_arena.v1.JoinQueueResponse}
+     * Protobuf type {@code match_arena.v1.JoinQueueUpdate}
      */
     public static final class Builder extends
             com.google.protobuf.GeneratedMessage.Builder<Builder> implements
-            // @@protoc_insertion_point(builder_implements:match_arena.v1.JoinQueueResponse)
-            com.matcharena.grpc.v1.JoinQueueResponseOrBuilder {
+            // @@protoc_insertion_point(builder_implements:match_arena.v1.JoinQueueUpdate)
+            com.matcharena.grpc.v1.JoinQueueUpdateOrBuilder {
         private int updateCase_ = 0;
         private java.lang.Object update_;
         private int bitField0_;
         private com.google.protobuf.SingleFieldBuilder<
                 com.matcharena.grpc.v1.MatchFound, com.matcharena.grpc.v1.MatchFound.Builder, com.matcharena.grpc.v1.MatchFoundOrBuilder> matchFoundBuilder_;
 
-        // Construct using com.matcharena.grpc.v1.JoinQueueResponse.newBuilder()
+        // Construct using com.matcharena.grpc.v1.JoinQueueUpdate.newBuilder()
         private Builder() {
 
         }
@@ -467,15 +467,15 @@ public final class JoinQueueResponse extends
 
         public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-            return com.matcharena.grpc.v1.Matchmaking.internal_static_match_arena_v1_JoinQueueResponse_descriptor;
+            return com.matcharena.grpc.v1.Matchmaking.internal_static_match_arena_v1_JoinQueueUpdate_descriptor;
         }
 
         @java.lang.Override
         protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
         internalGetFieldAccessorTable() {
-            return com.matcharena.grpc.v1.Matchmaking.internal_static_match_arena_v1_JoinQueueResponse_fieldAccessorTable
+            return com.matcharena.grpc.v1.Matchmaking.internal_static_match_arena_v1_JoinQueueUpdate_fieldAccessorTable
                     .ensureFieldAccessorsInitialized(
-                            com.matcharena.grpc.v1.JoinQueueResponse.class, com.matcharena.grpc.v1.JoinQueueResponse.Builder.class);
+                            com.matcharena.grpc.v1.JoinQueueUpdate.class, com.matcharena.grpc.v1.JoinQueueUpdate.Builder.class);
         }
 
         @java.lang.Override
@@ -493,17 +493,17 @@ public final class JoinQueueResponse extends
         @java.lang.Override
         public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-            return com.matcharena.grpc.v1.Matchmaking.internal_static_match_arena_v1_JoinQueueResponse_descriptor;
+            return com.matcharena.grpc.v1.Matchmaking.internal_static_match_arena_v1_JoinQueueUpdate_descriptor;
         }
 
         @java.lang.Override
-        public com.matcharena.grpc.v1.JoinQueueResponse getDefaultInstanceForType() {
-            return com.matcharena.grpc.v1.JoinQueueResponse.getDefaultInstance();
+        public com.matcharena.grpc.v1.JoinQueueUpdate getDefaultInstanceForType() {
+            return com.matcharena.grpc.v1.JoinQueueUpdate.getDefaultInstance();
         }
 
         @java.lang.Override
-        public com.matcharena.grpc.v1.JoinQueueResponse build() {
-            com.matcharena.grpc.v1.JoinQueueResponse result = buildPartial();
+        public com.matcharena.grpc.v1.JoinQueueUpdate build() {
+            com.matcharena.grpc.v1.JoinQueueUpdate result = buildPartial();
             if (!result.isInitialized()) {
                 throw newUninitializedMessageException(result);
             }
@@ -511,8 +511,8 @@ public final class JoinQueueResponse extends
         }
 
         @java.lang.Override
-        public com.matcharena.grpc.v1.JoinQueueResponse buildPartial() {
-            com.matcharena.grpc.v1.JoinQueueResponse result = new com.matcharena.grpc.v1.JoinQueueResponse(this);
+        public com.matcharena.grpc.v1.JoinQueueUpdate buildPartial() {
+            com.matcharena.grpc.v1.JoinQueueUpdate result = new com.matcharena.grpc.v1.JoinQueueUpdate(this);
             if (bitField0_ != 0) {
                 buildPartial0(result);
             }
@@ -521,11 +521,11 @@ public final class JoinQueueResponse extends
             return result;
         }
 
-        private void buildPartial0(com.matcharena.grpc.v1.JoinQueueResponse result) {
+        private void buildPartial0(com.matcharena.grpc.v1.JoinQueueUpdate result) {
             int from_bitField0_ = bitField0_;
         }
 
-        private void buildPartialOneofs(com.matcharena.grpc.v1.JoinQueueResponse result) {
+        private void buildPartialOneofs(com.matcharena.grpc.v1.JoinQueueUpdate result) {
             result.updateCase_ = updateCase_;
             result.update_ = this.update_;
             if (updateCase_ == 2 &&
@@ -536,16 +536,16 @@ public final class JoinQueueResponse extends
 
         @java.lang.Override
         public Builder mergeFrom(com.google.protobuf.Message other) {
-            if (other instanceof com.matcharena.grpc.v1.JoinQueueResponse) {
-                return mergeFrom((com.matcharena.grpc.v1.JoinQueueResponse) other);
+            if (other instanceof com.matcharena.grpc.v1.JoinQueueUpdate) {
+                return mergeFrom((com.matcharena.grpc.v1.JoinQueueUpdate) other);
             } else {
                 super.mergeFrom(other);
                 return this;
             }
         }
 
-        public Builder mergeFrom(com.matcharena.grpc.v1.JoinQueueResponse other) {
-            if (other == com.matcharena.grpc.v1.JoinQueueResponse.getDefaultInstance()) return this;
+        public Builder mergeFrom(com.matcharena.grpc.v1.JoinQueueUpdate other) {
+            if (other == com.matcharena.grpc.v1.JoinQueueUpdate.getDefaultInstance()) return this;
             switch (other.getUpdateCase()) {
                 case QUEUE_TICKET_ID: {
                     updateCase_ = 1;
@@ -882,7 +882,7 @@ public final class JoinQueueResponse extends
             return matchFoundBuilder_;
         }
 
-        // @@protoc_insertion_point(builder_scope:match_arena.v1.JoinQueueResponse)
+        // @@protoc_insertion_point(builder_scope:match_arena.v1.JoinQueueUpdate)
     }
 
 }

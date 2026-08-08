@@ -55,7 +55,6 @@ public final class ReportMatchResultResponse extends
 
     private boolean success_ = false;
     private byte memoizedIsInitialized = -1;
-
     // Use ReportMatchResultResponse.newBuilder() to construct.
     private ReportMatchResultResponse(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
         super(builder);

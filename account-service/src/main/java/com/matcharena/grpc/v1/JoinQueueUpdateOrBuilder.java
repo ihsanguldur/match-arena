@@ -6,8 +6,8 @@
 package com.matcharena.grpc.v1;
 
 @com.google.protobuf.Generated
-public interface JoinQueueResponseOrBuilder extends
-        // @@protoc_insertion_point(interface_extends:match_arena.v1.JoinQueueResponse)
+public interface JoinQueueUpdateOrBuilder extends
+        // @@protoc_insertion_point(interface_extends:match_arena.v1.JoinQueueUpdate)
         com.google.protobuf.MessageOrBuilder {
 
     /**
@@ -51,5 +51,5 @@ public interface JoinQueueResponseOrBuilder extends
      */
     com.matcharena.grpc.v1.MatchFoundOrBuilder getMatchFoundOrBuilder();
 
-    com.matcharena.grpc.v1.JoinQueueResponse.UpdateCase getUpdateCase();
+    com.matcharena.grpc.v1.JoinQueueUpdate.UpdateCase getUpdateCase();
 }
