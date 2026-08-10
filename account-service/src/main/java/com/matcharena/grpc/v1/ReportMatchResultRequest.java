@@ -56,6 +56,7 @@ public final class ReportMatchResultRequest extends
     @SuppressWarnings("serial")
     private volatile java.lang.Object sessionId_ = "";
     private byte memoizedIsInitialized = -1;
+
     // Use ReportMatchResultRequest.newBuilder() to construct.
     private ReportMatchResultRequest(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
         super(builder);

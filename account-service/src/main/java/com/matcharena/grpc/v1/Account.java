@@ -88,6 +88,7 @@ public final class Account extends com.google.protobuf.GeneratedFile {
                 new java.lang.String[]{"Success",});
         descriptor.resolveAllFeaturesImmutable();
     }
+
     private Account() {
     }
 

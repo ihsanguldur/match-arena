@@ -103,6 +103,7 @@ public final class Matchmaking extends com.google.protobuf.GeneratedFile {
                 new java.lang.String[]{"Success",});
         descriptor.resolveAllFeaturesImmutable();
     }
+
     private Matchmaking() {
     }
 

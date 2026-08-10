@@ -24,13 +24,12 @@ flowchart LR
 
     Redis[("Redis<br/>(Sorted Set queue)")]
     PG[("Postgres")]
-
-    Client -- "gRPC streaming<br/>PlayerAction" --> GS
-    GS -- "gRPC streaming<br/>SessionUpdate" --> Client
+    Client -- " gRPC streaming<br/>PlayerAction " --> GS
+    GS -- " gRPC streaming<br/>SessionUpdate " --> Client
     MM --> Redis
-    GS -- "gRPC unary<br/>match result" --> AS
+    GS -- " gRPC unary<br/>match result " --> AS
     AS --> PG
-    Client -- "REST<br/>(login, history, leaderboard)" --> AS
+    Client -- " REST<br/>(login, history, leaderboard) " --> AS
 ```
 
 ## Tech stack
