@@ -96,6 +96,7 @@ public final class GameSession extends com.google.protobuf.GeneratedFile {
         descriptor.resolveAllFeaturesImmutable();
         com.google.protobuf.TimestampProto.getDescriptor();
     }
+
     private GameSession() {
     }
 

@@ -4,6 +4,7 @@ import (
 	"context"
 	"time"
 
+	"github.com/ihsanguldur/match-arena/game-service/internal/anticheat"
 	matcharenav1 "github.com/ihsanguldur/match-arena/game-service/internal/gen/match_arena/v1"
 )
 
@@ -27,6 +28,8 @@ type Session struct {
 	playerIDs []string
 	players   map[string]*PlayerState
 	subs      map[string]chan *matcharenav1.SessionUpdate
+	flags     []*matcharenav1.AntiCheatFlag
+	engine    *anticheat.Engine
 
 	inbox chan sessionCmd
 	done  chan struct{}
@@ -60,6 +63,7 @@ func NewSession(id string, playerIDs []string) *Session {
 		playerIDs: playerIDs,
 		players:   players,
 		subs:      make(map[string]chan *matcharenav1.SessionUpdate),
+		engine:    anticheat.NewEngine(),
 		inbox:     make(chan sessionCmd),
 		done:      make(chan struct{}),
 	}
@@ -129,7 +133,12 @@ func (s *Session) handle(cmd sessionCmd) {
 			return
 		}
 
-		player.LastActionAt = time.Now()
+		now := time.Now()
+		if flags := s.engine.Evaluate(c.action, now); len(flags) > 0 {
+			s.flags = append(s.flags, flags...)
+		}
+
+		player.LastActionAt = now
 		player.Score++
 		s.broadcast(false)
 	case subscribeCmd:
@@ -170,6 +179,7 @@ func (s *Session) broadcast(ended bool) {
 	update := &matcharenav1.SessionUpdate{
 		SessionId:    s.ID,
 		Scores:       s.currentScores(),
+		Flags:        s.flags,
 		SessionEnded: ended,
 	}
 

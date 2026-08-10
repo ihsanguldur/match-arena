@@ -62,6 +62,7 @@ public final class AntiCheatFlag extends
     @SuppressWarnings("serial")
     private volatile java.lang.Object detail_ = "";
     private byte memoizedIsInitialized = -1;
+
     // Use AntiCheatFlag.newBuilder() to construct.
     private AntiCheatFlag(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
         super(builder);
