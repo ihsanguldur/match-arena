@@ -24,4 +24,51 @@ public interface ReportMatchResultRequestOrBuilder extends
      */
     com.google.protobuf.ByteString
     getSessionIdBytes();
+
+    /**
+     * <code>repeated .match_arena.v1.MatchParticipant participants = 2 [json_name = "participants"];</code>
+     */
+    java.util.List<com.matcharena.grpc.v1.MatchParticipant>
+    getParticipantsList();
+
+    /**
+     * <code>repeated .match_arena.v1.MatchParticipant participants = 2 [json_name = "participants"];</code>
+     */
+    com.matcharena.grpc.v1.MatchParticipant getParticipants(int index);
+
+    /**
+     * <code>repeated .match_arena.v1.MatchParticipant participants = 2 [json_name = "participants"];</code>
+     */
+    int getParticipantsCount();
+
+    /**
+     * <code>repeated .match_arena.v1.MatchParticipant participants = 2 [json_name = "participants"];</code>
+     */
+    java.util.List<? extends com.matcharena.grpc.v1.MatchParticipantOrBuilder>
+    getParticipantsOrBuilderList();
+
+    /**
+     * <code>repeated .match_arena.v1.MatchParticipant participants = 2 [json_name = "participants"];</code>
+     */
+    com.matcharena.grpc.v1.MatchParticipantOrBuilder getParticipantsOrBuilder(
+            int index);
+
+    /**
+     * <code>.google.protobuf.Timestamp played_at = 3 [json_name = "playedAt"];</code>
+     *
+     * @return Whether the playedAt field is set.
+     */
+    boolean hasPlayedAt();
+
+    /**
+     * <code>.google.protobuf.Timestamp played_at = 3 [json_name = "playedAt"];</code>
+     *
+     * @return The playedAt.
+     */
+    com.google.protobuf.Timestamp getPlayedAt();
+
+    /**
+     * <code>.google.protobuf.Timestamp played_at = 3 [json_name = "playedAt"];</code>
+     */
+    com.google.protobuf.TimestampOrBuilder getPlayedAtOrBuilder();
 }

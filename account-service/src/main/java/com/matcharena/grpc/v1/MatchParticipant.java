@@ -6,21 +6,23 @@
 package com.matcharena.grpc.v1;
 
 /**
- * Protobuf type {@code match_arena.v1.PingRequest}
+ * Protobuf type {@code match_arena.v1.MatchParticipant}
  */
 @com.google.protobuf.Generated
-public final class PingRequest extends
+public final class MatchParticipant extends
         com.google.protobuf.GeneratedMessage implements
-        // @@protoc_insertion_point(message_implements:match_arena.v1.PingRequest)
-        PingRequestOrBuilder {
-    public static final int MESSAGE_FIELD_NUMBER = 1;
+        // @@protoc_insertion_point(message_implements:match_arena.v1.MatchParticipant)
+        MatchParticipantOrBuilder {
+    public static final int PLAYER_ID_FIELD_NUMBER = 1;
+    public static final int SCORE_FIELD_NUMBER = 2;
+    public static final int FLAG_COUNT_FIELD_NUMBER = 3;
     private static final long serialVersionUID = 0L;
-    // @@protoc_insertion_point(class_scope:match_arena.v1.PingRequest)
-    private static final com.matcharena.grpc.v1.PingRequest DEFAULT_INSTANCE;
-    private static final com.google.protobuf.Parser<PingRequest>
-            PARSER = new com.google.protobuf.AbstractParser<PingRequest>() {
+    // @@protoc_insertion_point(class_scope:match_arena.v1.MatchParticipant)
+    private static final com.matcharena.grpc.v1.MatchParticipant DEFAULT_INSTANCE;
+    private static final com.google.protobuf.Parser<MatchParticipant>
+            PARSER = new com.google.protobuf.AbstractParser<MatchParticipant>() {
         @java.lang.Override
-        public PingRequest parsePartialFrom(
+        public MatchParticipant parsePartialFrom(
                 com.google.protobuf.CodedInputStream input,
                 com.google.protobuf.ExtensionRegistryLite extensionRegistry)
                 throws com.google.protobuf.InvalidProtocolBufferException {
@@ -46,75 +48,77 @@ public final class PingRequest extends
                 /* minor= */ 35,
                 /* patch= */ 1,
                 /* suffix= */ "",
-                "PingRequest");
+                "MatchParticipant");
     }
 
     static {
-        DEFAULT_INSTANCE = new com.matcharena.grpc.v1.PingRequest();
+        DEFAULT_INSTANCE = new com.matcharena.grpc.v1.MatchParticipant();
     }
 
     @SuppressWarnings("serial")
-    private volatile java.lang.Object message_ = "";
+    private volatile java.lang.Object playerId_ = "";
+    private int score_ = 0;
+    private int flagCount_ = 0;
     private byte memoizedIsInitialized = -1;
-    // Use PingRequest.newBuilder() to construct.
-    private PingRequest(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+    // Use MatchParticipant.newBuilder() to construct.
+    private MatchParticipant(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
         super(builder);
     }
 
-    private PingRequest() {
-        message_ = "";
+    private MatchParticipant() {
+        playerId_ = "";
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor
     getDescriptor() {
-        return com.matcharena.grpc.v1.Account.internal_static_match_arena_v1_PingRequest_descriptor;
+        return com.matcharena.grpc.v1.Account.internal_static_match_arena_v1_MatchParticipant_descriptor;
     }
 
-    public static com.matcharena.grpc.v1.PingRequest parseFrom(
+    public static com.matcharena.grpc.v1.MatchParticipant parseFrom(
             java.nio.ByteBuffer data)
             throws com.google.protobuf.InvalidProtocolBufferException {
         return PARSER.parseFrom(data);
     }
 
-    public static com.matcharena.grpc.v1.PingRequest parseFrom(
+    public static com.matcharena.grpc.v1.MatchParticipant parseFrom(
             java.nio.ByteBuffer data,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
         return PARSER.parseFrom(data, extensionRegistry);
     }
 
-    public static com.matcharena.grpc.v1.PingRequest parseFrom(
+    public static com.matcharena.grpc.v1.MatchParticipant parseFrom(
             com.google.protobuf.ByteString data)
             throws com.google.protobuf.InvalidProtocolBufferException {
         return PARSER.parseFrom(data);
     }
 
-    public static com.matcharena.grpc.v1.PingRequest parseFrom(
+    public static com.matcharena.grpc.v1.MatchParticipant parseFrom(
             com.google.protobuf.ByteString data,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
         return PARSER.parseFrom(data, extensionRegistry);
     }
 
-    public static com.matcharena.grpc.v1.PingRequest parseFrom(byte[] data)
+    public static com.matcharena.grpc.v1.MatchParticipant parseFrom(byte[] data)
             throws com.google.protobuf.InvalidProtocolBufferException {
         return PARSER.parseFrom(data);
     }
 
-    public static com.matcharena.grpc.v1.PingRequest parseFrom(
+    public static com.matcharena.grpc.v1.MatchParticipant parseFrom(
             byte[] data,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
         return PARSER.parseFrom(data, extensionRegistry);
     }
 
-    public static com.matcharena.grpc.v1.PingRequest parseFrom(java.io.InputStream input)
+    public static com.matcharena.grpc.v1.MatchParticipant parseFrom(java.io.InputStream input)
             throws java.io.IOException {
         return com.google.protobuf.GeneratedMessage
                 .parseWithIOException(PARSER, input);
     }
 
-    public static com.matcharena.grpc.v1.PingRequest parseFrom(
+    public static com.matcharena.grpc.v1.MatchParticipant parseFrom(
             java.io.InputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws java.io.IOException {
@@ -122,13 +126,13 @@ public final class PingRequest extends
                 .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
-    public static com.matcharena.grpc.v1.PingRequest parseDelimitedFrom(java.io.InputStream input)
+    public static com.matcharena.grpc.v1.MatchParticipant parseDelimitedFrom(java.io.InputStream input)
             throws java.io.IOException {
         return com.google.protobuf.GeneratedMessage
                 .parseDelimitedWithIOException(PARSER, input);
     }
 
-    public static com.matcharena.grpc.v1.PingRequest parseDelimitedFrom(
+    public static com.matcharena.grpc.v1.MatchParticipant parseDelimitedFrom(
             java.io.InputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws java.io.IOException {
@@ -136,14 +140,14 @@ public final class PingRequest extends
                 .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
 
-    public static com.matcharena.grpc.v1.PingRequest parseFrom(
+    public static com.matcharena.grpc.v1.MatchParticipant parseFrom(
             com.google.protobuf.CodedInputStream input)
             throws java.io.IOException {
         return com.google.protobuf.GeneratedMessage
                 .parseWithIOException(PARSER, input);
     }
 
-    public static com.matcharena.grpc.v1.PingRequest parseFrom(
+    public static com.matcharena.grpc.v1.MatchParticipant parseFrom(
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws java.io.IOException {
@@ -155,68 +159,88 @@ public final class PingRequest extends
         return DEFAULT_INSTANCE.toBuilder();
     }
 
-    public static Builder newBuilder(com.matcharena.grpc.v1.PingRequest prototype) {
+    public static Builder newBuilder(com.matcharena.grpc.v1.MatchParticipant prototype) {
         return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
 
-    public static com.matcharena.grpc.v1.PingRequest getDefaultInstance() {
+    public static com.matcharena.grpc.v1.MatchParticipant getDefaultInstance() {
         return DEFAULT_INSTANCE;
     }
 
-    public static com.google.protobuf.Parser<PingRequest> parser() {
+    public static com.google.protobuf.Parser<MatchParticipant> parser() {
         return PARSER;
     }
 
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
-        return com.matcharena.grpc.v1.Account.internal_static_match_arena_v1_PingRequest_descriptor;
+        return com.matcharena.grpc.v1.Account.internal_static_match_arena_v1_MatchParticipant_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
     internalGetFieldAccessorTable() {
-        return com.matcharena.grpc.v1.Account.internal_static_match_arena_v1_PingRequest_fieldAccessorTable
+        return com.matcharena.grpc.v1.Account.internal_static_match_arena_v1_MatchParticipant_fieldAccessorTable
                 .ensureFieldAccessorsInitialized(
-                        com.matcharena.grpc.v1.PingRequest.class, com.matcharena.grpc.v1.PingRequest.Builder.class);
+                        com.matcharena.grpc.v1.MatchParticipant.class, com.matcharena.grpc.v1.MatchParticipant.Builder.class);
     }
 
     /**
-     * <code>string message = 1 [json_name = "message"];</code>
+     * <code>string player_id = 1 [json_name = "playerId"];</code>
      *
-     * @return The message.
+     * @return The playerId.
      */
     @java.lang.Override
-    public java.lang.String getMessage() {
-        java.lang.Object ref = message_;
+    public java.lang.String getPlayerId() {
+        java.lang.Object ref = playerId_;
         if (ref instanceof java.lang.String) {
             return (java.lang.String) ref;
         } else {
             com.google.protobuf.ByteString bs =
                     (com.google.protobuf.ByteString) ref;
             java.lang.String s = bs.toStringUtf8();
-            message_ = s;
+            playerId_ = s;
             return s;
         }
     }
 
     /**
-     * <code>string message = 1 [json_name = "message"];</code>
+     * <code>string player_id = 1 [json_name = "playerId"];</code>
      *
-     * @return The bytes for message.
+     * @return The bytes for playerId.
      */
     @java.lang.Override
     public com.google.protobuf.ByteString
-    getMessageBytes() {
-        java.lang.Object ref = message_;
+    getPlayerIdBytes() {
+        java.lang.Object ref = playerId_;
         if (ref instanceof java.lang.String) {
             com.google.protobuf.ByteString b =
                     com.google.protobuf.ByteString.copyFromUtf8(
                             (java.lang.String) ref);
-            message_ = b;
+            playerId_ = b;
             return b;
         } else {
             return (com.google.protobuf.ByteString) ref;
         }
+    }
+
+    /**
+     * <code>int32 score = 2 [json_name = "score"];</code>
+     *
+     * @return The score.
+     */
+    @java.lang.Override
+    public int getScore() {
+        return score_;
+    }
+
+    /**
+     * <code>int32 flag_count = 3 [json_name = "flagCount"];</code>
+     *
+     * @return The flagCount.
+     */
+    @java.lang.Override
+    public int getFlagCount() {
+        return flagCount_;
     }
 
     @java.lang.Override
@@ -232,16 +256,30 @@ public final class PingRequest extends
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
             throws java.io.IOException {
-        if (!com.google.protobuf.GeneratedMessage.isStringEmpty(message_)) {
-            com.google.protobuf.GeneratedMessage.writeString(output, 1, message_);
+        if (!com.google.protobuf.GeneratedMessage.isStringEmpty(playerId_)) {
+            com.google.protobuf.GeneratedMessage.writeString(output, 1, playerId_);
+        }
+        if (score_ != 0) {
+            output.writeInt32(2, score_);
+        }
+        if (flagCount_ != 0) {
+            output.writeInt32(3, flagCount_);
         }
         getUnknownFields().writeTo(output);
     }
 
     private int computeSerializedSize_0() {
         int size = 0;
-        if (!com.google.protobuf.GeneratedMessage.isStringEmpty(message_)) {
-            size += com.google.protobuf.GeneratedMessage.computeStringSize(1, message_);
+        if (!com.google.protobuf.GeneratedMessage.isStringEmpty(playerId_)) {
+            size += com.google.protobuf.GeneratedMessage.computeStringSize(1, playerId_);
+        }
+        if (score_ != 0) {
+            size += com.google.protobuf.CodedOutputStream
+                    .computeInt32Size(2, score_);
+        }
+        if (flagCount_ != 0) {
+            size += com.google.protobuf.CodedOutputStream
+                    .computeInt32Size(3, flagCount_);
         }
         return size;
     }
@@ -263,13 +301,17 @@ public final class PingRequest extends
         if (obj == this) {
             return true;
         }
-        if (!(obj instanceof com.matcharena.grpc.v1.PingRequest)) {
+        if (!(obj instanceof com.matcharena.grpc.v1.MatchParticipant)) {
             return super.equals(obj);
         }
-        com.matcharena.grpc.v1.PingRequest other = (com.matcharena.grpc.v1.PingRequest) obj;
+        com.matcharena.grpc.v1.MatchParticipant other = (com.matcharena.grpc.v1.MatchParticipant) obj;
 
-        if (!getMessage()
-                .equals(other.getMessage())) return false;
+        if (!getPlayerId()
+                .equals(other.getPlayerId())) return false;
+        if (getScore()
+                != other.getScore()) return false;
+        if (getFlagCount()
+                != other.getFlagCount()) return false;
         if (!getUnknownFields().equals(other.getUnknownFields())) return false;
         return true;
     }
@@ -281,8 +323,12 @@ public final class PingRequest extends
         }
         int hash = 41;
         hash = (19 * hash) + getDescriptor().hashCode();
-        hash = (37 * hash) + MESSAGE_FIELD_NUMBER;
-        hash = (53 * hash) + getMessage().hashCode();
+        hash = (37 * hash) + PLAYER_ID_FIELD_NUMBER;
+        hash = (53 * hash) + getPlayerId().hashCode();
+        hash = (37 * hash) + SCORE_FIELD_NUMBER;
+        hash = (53 * hash) + getScore();
+        hash = (37 * hash) + FLAG_COUNT_FIELD_NUMBER;
+        hash = (53 * hash) + getFlagCount();
         hash = (29 * hash) + getUnknownFields().hashCode();
         memoizedHashCode = hash;
         return hash;
@@ -307,26 +353,28 @@ public final class PingRequest extends
     }
 
     @java.lang.Override
-    public com.google.protobuf.Parser<PingRequest> getParserForType() {
+    public com.google.protobuf.Parser<MatchParticipant> getParserForType() {
         return PARSER;
     }
 
     @java.lang.Override
-    public com.matcharena.grpc.v1.PingRequest getDefaultInstanceForType() {
+    public com.matcharena.grpc.v1.MatchParticipant getDefaultInstanceForType() {
         return DEFAULT_INSTANCE;
     }
 
     /**
-     * Protobuf type {@code match_arena.v1.PingRequest}
+     * Protobuf type {@code match_arena.v1.MatchParticipant}
      */
     public static final class Builder extends
             com.google.protobuf.GeneratedMessage.Builder<Builder> implements
-            // @@protoc_insertion_point(builder_implements:match_arena.v1.PingRequest)
-            com.matcharena.grpc.v1.PingRequestOrBuilder {
+            // @@protoc_insertion_point(builder_implements:match_arena.v1.MatchParticipant)
+            com.matcharena.grpc.v1.MatchParticipantOrBuilder {
         private int bitField0_;
-        private java.lang.Object message_ = "";
+        private java.lang.Object playerId_ = "";
+        private int score_;
+        private int flagCount_;
 
-        // Construct using com.matcharena.grpc.v1.PingRequest.newBuilder()
+        // Construct using com.matcharena.grpc.v1.MatchParticipant.newBuilder()
         private Builder() {
 
         }
@@ -339,39 +387,41 @@ public final class PingRequest extends
 
         public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-            return com.matcharena.grpc.v1.Account.internal_static_match_arena_v1_PingRequest_descriptor;
+            return com.matcharena.grpc.v1.Account.internal_static_match_arena_v1_MatchParticipant_descriptor;
         }
 
         @java.lang.Override
         protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
         internalGetFieldAccessorTable() {
-            return com.matcharena.grpc.v1.Account.internal_static_match_arena_v1_PingRequest_fieldAccessorTable
+            return com.matcharena.grpc.v1.Account.internal_static_match_arena_v1_MatchParticipant_fieldAccessorTable
                     .ensureFieldAccessorsInitialized(
-                            com.matcharena.grpc.v1.PingRequest.class, com.matcharena.grpc.v1.PingRequest.Builder.class);
+                            com.matcharena.grpc.v1.MatchParticipant.class, com.matcharena.grpc.v1.MatchParticipant.Builder.class);
         }
 
         @java.lang.Override
         public Builder clear() {
             super.clear();
             bitField0_ = 0;
-            message_ = "";
+            playerId_ = "";
+            score_ = 0;
+            flagCount_ = 0;
             return this;
         }
 
         @java.lang.Override
         public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-            return com.matcharena.grpc.v1.Account.internal_static_match_arena_v1_PingRequest_descriptor;
+            return com.matcharena.grpc.v1.Account.internal_static_match_arena_v1_MatchParticipant_descriptor;
         }
 
         @java.lang.Override
-        public com.matcharena.grpc.v1.PingRequest getDefaultInstanceForType() {
-            return com.matcharena.grpc.v1.PingRequest.getDefaultInstance();
+        public com.matcharena.grpc.v1.MatchParticipant getDefaultInstanceForType() {
+            return com.matcharena.grpc.v1.MatchParticipant.getDefaultInstance();
         }
 
         @java.lang.Override
-        public com.matcharena.grpc.v1.PingRequest build() {
-            com.matcharena.grpc.v1.PingRequest result = buildPartial();
+        public com.matcharena.grpc.v1.MatchParticipant build() {
+            com.matcharena.grpc.v1.MatchParticipant result = buildPartial();
             if (!result.isInitialized()) {
                 throw newUninitializedMessageException(result);
             }
@@ -379,8 +429,8 @@ public final class PingRequest extends
         }
 
         @java.lang.Override
-        public com.matcharena.grpc.v1.PingRequest buildPartial() {
-            com.matcharena.grpc.v1.PingRequest result = new com.matcharena.grpc.v1.PingRequest(this);
+        public com.matcharena.grpc.v1.MatchParticipant buildPartial() {
+            com.matcharena.grpc.v1.MatchParticipant result = new com.matcharena.grpc.v1.MatchParticipant(this);
             if (bitField0_ != 0) {
                 buildPartial0(result);
             }
@@ -388,29 +438,41 @@ public final class PingRequest extends
             return result;
         }
 
-        private void buildPartial0(com.matcharena.grpc.v1.PingRequest result) {
+        private void buildPartial0(com.matcharena.grpc.v1.MatchParticipant result) {
             int from_bitField0_ = bitField0_;
             if (((from_bitField0_ & 0x00000001) != 0)) {
-                result.message_ = message_;
+                result.playerId_ = playerId_;
+            }
+            if (((from_bitField0_ & 0x00000002) != 0)) {
+                result.score_ = score_;
+            }
+            if (((from_bitField0_ & 0x00000004) != 0)) {
+                result.flagCount_ = flagCount_;
             }
         }
 
         @java.lang.Override
         public Builder mergeFrom(com.google.protobuf.Message other) {
-            if (other instanceof com.matcharena.grpc.v1.PingRequest) {
-                return mergeFrom((com.matcharena.grpc.v1.PingRequest) other);
+            if (other instanceof com.matcharena.grpc.v1.MatchParticipant) {
+                return mergeFrom((com.matcharena.grpc.v1.MatchParticipant) other);
             } else {
                 super.mergeFrom(other);
                 return this;
             }
         }
 
-        public Builder mergeFrom(com.matcharena.grpc.v1.PingRequest other) {
-            if (other == com.matcharena.grpc.v1.PingRequest.getDefaultInstance()) return this;
-            if (!other.getMessage().isEmpty()) {
-                message_ = other.message_;
+        public Builder mergeFrom(com.matcharena.grpc.v1.MatchParticipant other) {
+            if (other == com.matcharena.grpc.v1.MatchParticipant.getDefaultInstance()) return this;
+            if (!other.getPlayerId().isEmpty()) {
+                playerId_ = other.playerId_;
                 bitField0_ |= 0x00000001;
                 onChanged();
+            }
+            if (other.getScore() != 0) {
+                setScore(other.getScore());
+            }
+            if (other.getFlagCount() != 0) {
+                setFlagCount(other.getFlagCount());
             }
             this.mergeUnknownFields(other.getUnknownFields());
             onChanged();
@@ -439,10 +501,20 @@ public final class PingRequest extends
                             done = true;
                             break;
                         case 10: {
-                            message_ = input.readStringRequireUtf8();
+                            playerId_ = input.readStringRequireUtf8();
                             bitField0_ |= 0x00000001;
                             break;
                         } // case 10
+                        case 16: {
+                            score_ = input.readInt32();
+                            bitField0_ |= 0x00000002;
+                            break;
+                        } // case 16
+                        case 24: {
+                            flagCount_ = input.readInt32();
+                            bitField0_ |= 0x00000004;
+                            break;
+                        } // case 24
                         default: {
                             if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                                 done = true; // was an endgroup tag
@@ -460,17 +532,17 @@ public final class PingRequest extends
         }
 
         /**
-         * <code>string message = 1 [json_name = "message"];</code>
+         * <code>string player_id = 1 [json_name = "playerId"];</code>
          *
-         * @return The message.
+         * @return The playerId.
          */
-        public java.lang.String getMessage() {
-            java.lang.Object ref = message_;
+        public java.lang.String getPlayerId() {
+            java.lang.Object ref = playerId_;
             if (!(ref instanceof java.lang.String)) {
                 com.google.protobuf.ByteString bs =
                         (com.google.protobuf.ByteString) ref;
                 java.lang.String s = bs.toStringUtf8();
-                message_ = s;
+                playerId_ = s;
                 return s;
             } else {
                 return (java.lang.String) ref;
@@ -478,35 +550,35 @@ public final class PingRequest extends
         }
 
         /**
-         * <code>string message = 1 [json_name = "message"];</code>
+         * <code>string player_id = 1 [json_name = "playerId"];</code>
          *
-         * @param value The message to set.
+         * @param value The playerId to set.
          * @return This builder for chaining.
          */
-        public Builder setMessage(
+        public Builder setPlayerId(
                 java.lang.String value) {
             if (value == null) {
                 throw new NullPointerException();
             }
-            message_ = value;
+            playerId_ = value;
             bitField0_ |= 0x00000001;
             onChanged();
             return this;
         }
 
         /**
-         * <code>string message = 1 [json_name = "message"];</code>
+         * <code>string player_id = 1 [json_name = "playerId"];</code>
          *
-         * @return The bytes for message.
+         * @return The bytes for playerId.
          */
         public com.google.protobuf.ByteString
-        getMessageBytes() {
-            java.lang.Object ref = message_;
+        getPlayerIdBytes() {
+            java.lang.Object ref = playerId_;
             if (ref instanceof String) {
                 com.google.protobuf.ByteString b =
                         com.google.protobuf.ByteString.copyFromUtf8(
                                 (java.lang.String) ref);
-                message_ = b;
+                playerId_ = b;
                 return b;
             } else {
                 return (com.google.protobuf.ByteString) ref;
@@ -514,36 +586,108 @@ public final class PingRequest extends
         }
 
         /**
-         * <code>string message = 1 [json_name = "message"];</code>
+         * <code>string player_id = 1 [json_name = "playerId"];</code>
          *
-         * @param value The bytes for message to set.
+         * @param value The bytes for playerId to set.
          * @return This builder for chaining.
          */
-        public Builder setMessageBytes(
+        public Builder setPlayerIdBytes(
                 com.google.protobuf.ByteString value) {
             if (value == null) {
                 throw new NullPointerException();
             }
             checkByteStringIsUtf8(value);
-            message_ = value;
+            playerId_ = value;
             bitField0_ |= 0x00000001;
             onChanged();
             return this;
         }
 
         /**
-         * <code>string message = 1 [json_name = "message"];</code>
+         * <code>string player_id = 1 [json_name = "playerId"];</code>
          *
          * @return This builder for chaining.
          */
-        public Builder clearMessage() {
-            message_ = getDefaultInstance().getMessage();
+        public Builder clearPlayerId() {
+            playerId_ = getDefaultInstance().getPlayerId();
             bitField0_ = (bitField0_ & ~0x00000001);
             onChanged();
             return this;
         }
 
-        // @@protoc_insertion_point(builder_scope:match_arena.v1.PingRequest)
+        /**
+         * <code>int32 score = 2 [json_name = "score"];</code>
+         *
+         * @return The score.
+         */
+        @java.lang.Override
+        public int getScore() {
+            return score_;
+        }
+
+        /**
+         * <code>int32 score = 2 [json_name = "score"];</code>
+         *
+         * @param value The score to set.
+         * @return This builder for chaining.
+         */
+        public Builder setScore(int value) {
+
+            score_ = value;
+            bitField0_ |= 0x00000002;
+            onChanged();
+            return this;
+        }
+
+        /**
+         * <code>int32 score = 2 [json_name = "score"];</code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearScore() {
+            bitField0_ = (bitField0_ & ~0x00000002);
+            score_ = 0;
+            onChanged();
+            return this;
+        }
+
+        /**
+         * <code>int32 flag_count = 3 [json_name = "flagCount"];</code>
+         *
+         * @return The flagCount.
+         */
+        @java.lang.Override
+        public int getFlagCount() {
+            return flagCount_;
+        }
+
+        /**
+         * <code>int32 flag_count = 3 [json_name = "flagCount"];</code>
+         *
+         * @param value The flagCount to set.
+         * @return This builder for chaining.
+         */
+        public Builder setFlagCount(int value) {
+
+            flagCount_ = value;
+            bitField0_ |= 0x00000004;
+            onChanged();
+            return this;
+        }
+
+        /**
+         * <code>int32 flag_count = 3 [json_name = "flagCount"];</code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearFlagCount() {
+            bitField0_ = (bitField0_ & ~0x00000004);
+            flagCount_ = 0;
+            onChanged();
+            return this;
+        }
+
+        // @@protoc_insertion_point(builder_scope:match_arena.v1.MatchParticipant)
     }
 
 }

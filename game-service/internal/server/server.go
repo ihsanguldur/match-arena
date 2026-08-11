@@ -4,6 +4,7 @@ import (
 	"context"
 	"sync"
 
+	"github.com/ihsanguldur/match-arena/game-service/internal/accountclient"
 	"github.com/ihsanguldur/match-arena/game-service/internal/auth"
 	"github.com/ihsanguldur/match-arena/game-service/internal/gamesession"
 	matcharenav1 "github.com/ihsanguldur/match-arena/game-service/internal/gen/match_arena/v1"
@@ -14,13 +15,13 @@ import (
 	"google.golang.org/grpc/reflection"
 )
 
-func New(ctx context.Context, redisClient *redis.Client) (*grpc.Server, *sync.WaitGroup) {
+func New(ctx context.Context, redisClient *redis.Client, accountClient *accountclient.Client) (*grpc.Server, *sync.WaitGroup) {
 	queue := matchmaking.NewQueue(redisClient)
 	notifier := matchmaking.NewNotifier()
 	matchmakingServer := matchmaking.NewServer(queue, notifier)
 
 	matcher := matchmaking.NewMatcher(queue)
-	sessionManager := session.NewManager()
+	sessionManager := session.NewManager(accountClient)
 
 	var wg sync.WaitGroup
 	wg.Add(1)

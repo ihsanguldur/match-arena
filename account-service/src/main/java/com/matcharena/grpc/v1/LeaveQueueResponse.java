@@ -55,7 +55,6 @@ public final class LeaveQueueResponse extends
 
     private boolean success_ = false;
     private byte memoizedIsInitialized = -1;
-
     // Use LeaveQueueResponse.newBuilder() to construct.
     private LeaveQueueResponse(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
         super(builder);

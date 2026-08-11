@@ -7,12 +7,11 @@ import (
 	"os/signal"
 	"syscall"
 
+	"github.com/ihsanguldur/match-arena/game-service/internal/accountclient"
 	"github.com/ihsanguldur/match-arena/game-service/internal/redis"
 	"github.com/ihsanguldur/match-arena/game-service/internal/server"
 )
 
-// for p1 d0c12b2c-4d7b-43df-8ab1-60e74aded683
-// for p2 fa73c833-7d6f-4431-80e3-f32b69f35baf
 func main() {
 	ctx, stop := signal.NotifyContext(context.Background(), syscall.SIGINT, syscall.SIGTERM)
 	defer stop()
@@ -24,7 +23,12 @@ func main() {
 
 	redisClient := redis.NewClient()
 
-	srv, wg := server.New(ctx, redisClient)
+	accountClient, err := accountclient.NewClient()
+	if err != nil {
+		log.Fatalf("failed to connect account-service: %v", err)
+	}
+
+	srv, wg := server.New(ctx, redisClient, accountClient)
 
 	go func() {
 		log.Println("game-service gRPC listening on :9091")
@@ -42,6 +46,10 @@ func main() {
 
 	if err := redisClient.Close(); err != nil {
 		log.Fatalf("failed to close redis client: %v", err)
+	}
+
+	if err := accountClient.Close(); err != nil {
+		log.Fatalf("failed to close account-service client: %v", err)
 	}
 
 	log.Println("gRPC server stopped")

@@ -60,4 +60,8 @@ public class User {
     void onCreate() {
         createdAt = Instant.now();
     }
+
+    public void applyRatingDelta(int delta) {
+        this.rating += delta;
+    }
 }
