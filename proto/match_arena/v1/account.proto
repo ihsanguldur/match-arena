@@ -1,6 +1,8 @@
 syntax = "proto3";
 package match_arena.v1;
 
+import "google/protobuf/timestamp.proto";
+
 option go_package = "github.com/ihsanguldur/match-arena/game-service/internal/gen/match_arena/v1;matcharenav1";
 option java_package = "com.matcharena.grpc.v1";
 option java_multiple_files = true;
@@ -13,8 +15,16 @@ message PingResponse {
   string message = 1;
 }
 
+message MatchParticipant {
+  string player_id = 1;
+  int32 score = 2;
+  int32 flag_count = 3;
+}
+
 message ReportMatchResultRequest {
   string session_id = 1;
+  repeated MatchParticipant participants = 2;
+  google.protobuf.Timestamp played_at = 3;
 }
 
 message ReportMatchResultResponse {

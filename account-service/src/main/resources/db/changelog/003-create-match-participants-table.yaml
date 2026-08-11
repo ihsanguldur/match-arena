@@ -1,0 +1,68 @@
+databaseChangeLog:
+  - changeSet:
+      id: 003-create-match-participants-table
+      author: Ihsan Guldur
+      changes:
+        - createTable:
+            tableName: match_participants
+            columns:
+              - column:
+                  name: id
+                  type: BIGSERIAL
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: match_id
+                  type: VARCHAR(36)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: player_id
+                  type: VARCHAR(50)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: score
+                  type: INT
+                  constraints:
+                    nullable: false
+              - column:
+                  name: result
+                  type: VARCHAR(10)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: rating_before
+                  type: INT
+                  constraints:
+                    nullable: false
+              - column:
+                  name: rating_after
+                  type: INT
+                  constraints:
+                    nullable: false
+              - column:
+                  name: flag_count
+                  type: INT
+                  defaultValueNumeric: 0
+                  constraints:
+                    nullable: false
+        - addForeignKeyConstraint:
+            baseTableName: match_participants
+            baseColumnNames: match_id
+            constraintName: fk_match_participants_match
+            referencedTableName: matches
+            referencedColumnNames: session_id
+        - addForeignKeyConstraint:
+            baseTableName: match_participants
+            baseColumnNames: player_id
+            constraintName: fk_match_participants_player
+            referencedTableName: users
+            referencedColumnNames: username
+        - createIndex:
+            indexName: idx_match_participants_player_id
+            tableName: match_participants
+            columns:
+              - column:
+                  name: player_id

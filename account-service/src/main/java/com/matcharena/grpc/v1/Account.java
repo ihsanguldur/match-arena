@@ -18,6 +18,11 @@ public final class Account extends com.google.protobuf.GeneratedFile {
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
             internal_static_match_arena_v1_PingResponse_fieldAccessorTable;
     static final com.google.protobuf.Descriptors.Descriptor
+            internal_static_match_arena_v1_MatchParticipant_descriptor;
+    static final
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+            internal_static_match_arena_v1_MatchParticipant_fieldAccessorTable;
+    static final com.google.protobuf.Descriptors.Descriptor
             internal_static_match_arena_v1_ReportMatchResultRequest_descriptor;
     static final
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
@@ -43,24 +48,31 @@ public final class Account extends com.google.protobuf.GeneratedFile {
     static {
         java.lang.String[] descriptorData = {
                 "\n\034match_arena/v1/account.proto\022\016match_ar" +
-                        "ena.v1\"\'\n\013PingRequest\022\030\n\007message\030\001 \001(\tR\007" +
-                        "message\"(\n\014PingResponse\022\030\n\007message\030\001 \001(\t" +
-                        "R\007message\"9\n\030ReportMatchResultRequest\022\035\n" +
-                        "\nsession_id\030\001 \001(\tR\tsessionId\"5\n\031ReportMa" +
-                        "tchResultResponse\022\030\n\007success\030\001 \001(\010R\007succ" +
-                        "ess2\303\001\n\024AccountLookupService\022A\n\004Ping\022\033.m" +
-                        "atch_arena.v1.PingRequest\032\034.match_arena." +
-                        "v1.PingResponse\022h\n\021ReportMatchResult\022(.m" +
-                        "atch_arena.v1.ReportMatchResultRequest\032)" +
-                        ".match_arena.v1.ReportMatchResultRespons" +
-                        "eBt\n\026com.matcharena.grpc.v1P\001ZXgithub.co" +
-                        "m/ihsanguldur/match-arena/game-service/i" +
-                        "nternal/gen/match_arena/v1;matcharenav1b" +
-                        "\006proto3"
+                        "ena.v1\032\037google/protobuf/timestamp.proto\"" +
+                        "\'\n\013PingRequest\022\030\n\007message\030\001 \001(\tR\007message" +
+                        "\"(\n\014PingResponse\022\030\n\007message\030\001 \001(\tR\007messa" +
+                        "ge\"d\n\020MatchParticipant\022\033\n\tplayer_id\030\001 \001(" +
+                        "\tR\010playerId\022\024\n\005score\030\002 \001(\005R\005score\022\035\n\nfla" +
+                        "g_count\030\003 \001(\005R\tflagCount\"\270\001\n\030ReportMatch" +
+                        "ResultRequest\022\035\n\nsession_id\030\001 \001(\tR\tsessi" +
+                        "onId\022D\n\014participants\030\002 \003(\0132 .match_arena" +
+                        ".v1.MatchParticipantR\014participants\0227\n\tpl" +
+                        "ayed_at\030\003 \001(\0132\032.google.protobuf.Timestam" +
+                        "pR\010playedAt\"5\n\031ReportMatchResultResponse" +
+                        "\022\030\n\007success\030\001 \001(\010R\007success2\303\001\n\024AccountLo" +
+                        "okupService\022A\n\004Ping\022\033.match_arena.v1.Pin" +
+                        "gRequest\032\034.match_arena.v1.PingResponse\022h" +
+                        "\n\021ReportMatchResult\022(.match_arena.v1.Rep" +
+                        "ortMatchResultRequest\032).match_arena.v1.R" +
+                        "eportMatchResultResponseBt\n\026com.matchare" +
+                        "na.grpc.v1P\001ZXgithub.com/ihsanguldur/mat" +
+                        "ch-arena/game-service/internal/gen/match" +
+                        "_arena/v1;matcharenav1b\006proto3"
         };
         descriptor = com.google.protobuf.Descriptors.FileDescriptor
                 .internalBuildGeneratedFileFrom(descriptorData,
                         new com.google.protobuf.Descriptors.FileDescriptor[]{
+                                com.google.protobuf.TimestampProto.getDescriptor(),
                         });
         internal_static_match_arena_v1_PingRequest_descriptor =
                 getDescriptor().getMessageType(0);
@@ -74,21 +86,27 @@ public final class Account extends com.google.protobuf.GeneratedFile {
                 com.google.protobuf.GeneratedMessage.FieldAccessorTable(
                 internal_static_match_arena_v1_PingResponse_descriptor,
                 new java.lang.String[]{"Message",});
-        internal_static_match_arena_v1_ReportMatchResultRequest_descriptor =
+        internal_static_match_arena_v1_MatchParticipant_descriptor =
                 getDescriptor().getMessageType(2);
+        internal_static_match_arena_v1_MatchParticipant_fieldAccessorTable = new
+                com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+                internal_static_match_arena_v1_MatchParticipant_descriptor,
+                new java.lang.String[]{"PlayerId", "Score", "FlagCount",});
+        internal_static_match_arena_v1_ReportMatchResultRequest_descriptor =
+                getDescriptor().getMessageType(3);
         internal_static_match_arena_v1_ReportMatchResultRequest_fieldAccessorTable = new
                 com.google.protobuf.GeneratedMessage.FieldAccessorTable(
                 internal_static_match_arena_v1_ReportMatchResultRequest_descriptor,
-                new java.lang.String[]{"SessionId",});
+                new java.lang.String[]{"SessionId", "Participants", "PlayedAt",});
         internal_static_match_arena_v1_ReportMatchResultResponse_descriptor =
-                getDescriptor().getMessageType(3);
+                getDescriptor().getMessageType(4);
         internal_static_match_arena_v1_ReportMatchResultResponse_fieldAccessorTable = new
                 com.google.protobuf.GeneratedMessage.FieldAccessorTable(
                 internal_static_match_arena_v1_ReportMatchResultResponse_descriptor,
                 new java.lang.String[]{"Success",});
         descriptor.resolveAllFeaturesImmutable();
+        com.google.protobuf.TimestampProto.getDescriptor();
     }
-
     private Account() {
     }
 

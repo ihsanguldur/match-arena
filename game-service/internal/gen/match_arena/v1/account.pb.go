@@ -9,6 +9,7 @@ package matcharenav1
 import (
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
+	timestamppb "google.golang.org/protobuf/types/known/timestamppb"
 	reflect "reflect"
 	sync "sync"
 	unsafe "unsafe"
@@ -109,16 +110,78 @@ func (x *PingResponse) GetMessage() string {
 	return ""
 }
 
+type MatchParticipant struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	PlayerId      string                 `protobuf:"bytes,1,opt,name=player_id,json=playerId,proto3" json:"player_id,omitempty"`
+	Score         int32                  `protobuf:"varint,2,opt,name=score,proto3" json:"score,omitempty"`
+	FlagCount     int32                  `protobuf:"varint,3,opt,name=flag_count,json=flagCount,proto3" json:"flag_count,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *MatchParticipant) Reset() {
+	*x = MatchParticipant{}
+	mi := &file_match_arena_v1_account_proto_msgTypes[2]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *MatchParticipant) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*MatchParticipant) ProtoMessage() {}
+
+func (x *MatchParticipant) ProtoReflect() protoreflect.Message {
+	mi := &file_match_arena_v1_account_proto_msgTypes[2]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use MatchParticipant.ProtoReflect.Descriptor instead.
+func (*MatchParticipant) Descriptor() ([]byte, []int) {
+	return file_match_arena_v1_account_proto_rawDescGZIP(), []int{2}
+}
+
+func (x *MatchParticipant) GetPlayerId() string {
+	if x != nil {
+		return x.PlayerId
+	}
+	return ""
+}
+
+func (x *MatchParticipant) GetScore() int32 {
+	if x != nil {
+		return x.Score
+	}
+	return 0
+}
+
+func (x *MatchParticipant) GetFlagCount() int32 {
+	if x != nil {
+		return x.FlagCount
+	}
+	return 0
+}
+
 type ReportMatchResultRequest struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	SessionId     string                 `protobuf:"bytes,1,opt,name=session_id,json=sessionId,proto3" json:"session_id,omitempty"`
+	Participants  []*MatchParticipant    `protobuf:"bytes,2,rep,name=participants,proto3" json:"participants,omitempty"`
+	PlayedAt      *timestamppb.Timestamp `protobuf:"bytes,3,opt,name=played_at,json=playedAt,proto3" json:"played_at,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
 
 func (x *ReportMatchResultRequest) Reset() {
 	*x = ReportMatchResultRequest{}
-	mi := &file_match_arena_v1_account_proto_msgTypes[2]
+	mi := &file_match_arena_v1_account_proto_msgTypes[3]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -130,7 +193,7 @@ func (x *ReportMatchResultRequest) String() string {
 func (*ReportMatchResultRequest) ProtoMessage() {}
 
 func (x *ReportMatchResultRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_match_arena_v1_account_proto_msgTypes[2]
+	mi := &file_match_arena_v1_account_proto_msgTypes[3]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -143,7 +206,7 @@ func (x *ReportMatchResultRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ReportMatchResultRequest.ProtoReflect.Descriptor instead.
 func (*ReportMatchResultRequest) Descriptor() ([]byte, []int) {
-	return file_match_arena_v1_account_proto_rawDescGZIP(), []int{2}
+	return file_match_arena_v1_account_proto_rawDescGZIP(), []int{3}
 }
 
 func (x *ReportMatchResultRequest) GetSessionId() string {
@@ -151,6 +214,20 @@ func (x *ReportMatchResultRequest) GetSessionId() string {
 		return x.SessionId
 	}
 	return ""
+}
+
+func (x *ReportMatchResultRequest) GetParticipants() []*MatchParticipant {
+	if x != nil {
+		return x.Participants
+	}
+	return nil
+}
+
+func (x *ReportMatchResultRequest) GetPlayedAt() *timestamppb.Timestamp {
+	if x != nil {
+		return x.PlayedAt
+	}
+	return nil
 }
 
 type ReportMatchResultResponse struct {
@@ -162,7 +239,7 @@ type ReportMatchResultResponse struct {
 
 func (x *ReportMatchResultResponse) Reset() {
 	*x = ReportMatchResultResponse{}
-	mi := &file_match_arena_v1_account_proto_msgTypes[3]
+	mi := &file_match_arena_v1_account_proto_msgTypes[4]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -174,7 +251,7 @@ func (x *ReportMatchResultResponse) String() string {
 func (*ReportMatchResultResponse) ProtoMessage() {}
 
 func (x *ReportMatchResultResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_match_arena_v1_account_proto_msgTypes[3]
+	mi := &file_match_arena_v1_account_proto_msgTypes[4]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -187,7 +264,7 @@ func (x *ReportMatchResultResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ReportMatchResultResponse.ProtoReflect.Descriptor instead.
 func (*ReportMatchResultResponse) Descriptor() ([]byte, []int) {
-	return file_match_arena_v1_account_proto_rawDescGZIP(), []int{3}
+	return file_match_arena_v1_account_proto_rawDescGZIP(), []int{4}
 }
 
 func (x *ReportMatchResultResponse) GetSuccess() bool {
@@ -201,14 +278,21 @@ var File_match_arena_v1_account_proto protoreflect.FileDescriptor
 
 const file_match_arena_v1_account_proto_rawDesc = "" +
 	"\n" +
-	"\x1cmatch_arena/v1/account.proto\x12\x0ematch_arena.v1\"'\n" +
+	"\x1cmatch_arena/v1/account.proto\x12\x0ematch_arena.v1\x1a\x1fgoogle/protobuf/timestamp.proto\"'\n" +
 	"\vPingRequest\x12\x18\n" +
 	"\amessage\x18\x01 \x01(\tR\amessage\"(\n" +
 	"\fPingResponse\x12\x18\n" +
-	"\amessage\x18\x01 \x01(\tR\amessage\"9\n" +
+	"\amessage\x18\x01 \x01(\tR\amessage\"d\n" +
+	"\x10MatchParticipant\x12\x1b\n" +
+	"\tplayer_id\x18\x01 \x01(\tR\bplayerId\x12\x14\n" +
+	"\x05score\x18\x02 \x01(\x05R\x05score\x12\x1d\n" +
+	"\n" +
+	"flag_count\x18\x03 \x01(\x05R\tflagCount\"\xb8\x01\n" +
 	"\x18ReportMatchResultRequest\x12\x1d\n" +
 	"\n" +
-	"session_id\x18\x01 \x01(\tR\tsessionId\"5\n" +
+	"session_id\x18\x01 \x01(\tR\tsessionId\x12D\n" +
+	"\fparticipants\x18\x02 \x03(\v2 .match_arena.v1.MatchParticipantR\fparticipants\x127\n" +
+	"\tplayed_at\x18\x03 \x01(\v2\x1a.google.protobuf.TimestampR\bplayedAt\"5\n" +
 	"\x19ReportMatchResultResponse\x12\x18\n" +
 	"\asuccess\x18\x01 \x01(\bR\asuccess2\xc3\x01\n" +
 	"\x14AccountLookupService\x12A\n" +
@@ -228,23 +312,27 @@ func file_match_arena_v1_account_proto_rawDescGZIP() []byte {
 	return file_match_arena_v1_account_proto_rawDescData
 }
 
-var file_match_arena_v1_account_proto_msgTypes = make([]protoimpl.MessageInfo, 4)
+var file_match_arena_v1_account_proto_msgTypes = make([]protoimpl.MessageInfo, 5)
 var file_match_arena_v1_account_proto_goTypes = []any{
 	(*PingRequest)(nil),               // 0: match_arena.v1.PingRequest
 	(*PingResponse)(nil),              // 1: match_arena.v1.PingResponse
-	(*ReportMatchResultRequest)(nil),  // 2: match_arena.v1.ReportMatchResultRequest
-	(*ReportMatchResultResponse)(nil), // 3: match_arena.v1.ReportMatchResultResponse
+	(*MatchParticipant)(nil),          // 2: match_arena.v1.MatchParticipant
+	(*ReportMatchResultRequest)(nil),  // 3: match_arena.v1.ReportMatchResultRequest
+	(*ReportMatchResultResponse)(nil), // 4: match_arena.v1.ReportMatchResultResponse
+	(*timestamppb.Timestamp)(nil),     // 5: google.protobuf.Timestamp
 }
 var file_match_arena_v1_account_proto_depIdxs = []int32{
-	0, // 0: match_arena.v1.AccountLookupService.Ping:input_type -> match_arena.v1.PingRequest
-	2, // 1: match_arena.v1.AccountLookupService.ReportMatchResult:input_type -> match_arena.v1.ReportMatchResultRequest
-	1, // 2: match_arena.v1.AccountLookupService.Ping:output_type -> match_arena.v1.PingResponse
-	3, // 3: match_arena.v1.AccountLookupService.ReportMatchResult:output_type -> match_arena.v1.ReportMatchResultResponse
-	2, // [2:4] is the sub-list for method output_type
-	0, // [0:2] is the sub-list for method input_type
-	0, // [0:0] is the sub-list for extension type_name
-	0, // [0:0] is the sub-list for extension extendee
-	0, // [0:0] is the sub-list for field type_name
+	2, // 0: match_arena.v1.ReportMatchResultRequest.participants:type_name -> match_arena.v1.MatchParticipant
+	5, // 1: match_arena.v1.ReportMatchResultRequest.played_at:type_name -> google.protobuf.Timestamp
+	0, // 2: match_arena.v1.AccountLookupService.Ping:input_type -> match_arena.v1.PingRequest
+	3, // 3: match_arena.v1.AccountLookupService.ReportMatchResult:input_type -> match_arena.v1.ReportMatchResultRequest
+	1, // 4: match_arena.v1.AccountLookupService.Ping:output_type -> match_arena.v1.PingResponse
+	4, // 5: match_arena.v1.AccountLookupService.ReportMatchResult:output_type -> match_arena.v1.ReportMatchResultResponse
+	4, // [4:6] is the sub-list for method output_type
+	2, // [2:4] is the sub-list for method input_type
+	2, // [2:2] is the sub-list for extension type_name
+	2, // [2:2] is the sub-list for extension extendee
+	0, // [0:2] is the sub-list for field type_name
 }
 
 func init() { file_match_arena_v1_account_proto_init() }
@@ -258,7 +346,7 @@ func file_match_arena_v1_account_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_match_arena_v1_account_proto_rawDesc), len(file_match_arena_v1_account_proto_rawDesc)),
 			NumEnums:      0,
-			NumMessages:   4,
+			NumMessages:   5,
 			NumExtensions: 0,
 			NumServices:   1,
 		},

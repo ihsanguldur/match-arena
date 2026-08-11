@@ -14,6 +14,8 @@ public final class ReportMatchResultRequest extends
         // @@protoc_insertion_point(message_implements:match_arena.v1.ReportMatchResultRequest)
         ReportMatchResultRequestOrBuilder {
     public static final int SESSION_ID_FIELD_NUMBER = 1;
+    public static final int PARTICIPANTS_FIELD_NUMBER = 2;
+    public static final int PLAYED_AT_FIELD_NUMBER = 3;
     private static final long serialVersionUID = 0L;
     // @@protoc_insertion_point(class_scope:match_arena.v1.ReportMatchResultRequest)
     private static final com.matcharena.grpc.v1.ReportMatchResultRequest DEFAULT_INSTANCE;
@@ -53,10 +55,13 @@ public final class ReportMatchResultRequest extends
         DEFAULT_INSTANCE = new com.matcharena.grpc.v1.ReportMatchResultRequest();
     }
 
+    private int bitField0_;
     @SuppressWarnings("serial")
     private volatile java.lang.Object sessionId_ = "";
+    @SuppressWarnings("serial")
+    private java.util.List<com.matcharena.grpc.v1.MatchParticipant> participants_;
+    private com.google.protobuf.Timestamp playedAt_;
     private byte memoizedIsInitialized = -1;
-
     // Use ReportMatchResultRequest.newBuilder() to construct.
     private ReportMatchResultRequest(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
         super(builder);
@@ -64,6 +69,7 @@ public final class ReportMatchResultRequest extends
 
     private ReportMatchResultRequest() {
         sessionId_ = "";
+        participants_ = java.util.Collections.emptyList();
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor
@@ -220,6 +226,76 @@ public final class ReportMatchResultRequest extends
         }
     }
 
+    /**
+     * <code>repeated .match_arena.v1.MatchParticipant participants = 2 [json_name = "participants"];</code>
+     */
+    @java.lang.Override
+    public java.util.List<com.matcharena.grpc.v1.MatchParticipant> getParticipantsList() {
+        return participants_;
+    }
+
+    /**
+     * <code>repeated .match_arena.v1.MatchParticipant participants = 2 [json_name = "participants"];</code>
+     */
+    @java.lang.Override
+    public java.util.List<? extends com.matcharena.grpc.v1.MatchParticipantOrBuilder>
+    getParticipantsOrBuilderList() {
+        return participants_;
+    }
+
+    /**
+     * <code>repeated .match_arena.v1.MatchParticipant participants = 2 [json_name = "participants"];</code>
+     */
+    @java.lang.Override
+    public int getParticipantsCount() {
+        return participants_.size();
+    }
+
+    /**
+     * <code>repeated .match_arena.v1.MatchParticipant participants = 2 [json_name = "participants"];</code>
+     */
+    @java.lang.Override
+    public com.matcharena.grpc.v1.MatchParticipant getParticipants(int index) {
+        return participants_.get(index);
+    }
+
+    /**
+     * <code>repeated .match_arena.v1.MatchParticipant participants = 2 [json_name = "participants"];</code>
+     */
+    @java.lang.Override
+    public com.matcharena.grpc.v1.MatchParticipantOrBuilder getParticipantsOrBuilder(
+            int index) {
+        return participants_.get(index);
+    }
+
+    /**
+     * <code>.google.protobuf.Timestamp played_at = 3 [json_name = "playedAt"];</code>
+     *
+     * @return Whether the playedAt field is set.
+     */
+    @java.lang.Override
+    public boolean hasPlayedAt() {
+        return ((bitField0_ & 0x00000001) != 0);
+    }
+
+    /**
+     * <code>.google.protobuf.Timestamp played_at = 3 [json_name = "playedAt"];</code>
+     *
+     * @return The playedAt.
+     */
+    @java.lang.Override
+    public com.google.protobuf.Timestamp getPlayedAt() {
+        return playedAt_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : playedAt_;
+    }
+
+    /**
+     * <code>.google.protobuf.Timestamp played_at = 3 [json_name = "playedAt"];</code>
+     */
+    @java.lang.Override
+    public com.google.protobuf.TimestampOrBuilder getPlayedAtOrBuilder() {
+        return playedAt_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : playedAt_;
+    }
+
     @java.lang.Override
     public final boolean isInitialized() {
         byte isInitialized = memoizedIsInitialized;
@@ -236,6 +312,12 @@ public final class ReportMatchResultRequest extends
         if (!com.google.protobuf.GeneratedMessage.isStringEmpty(sessionId_)) {
             com.google.protobuf.GeneratedMessage.writeString(output, 1, sessionId_);
         }
+        for (int i = 0; i < participants_.size(); i++) {
+            output.writeMessage(2, participants_.get(i));
+        }
+        if (((bitField0_ & 0x00000001) != 0)) {
+            output.writeMessage(3, getPlayedAt());
+        }
         getUnknownFields().writeTo(output);
     }
 
@@ -243,6 +325,19 @@ public final class ReportMatchResultRequest extends
         int size = 0;
         if (!com.google.protobuf.GeneratedMessage.isStringEmpty(sessionId_)) {
             size += com.google.protobuf.GeneratedMessage.computeStringSize(1, sessionId_);
+        }
+
+        {
+            final int count = participants_.size();
+            for (int i = 0; i < count; i++) {
+                size += com.google.protobuf.CodedOutputStream
+                        .computeMessageSizeNoTag(participants_.get(i));
+            }
+            size += 1 * count;
+        }
+        if (((bitField0_ & 0x00000001) != 0)) {
+            size += com.google.protobuf.CodedOutputStream
+                    .computeMessageSize(3, getPlayedAt());
         }
         return size;
     }
@@ -271,6 +366,13 @@ public final class ReportMatchResultRequest extends
 
         if (!getSessionId()
                 .equals(other.getSessionId())) return false;
+        if (!getParticipantsList()
+                .equals(other.getParticipantsList())) return false;
+        if (hasPlayedAt() != other.hasPlayedAt()) return false;
+        if (hasPlayedAt()) {
+            if (!getPlayedAt()
+                    .equals(other.getPlayedAt())) return false;
+        }
         if (!getUnknownFields().equals(other.getUnknownFields())) return false;
         return true;
     }
@@ -284,6 +386,14 @@ public final class ReportMatchResultRequest extends
         hash = (19 * hash) + getDescriptor().hashCode();
         hash = (37 * hash) + SESSION_ID_FIELD_NUMBER;
         hash = (53 * hash) + getSessionId().hashCode();
+        if (getParticipantsCount() > 0) {
+            hash = (37 * hash) + PARTICIPANTS_FIELD_NUMBER;
+            hash = (53 * hash) + getParticipantsList().hashCode();
+        }
+        if (hasPlayedAt()) {
+            hash = (37 * hash) + PLAYED_AT_FIELD_NUMBER;
+            hash = (53 * hash) + getPlayedAt().hashCode();
+        }
         hash = (29 * hash) + getUnknownFields().hashCode();
         memoizedHashCode = hash;
         return hash;
@@ -326,16 +436,23 @@ public final class ReportMatchResultRequest extends
             com.matcharena.grpc.v1.ReportMatchResultRequestOrBuilder {
         private int bitField0_;
         private java.lang.Object sessionId_ = "";
+        private java.util.List<com.matcharena.grpc.v1.MatchParticipant> participants_ =
+                java.util.Collections.emptyList();
+        private com.google.protobuf.RepeatedFieldBuilder<
+                com.matcharena.grpc.v1.MatchParticipant, com.matcharena.grpc.v1.MatchParticipant.Builder, com.matcharena.grpc.v1.MatchParticipantOrBuilder> participantsBuilder_;
+        private com.google.protobuf.Timestamp playedAt_;
+        private com.google.protobuf.SingleFieldBuilder<
+                com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> playedAtBuilder_;
 
         // Construct using com.matcharena.grpc.v1.ReportMatchResultRequest.newBuilder()
         private Builder() {
-
+            maybeForceBuilderInitialization();
         }
 
         private Builder(
                 com.google.protobuf.GeneratedMessage.BuilderParent parent) {
             super(parent);
-
+            maybeForceBuilderInitialization();
         }
 
         public static final com.google.protobuf.Descriptors.Descriptor
@@ -351,11 +468,31 @@ public final class ReportMatchResultRequest extends
                             com.matcharena.grpc.v1.ReportMatchResultRequest.class, com.matcharena.grpc.v1.ReportMatchResultRequest.Builder.class);
         }
 
+        private void maybeForceBuilderInitialization() {
+            if (com.google.protobuf.GeneratedMessage
+                    .alwaysUseFieldBuilders) {
+                internalGetParticipantsFieldBuilder();
+                internalGetPlayedAtFieldBuilder();
+            }
+        }
+
         @java.lang.Override
         public Builder clear() {
             super.clear();
             bitField0_ = 0;
             sessionId_ = "";
+            if (participantsBuilder_ == null) {
+                participants_ = java.util.Collections.emptyList();
+            } else {
+                participants_ = null;
+                participantsBuilder_.clear();
+            }
+            bitField0_ = (bitField0_ & ~0x00000002);
+            playedAt_ = null;
+            if (playedAtBuilder_ != null) {
+                playedAtBuilder_.dispose();
+                playedAtBuilder_ = null;
+            }
             return this;
         }
 
@@ -382,6 +519,7 @@ public final class ReportMatchResultRequest extends
         @java.lang.Override
         public com.matcharena.grpc.v1.ReportMatchResultRequest buildPartial() {
             com.matcharena.grpc.v1.ReportMatchResultRequest result = new com.matcharena.grpc.v1.ReportMatchResultRequest(this);
+            buildPartialRepeatedFields(result);
             if (bitField0_ != 0) {
                 buildPartial0(result);
             }
@@ -389,11 +527,31 @@ public final class ReportMatchResultRequest extends
             return result;
         }
 
+        private void buildPartialRepeatedFields(com.matcharena.grpc.v1.ReportMatchResultRequest result) {
+            if (participantsBuilder_ == null) {
+                if (((bitField0_ & 0x00000002) != 0)) {
+                    participants_ = java.util.Collections.unmodifiableList(participants_);
+                    bitField0_ = (bitField0_ & ~0x00000002);
+                }
+                result.participants_ = participants_;
+            } else {
+                result.participants_ = participantsBuilder_.build();
+            }
+        }
+
         private void buildPartial0(com.matcharena.grpc.v1.ReportMatchResultRequest result) {
             int from_bitField0_ = bitField0_;
             if (((from_bitField0_ & 0x00000001) != 0)) {
                 result.sessionId_ = sessionId_;
             }
+            int to_bitField0_ = 0;
+            if (((from_bitField0_ & 0x00000004) != 0)) {
+                result.playedAt_ = playedAtBuilder_ == null
+                        ? playedAt_
+                        : playedAtBuilder_.build();
+                to_bitField0_ |= 0x00000001;
+            }
+            result.bitField0_ |= to_bitField0_;
         }
 
         @java.lang.Override
@@ -412,6 +570,35 @@ public final class ReportMatchResultRequest extends
                 sessionId_ = other.sessionId_;
                 bitField0_ |= 0x00000001;
                 onChanged();
+            }
+            if (participantsBuilder_ == null) {
+                if (!other.participants_.isEmpty()) {
+                    if (participants_.isEmpty()) {
+                        participants_ = other.participants_;
+                        bitField0_ = (bitField0_ & ~0x00000002);
+                    } else {
+                        ensureParticipantsIsMutable();
+                        participants_.addAll(other.participants_);
+                    }
+                    onChanged();
+                }
+            } else {
+                if (!other.participants_.isEmpty()) {
+                    if (participantsBuilder_.isEmpty()) {
+                        participantsBuilder_.dispose();
+                        participantsBuilder_ = null;
+                        participants_ = other.participants_;
+                        bitField0_ = (bitField0_ & ~0x00000002);
+                        participantsBuilder_ =
+                                com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders ?
+                                        internalGetParticipantsFieldBuilder() : null;
+                    } else {
+                        participantsBuilder_.addAllMessages(other.participants_);
+                    }
+                }
+            }
+            if (other.hasPlayedAt()) {
+                mergePlayedAt(other.getPlayedAt());
             }
             this.mergeUnknownFields(other.getUnknownFields());
             onChanged();
@@ -444,6 +631,26 @@ public final class ReportMatchResultRequest extends
                             bitField0_ |= 0x00000001;
                             break;
                         } // case 10
+                        case 18: {
+                            com.matcharena.grpc.v1.MatchParticipant m =
+                                    input.readMessage(
+                                            com.matcharena.grpc.v1.MatchParticipant.parser(),
+                                            extensionRegistry);
+                            if (participantsBuilder_ == null) {
+                                ensureParticipantsIsMutable();
+                                participants_.add(m);
+                            } else {
+                                participantsBuilder_.addMessage(m);
+                            }
+                            break;
+                        } // case 18
+                        case 26: {
+                            input.readMessage(
+                                    internalGetPlayedAtFieldBuilder().getBuilder(),
+                                    extensionRegistry);
+                            bitField0_ |= 0x00000004;
+                            break;
+                        } // case 26
                         default: {
                             if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                                 done = true; // was an endgroup tag
@@ -542,6 +749,388 @@ public final class ReportMatchResultRequest extends
             bitField0_ = (bitField0_ & ~0x00000001);
             onChanged();
             return this;
+        }
+
+        private void ensureParticipantsIsMutable() {
+            if (!((bitField0_ & 0x00000002) != 0)) {
+                participants_ = new java.util.ArrayList<com.matcharena.grpc.v1.MatchParticipant>(participants_);
+                bitField0_ |= 0x00000002;
+            }
+        }
+
+        /**
+         * <code>repeated .match_arena.v1.MatchParticipant participants = 2 [json_name = "participants"];</code>
+         */
+        public java.util.List<com.matcharena.grpc.v1.MatchParticipant> getParticipantsList() {
+            if (participantsBuilder_ == null) {
+                return java.util.Collections.unmodifiableList(participants_);
+            } else {
+                return participantsBuilder_.getMessageList();
+            }
+        }
+
+        /**
+         * <code>repeated .match_arena.v1.MatchParticipant participants = 2 [json_name = "participants"];</code>
+         */
+        public int getParticipantsCount() {
+            if (participantsBuilder_ == null) {
+                return participants_.size();
+            } else {
+                return participantsBuilder_.getCount();
+            }
+        }
+
+        /**
+         * <code>repeated .match_arena.v1.MatchParticipant participants = 2 [json_name = "participants"];</code>
+         */
+        public com.matcharena.grpc.v1.MatchParticipant getParticipants(int index) {
+            if (participantsBuilder_ == null) {
+                return participants_.get(index);
+            } else {
+                return participantsBuilder_.getMessage(index);
+            }
+        }
+
+        /**
+         * <code>repeated .match_arena.v1.MatchParticipant participants = 2 [json_name = "participants"];</code>
+         */
+        public Builder setParticipants(
+                int index, com.matcharena.grpc.v1.MatchParticipant value) {
+            if (participantsBuilder_ == null) {
+                if (value == null) {
+                    throw new NullPointerException();
+                }
+                ensureParticipantsIsMutable();
+                participants_.set(index, value);
+                onChanged();
+            } else {
+                participantsBuilder_.setMessage(index, value);
+            }
+            return this;
+        }
+
+        /**
+         * <code>repeated .match_arena.v1.MatchParticipant participants = 2 [json_name = "participants"];</code>
+         */
+        public Builder setParticipants(
+                int index, com.matcharena.grpc.v1.MatchParticipant.Builder builderForValue) {
+            if (participantsBuilder_ == null) {
+                ensureParticipantsIsMutable();
+                participants_.set(index, builderForValue.build());
+                onChanged();
+            } else {
+                participantsBuilder_.setMessage(index, builderForValue.build());
+            }
+            return this;
+        }
+
+        /**
+         * <code>repeated .match_arena.v1.MatchParticipant participants = 2 [json_name = "participants"];</code>
+         */
+        public Builder addParticipants(com.matcharena.grpc.v1.MatchParticipant value) {
+            if (participantsBuilder_ == null) {
+                if (value == null) {
+                    throw new NullPointerException();
+                }
+                ensureParticipantsIsMutable();
+                participants_.add(value);
+                onChanged();
+            } else {
+                participantsBuilder_.addMessage(value);
+            }
+            return this;
+        }
+
+        /**
+         * <code>repeated .match_arena.v1.MatchParticipant participants = 2 [json_name = "participants"];</code>
+         */
+        public Builder addParticipants(
+                int index, com.matcharena.grpc.v1.MatchParticipant value) {
+            if (participantsBuilder_ == null) {
+                if (value == null) {
+                    throw new NullPointerException();
+                }
+                ensureParticipantsIsMutable();
+                participants_.add(index, value);
+                onChanged();
+            } else {
+                participantsBuilder_.addMessage(index, value);
+            }
+            return this;
+        }
+
+        /**
+         * <code>repeated .match_arena.v1.MatchParticipant participants = 2 [json_name = "participants"];</code>
+         */
+        public Builder addParticipants(
+                com.matcharena.grpc.v1.MatchParticipant.Builder builderForValue) {
+            if (participantsBuilder_ == null) {
+                ensureParticipantsIsMutable();
+                participants_.add(builderForValue.build());
+                onChanged();
+            } else {
+                participantsBuilder_.addMessage(builderForValue.build());
+            }
+            return this;
+        }
+
+        /**
+         * <code>repeated .match_arena.v1.MatchParticipant participants = 2 [json_name = "participants"];</code>
+         */
+        public Builder addParticipants(
+                int index, com.matcharena.grpc.v1.MatchParticipant.Builder builderForValue) {
+            if (participantsBuilder_ == null) {
+                ensureParticipantsIsMutable();
+                participants_.add(index, builderForValue.build());
+                onChanged();
+            } else {
+                participantsBuilder_.addMessage(index, builderForValue.build());
+            }
+            return this;
+        }
+
+        /**
+         * <code>repeated .match_arena.v1.MatchParticipant participants = 2 [json_name = "participants"];</code>
+         */
+        public Builder addAllParticipants(
+                java.lang.Iterable<? extends com.matcharena.grpc.v1.MatchParticipant> values) {
+            if (participantsBuilder_ == null) {
+                ensureParticipantsIsMutable();
+                com.google.protobuf.AbstractMessageLite.Builder.addAll(
+                        values, participants_);
+                onChanged();
+            } else {
+                participantsBuilder_.addAllMessages(values);
+            }
+            return this;
+        }
+
+        /**
+         * <code>repeated .match_arena.v1.MatchParticipant participants = 2 [json_name = "participants"];</code>
+         */
+        public Builder clearParticipants() {
+            if (participantsBuilder_ == null) {
+                participants_ = java.util.Collections.emptyList();
+                bitField0_ = (bitField0_ & ~0x00000002);
+                onChanged();
+            } else {
+                participantsBuilder_.clear();
+            }
+            return this;
+        }
+
+        /**
+         * <code>repeated .match_arena.v1.MatchParticipant participants = 2 [json_name = "participants"];</code>
+         */
+        public Builder removeParticipants(int index) {
+            if (participantsBuilder_ == null) {
+                ensureParticipantsIsMutable();
+                participants_.remove(index);
+                onChanged();
+            } else {
+                participantsBuilder_.remove(index);
+            }
+            return this;
+        }
+
+        /**
+         * <code>repeated .match_arena.v1.MatchParticipant participants = 2 [json_name = "participants"];</code>
+         */
+        public com.matcharena.grpc.v1.MatchParticipant.Builder getParticipantsBuilder(
+                int index) {
+            return internalGetParticipantsFieldBuilder().getBuilder(index);
+        }
+
+        /**
+         * <code>repeated .match_arena.v1.MatchParticipant participants = 2 [json_name = "participants"];</code>
+         */
+        public com.matcharena.grpc.v1.MatchParticipantOrBuilder getParticipantsOrBuilder(
+                int index) {
+            if (participantsBuilder_ == null) {
+                return participants_.get(index);
+            } else {
+                return participantsBuilder_.getMessageOrBuilder(index);
+            }
+        }
+
+        /**
+         * <code>repeated .match_arena.v1.MatchParticipant participants = 2 [json_name = "participants"];</code>
+         */
+        public java.util.List<? extends com.matcharena.grpc.v1.MatchParticipantOrBuilder>
+        getParticipantsOrBuilderList() {
+            if (participantsBuilder_ != null) {
+                return participantsBuilder_.getMessageOrBuilderList();
+            } else {
+                return java.util.Collections.unmodifiableList(participants_);
+            }
+        }
+
+        /**
+         * <code>repeated .match_arena.v1.MatchParticipant participants = 2 [json_name = "participants"];</code>
+         */
+        public com.matcharena.grpc.v1.MatchParticipant.Builder addParticipantsBuilder() {
+            return internalGetParticipantsFieldBuilder().addBuilder(
+                    com.matcharena.grpc.v1.MatchParticipant.getDefaultInstance());
+        }
+
+        /**
+         * <code>repeated .match_arena.v1.MatchParticipant participants = 2 [json_name = "participants"];</code>
+         */
+        public com.matcharena.grpc.v1.MatchParticipant.Builder addParticipantsBuilder(
+                int index) {
+            return internalGetParticipantsFieldBuilder().addBuilder(
+                    index, com.matcharena.grpc.v1.MatchParticipant.getDefaultInstance());
+        }
+
+        /**
+         * <code>repeated .match_arena.v1.MatchParticipant participants = 2 [json_name = "participants"];</code>
+         */
+        public java.util.List<com.matcharena.grpc.v1.MatchParticipant.Builder>
+        getParticipantsBuilderList() {
+            return internalGetParticipantsFieldBuilder().getBuilderList();
+        }
+
+        private com.google.protobuf.RepeatedFieldBuilder<
+                com.matcharena.grpc.v1.MatchParticipant, com.matcharena.grpc.v1.MatchParticipant.Builder, com.matcharena.grpc.v1.MatchParticipantOrBuilder>
+        internalGetParticipantsFieldBuilder() {
+            if (participantsBuilder_ == null) {
+                participantsBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<
+                        com.matcharena.grpc.v1.MatchParticipant, com.matcharena.grpc.v1.MatchParticipant.Builder, com.matcharena.grpc.v1.MatchParticipantOrBuilder>(
+                        participants_,
+                        ((bitField0_ & 0x00000002) != 0),
+                        getParentForChildren(),
+                        isClean());
+                participants_ = null;
+            }
+            return participantsBuilder_;
+        }
+
+        /**
+         * <code>.google.protobuf.Timestamp played_at = 3 [json_name = "playedAt"];</code>
+         *
+         * @return Whether the playedAt field is set.
+         */
+        public boolean hasPlayedAt() {
+            return ((bitField0_ & 0x00000004) != 0);
+        }
+
+        /**
+         * <code>.google.protobuf.Timestamp played_at = 3 [json_name = "playedAt"];</code>
+         *
+         * @return The playedAt.
+         */
+        public com.google.protobuf.Timestamp getPlayedAt() {
+            if (playedAtBuilder_ == null) {
+                return playedAt_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : playedAt_;
+            } else {
+                return playedAtBuilder_.getMessage();
+            }
+        }
+
+        /**
+         * <code>.google.protobuf.Timestamp played_at = 3 [json_name = "playedAt"];</code>
+         */
+        public Builder setPlayedAt(com.google.protobuf.Timestamp value) {
+            if (playedAtBuilder_ == null) {
+                if (value == null) {
+                    throw new NullPointerException();
+                }
+                playedAt_ = value;
+            } else {
+                playedAtBuilder_.setMessage(value);
+            }
+            bitField0_ |= 0x00000004;
+            onChanged();
+            return this;
+        }
+
+        /**
+         * <code>.google.protobuf.Timestamp played_at = 3 [json_name = "playedAt"];</code>
+         */
+        public Builder setPlayedAt(
+                com.google.protobuf.Timestamp.Builder builderForValue) {
+            if (playedAtBuilder_ == null) {
+                playedAt_ = builderForValue.build();
+            } else {
+                playedAtBuilder_.setMessage(builderForValue.build());
+            }
+            bitField0_ |= 0x00000004;
+            onChanged();
+            return this;
+        }
+
+        /**
+         * <code>.google.protobuf.Timestamp played_at = 3 [json_name = "playedAt"];</code>
+         */
+        public Builder mergePlayedAt(com.google.protobuf.Timestamp value) {
+            if (playedAtBuilder_ == null) {
+                if (((bitField0_ & 0x00000004) != 0) &&
+                        playedAt_ != null &&
+                        playedAt_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+                    getPlayedAtBuilder().mergeFrom(value);
+                } else {
+                    playedAt_ = value;
+                }
+            } else {
+                playedAtBuilder_.mergeFrom(value);
+            }
+            if (playedAt_ != null) {
+                bitField0_ |= 0x00000004;
+                onChanged();
+            }
+            return this;
+        }
+
+        /**
+         * <code>.google.protobuf.Timestamp played_at = 3 [json_name = "playedAt"];</code>
+         */
+        public Builder clearPlayedAt() {
+            bitField0_ = (bitField0_ & ~0x00000004);
+            playedAt_ = null;
+            if (playedAtBuilder_ != null) {
+                playedAtBuilder_.dispose();
+                playedAtBuilder_ = null;
+            }
+            onChanged();
+            return this;
+        }
+
+        /**
+         * <code>.google.protobuf.Timestamp played_at = 3 [json_name = "playedAt"];</code>
+         */
+        public com.google.protobuf.Timestamp.Builder getPlayedAtBuilder() {
+            bitField0_ |= 0x00000004;
+            onChanged();
+            return internalGetPlayedAtFieldBuilder().getBuilder();
+        }
+
+        /**
+         * <code>.google.protobuf.Timestamp played_at = 3 [json_name = "playedAt"];</code>
+         */
+        public com.google.protobuf.TimestampOrBuilder getPlayedAtOrBuilder() {
+            if (playedAtBuilder_ != null) {
+                return playedAtBuilder_.getMessageOrBuilder();
+            } else {
+                return playedAt_ == null ?
+                        com.google.protobuf.Timestamp.getDefaultInstance() : playedAt_;
+            }
+        }
+
+        /**
+         * <code>.google.protobuf.Timestamp played_at = 3 [json_name = "playedAt"];</code>
+         */
+        private com.google.protobuf.SingleFieldBuilder<
+                com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder>
+        internalGetPlayedAtFieldBuilder() {
+            if (playedAtBuilder_ == null) {
+                playedAtBuilder_ = new com.google.protobuf.SingleFieldBuilder<
+                        com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder>(
+                        getPlayedAt(),
+                        getParentForChildren(),
+                        isClean());
+                playedAt_ = null;
+            }
+            return playedAtBuilder_;
         }
 
         // @@protoc_insertion_point(builder_scope:match_arena.v1.ReportMatchResultRequest)

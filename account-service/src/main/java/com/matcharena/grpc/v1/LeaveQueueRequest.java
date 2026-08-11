@@ -56,7 +56,6 @@ public final class LeaveQueueRequest extends
     @SuppressWarnings("serial")
     private volatile java.lang.Object queueTicketId_ = "";
     private byte memoizedIsInitialized = -1;
-
     // Use LeaveQueueRequest.newBuilder() to construct.
     private LeaveQueueRequest(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
         super(builder);

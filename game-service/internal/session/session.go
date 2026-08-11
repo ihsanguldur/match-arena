@@ -23,6 +23,12 @@ type PlayerState struct {
 	Connected    bool
 }
 
+type PlayerResult struct {
+	PlayerID  string
+	Score     int32
+	FlagCount int32
+}
+
 type Session struct {
 	ID        string
 	playerIDs []string
@@ -123,6 +129,24 @@ func (s *Session) Run(ctx context.Context) {
 			s.handle(cmd)
 		}
 	}
+}
+
+func (s *Session) Results() []PlayerResult {
+	flagCounts := make(map[string]int32, len(s.players))
+	for _, f := range s.flags {
+		flagCounts[f.GetPlayerId()]++
+	}
+
+	results := make([]PlayerResult, 0, len(s.players))
+	for id, state := range s.players {
+		results = append(results, PlayerResult{
+			PlayerID:  id,
+			Score:     state.Score,
+			FlagCount: flagCounts[id],
+		})
+	}
+
+	return results
 }
 
 func (s *Session) handle(cmd sessionCmd) {
