@@ -18,3 +18,6 @@ client/web/dist/
 
 # OS
 .DS_Store
+
+# Docker Compose secrets
+.env
