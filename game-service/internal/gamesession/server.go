@@ -46,8 +46,6 @@ func (s *Server) PlayGame(stream matcharenav1.GameSessionService_PlayGameServer)
 	sess.Subscribe(playerID, updates)
 	defer sess.Unsubscribe(playerID)
 
-	sess.Action(first)
-
 	recvErr := make(chan error, 1)
 	go func() {
 		for {

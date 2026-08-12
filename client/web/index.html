@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>match-arena</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">match<span class="accent">/</span>arena</div>
+    <nav class="topnav" id="topnav" hidden>
+      <span class="whoami" id="whoami"></span>
+      <button class="link-btn" id="nav-leaderboard">Leaderboard</button>
+      <button class="link-btn" id="nav-logout">Log out</button>
+    </nav>
+  </header>
+
+  <main id="app">
+
+    <section id="screen-auth" class="screen">
+      <div class="card">
+        <div class="tabs">
+          <button class="tab active" data-tab="login">Log in</button>
+          <button class="tab" data-tab="register">Register</button>
+        </div>
+
+        <form id="form-login" class="tab-panel active">
+          <label>Username<input type="text" id="login-username" autocomplete="username" required /></label>
+          <label>Password<input type="password" id="login-password" autocomplete="current-password" required /></label>
+          <button type="submit" class="primary">Log in</button>
+          <p class="error" id="login-error"></p>
+        </form>
+
+        <form id="form-register" class="tab-panel">
+          <label>Username<input type="text" id="register-username" autocomplete="username" required /></label>
+          <label>Email<input type="email" id="register-email" autocomplete="email" required /></label>
+          <label>Password<input type="password" id="register-password" autocomplete="new-password" required /></label>
+          <button type="submit" class="primary">Create account</button>
+          <p class="error" id="register-error"></p>
+        </form>
+      </div>
+    </section>
+
+    <section id="screen-lobby" class="screen">
+      <div class="card center">
+        <p class="lobby-rating">Your rating: <strong id="lobby-rating">-</strong></p>
+        <button class="primary big" id="btn-join-queue">Find match</button>
+      </div>
+    </section>
+
+    <section id="screen-queue" class="screen">
+      <div class="card center">
+        <div class="spinner"></div>
+        <p>Searching for an opponent&hellip;</p>
+        <p class="muted" id="queue-ticket"></p>
+        <button class="ghost" id="btn-leave-queue">Cancel</button>
+      </div>
+    </section>
+
+    <section id="screen-game" class="screen">
+      <div class="game-hud">
+        <div class="score-pill me">
+          <span class="label">You</span>
+          <span class="value" id="score-me">0</span>
+        </div>
+        <div class="elapsed" id="game-elapsed">0:00</div>
+        <div class="score-pill opp">
+          <span class="label" id="opp-label">Opponent</span>
+          <span class="value" id="score-opp">0</span>
+        </div>
+      </div>
+      <canvas id="game-canvas" width="640" height="420"></canvas>
+      <div class="flag-toast" id="flag-toast" hidden></div>
+    </section>
+
+    <section id="screen-result" class="screen">
+      <div class="card center">
+        <h2 id="result-heading">Match over</h2>
+        <p class="result-score" id="result-score"></p>
+        <button class="primary" id="btn-play-again">Back to lobby</button>
+      </div>
+    </section>
+
+    <section id="screen-leaderboard" class="screen">
+      <div class="card wide">
+        <h2>Leaderboard</h2>
+        <table class="leaderboard-table">
+          <thead>
+            <tr><th>#</th><th>Player</th><th>Rating</th></tr>
+          </thead>
+          <tbody id="leaderboard-body"></tbody>
+        </table>
+        <button class="ghost" id="btn-leaderboard-back">Back</button>
+      </div>
+    </section>
+
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
